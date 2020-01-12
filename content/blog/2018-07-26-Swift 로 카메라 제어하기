@@ -1,0 +1,152 @@
+---
+title: 1. Swift 로 카메라 제어하기
+date: 2018-07-26 00:00:00
+categories:
+- Swift
+tags:
+- Swift
+- 스위프트
+cheers:
+- what?
+---  
+
+이 포스트는 Swift4를 기준으로 작성하였습니다.<br/>
+Swift에서 카메라 제어 공식 문서는 [docs](https://developer.apple.com/documentation/avfoundation/avcapturesession) 여기서 볼 수 있습니다.
+
+## SWIFT 에서 카메라 제어하기 - 서론
+> 언제 카메라 제어하기가 필요한가?
+
+만약 나만의 카메라 필터 앱이 가지고 싶거나 카메라를 통해서 얻고자 하는 정보가 있을 때 사용한다.<br/>
+필자는 현재 개발하고 있는 앱에 가장 기초가 되는 심박수 정보를 가져오기 위해서 사용하였다.<br/>
+한글로 작성된 카메라 제어에 대한 설명을 찾기 힘들었고 구글링을 해도 버전이 맞지 않는 코드들이 나와 프로그램 작성에 애를 먹었다. <br/>
+물론 다시 코드를 돌아 봤을 땐 너무 간단하다.😮<br/>
+어찌되었든 필자처럼 Swift에 처음 접근해 보는 사람이 이 글을 읽고 도움을 얻어 갔으면 한다.<br/>
+<br/>
+
+## SWIFT 에서 카메라 제어하기 - 본론
+AVfoundation 은 오디오나 카메라 작업을 포함하는 프레임 워크이다.<br/>
+
+크게 세가지로 구성된다.<br/>
+AVCaptureSession : 데이터의 흐름을 관리하는 세션
+
+AVCaptureDevice : 입력 장치를 나타낸다.
+
+AVCaptureOutput : 출력을 나타낸다.
+<br/>
+
+작성한 코드는 프레임마다 실행되는 captureOutput에서 이미지의 RGB 를 콘솔에 출력하는 프로그램이다.<br/>
+보통 이미지를 받아서 captureOutput에서 수정하기 때문에 필요한 앱에 따라 captureOutput을 바꾸면 되겠다.<br/>
+
+모든 코드에 주석을 작성하였다.
+### 전체 소스 코드
+```Swift
+//
+//  ViewController.swift
+//  SWIFT_1_camera
+//
+//  Created by OOPSLA on 2018. 7. 26..
+//  Copyright © 2018년 OOPSLA. All rights reserved.
+//
+
+import UIKit
+import AVFoundation
+
+class ViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferDelegate {
+    //storyboard에서 만든 View
+    @IBOutlet weak var CameraView: UIView!
+
+    //카메라를 제어할 함수
+    func Camera(){
+        let captureSession = AVCaptureSession()
+        //설정 변경 전 beginConfiguration 호출하고
+        captureSession.beginConfiguration()
+        //캡처 품질
+        captureSession.sessionPreset = AVCaptureSession.Preset.vga640x480
+        //commitConfiguration 설정 반영
+        captureSession.commitConfiguration()
+        //장치 설정
+        let videoDevice = AVCaptureDevice.default(for: .video)
+        //frame 설정
+        videoDevice?.activeVideoMinFrameDuration = CMTimeMake(1, 30)
+        do{
+            let videoInput = try AVCaptureDeviceInput(device: videoDevice!)
+            captureSession.addInput(videoInput)
+        }catch{
+            print("\(error)")
+            return
+        }
+        //화면 출력 부분
+        let previewLayer = AVCaptureVideoPreviewLayer.init(session: captureSession)
+        //video setting 하고 view에 현재 화면 출력
+        previewLayer.frame = CameraView.bounds
+        CameraView.layer.addSublayer(previewLayer)
+
+        let videoOutput = AVCaptureVideoDataOutput()
+        ////새 비디오 샘플 버퍼가 캡처되면 captureOutput (_ : didOutput : from :)을 사용하여 샘플 버퍼 대리인에게 전송.
+        let videoOutputQueue = DispatchQueue(label: "VideoQueue")
+        videoOutput.setSampleBufferDelegate(self, queue: videoOutputQueue)
+        captureSession.addOutput(videoOutput)
+
+        //32bit BGRA 포맷
+        videoOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as AnyHashable as! String: Int(kCVPixelFormatType_32BGRA)]
+        videoOutput.alwaysDiscardsLateVideoFrames = true
+
+        //세션 시작
+        captureSession.startRunning()
+    }
+    //설정된 프레임마다 실행되는 함수 (위에서 30프레임으로 설정함)
+    func captureOutput(_ captureOutput: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)!
+        //이지미 버퍼 lock
+        CVPixelBufferLockBaseAddress(imageBuffer, CVPixelBufferLockFlags(rawValue: CVOptionFlags(0)))
+        //imagevBuffer의 크기를 가져옴
+        let height = CVPixelBufferGetHeight(imageBuffer)
+        let width = CVPixelBufferGetWidth(imageBuffer)
+
+        let baseAddress = CVPixelBufferGetBaseAddress(imageBuffer)!
+        let byteBuffer = baseAddress.assumingMemoryBound(to: UInt8.self)
+
+        //RGB 값 가져와서 콘솔창에 print
+        for j in 0..<height {
+            for i in 0..<width {
+                let index = (j * width + i) * 4
+                print(" B : \(byteBuffer[index])")
+                print(" G : \(byteBuffer[index+1])")
+                print(" R : \(byteBuffer[index+2])")
+                }
+        }
+        //이미지 버퍼 unlock
+        CVPixelBufferUnlockBaseAddress(imageBuffer, CVPixelBufferLockFlags(rawValue: CVOptionFlags(0)))
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        Camera()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+
+}
+
+```
+### 💥swift 에서 카메라를 제어할 때는 카메라 권한을 주어야 한다.!💥
+
+![info.plist](/assets/images/07-26/info.07.17.png)
+list에 커서를 놓으면 + - 표시가 나올텐데 + 누르고 privacy - camera usage description 을 찾아서 추가하면 된다.
+<br/>
+## SWIFT에서 카메라 제어하기 - 실행
+![실행결과](/assets/images/07-26/IMG_0001.png)
+![실행결과](/assets/images/07-26/IMG_0002.png)
+<br/>
+콘솔 실행 결과<br/>
+![콘솔결과](/assets/images/07-26/result.png)
+## 전체 소스 코드 (github)
+[GitHub](https://github.com/Haeuncs/Swift_github_post/tree/master/SWIFT_1_camera) 여기서 볼 수 있습니다.
+
+## Any question?🙋‍
+Please email me with any questions or concerns! 😃<br/>
+💌 : sch.haeun@gmail.com

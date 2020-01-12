@@ -6,10 +6,9 @@ import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
 import MyInfo from "./myInfo"
+import "../css/layout.css"
 
 const Wrapper = styled.div`
-  background-image: url("../../static/pattern.png");
-  background-repeat: true;
   display: flex;
   flex-direction: row;
   height: 100vh;
@@ -111,7 +110,7 @@ const Layout = props => {
     )
   }
   return (
-    <Wrapper>
+    <Wrapper className="test">
       <MainWrapper>
         <div
           id="style-15"

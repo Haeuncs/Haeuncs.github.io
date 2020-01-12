@@ -1,6 +1,7 @@
 ---
 title: SwiftUI Animation 을 가지고 놀아보자 🤠
 date: 2019-12-10 00:00:00
+description: "SwiftUI Animation 을 가지고 놀아보자"
 categories:
   - Swift
   - SwiftUI
@@ -9,30 +10,26 @@ tags:
   - SwiftUI
 ---
 
-
 새로바뀐 SwiftUI 에서는 어떻게 Animation이 작동할까요?!
 기존 Swift 에서 Animation을 그릴 때는 UIView.animate or animateKeyframes 을 사용했었습니다.
 
-SwiftUI 는 [Animation (Apple 공식 문서)](https://developer.apple.com/documentation/swiftui/animation) Structure 을 사용하여 애니메이션을 정의합니다.
-
+SwiftUI 는 [Animation (Apple 공식 문서)](https:// developer.apple.com/documentation/swiftui/animation) Structure 을 사용하여 애니메이션을 정의합니다.
 
 공식 문서를 보면 Method 가 나와있는데 Swift 에서 animate하나로 정의 하던 option 이나 delay 가 각각의 Method 로 나눠졌습니다.
 
 이제 이 animation을 가지고 만들어봅시다 😲
 
 # Goal💡
+
 > Naver Clova 앱의 사용자에게 마이크 입력값을 받는 뷰에 나타나는 애니메이션과 비슷하게 만들어 봅니다.
 
-
-<img src="/image/191210/2.gif">
-
-
+<img src="../assets/image/191210/2.gif">
 
 제가 봤을 때는 Spring 애니메이션을 적용한 거 같아서 Spring으로 애니메이션을 구현해봤습니다.
 
 먼저 4개의 Rectangle 이 움직이는 애니메이션을 만들어 봅시다.
 
-{% highlight Swift linenos %}
+```swift
 // 1
 ZStack{
   // 2
@@ -57,7 +54,7 @@ ZStack{
   }
   .foregroundColor(.white)
 }
-{% endhighlight %}
+```
 
 1: ZStack으로 뷰가 layering 되도록 해준 후<br/>
 2: Circle() 으로 기본 타원을 그립니다.<br/>
@@ -65,17 +62,13 @@ ZStack{
 4: Rectangle() 을 그리는데 scaleEffect로 x는 그대로인 상태이고 pulse boolean 변수가 true일 때 랜덤 Float 크기 만큼 변하게 작성하여 y축으로만 커지도록 작성합니다.<br/>
 그 다음 animation 은 Spring 으로, speed 는 랜덤값으로 그리고 계속 반복할 수 있도록 repeat 을 작성해줍니다.<br/>
 
-
-
 결과
 
-
-<img src="/image/191210/3.gif">
+<img src="../assets/image/191210/3.gif">
 
 같은 방법으로 중앙 버튼 외곽에 나타나는 배경 애니메이션도 추가해봅시다.
 
-
-{% highlight Swift linenos %}
+```swift
 
 ZStack {
   VStack{
@@ -95,9 +88,9 @@ ZStack {
         .repeatForever(autoreverses: true)
     )
   }
-  
+
   Button(action: {
-    
+
   }){
     ZStack{
       Circle()
@@ -120,16 +113,14 @@ ZStack {
       .foregroundColor(.white)
     }
   }
-  
+
 }
 
-{% endhighlight %}
+```
 
 최종 결과
 
-<img src="/image/191210/4.gif">
-
-
+<img src="../assets/image/191210/4.gif">
 
 ## Any question?🙋‍
 

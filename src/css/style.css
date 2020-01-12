@@ -103,3 +103,45 @@ article img {
   max-width: 100%;
   height: auto;
 }
+
+.test {
+  background: linear-gradient(155deg, #ffcd00, #4ea53f);
+  background-size: 400% 400%;
+
+  -webkit-animation: backAnimate 21s ease infinite;
+  -moz-animation: backAnimate 21s ease infinite;
+  animation: backAnimate 21s ease infinite;
+}
+@-webkit-keyframes backAnimate {
+  0% {
+    background-position: 17% 0%;
+  }
+  50% {
+    background-position: 84% 100%;
+  }
+  100% {
+    background-position: 17% 0%;
+  }
+}
+@-moz-keyframes backAnimate {
+  0% {
+    background-position: 17% 0%;
+  }
+  50% {
+    background-position: 84% 100%;
+  }
+  100% {
+    background-position: 17% 0%;
+  }
+}
+@keyframes backAnimate {
+  0% {
+    background-position: 17% 0%;
+  }
+  50% {
+    background-position: 84% 100%;
+  }
+  100% {
+    background-position: 17% 0%;
+  }
+}

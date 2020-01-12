@@ -7,7 +7,20 @@ import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
 import "../css/style.css"
+import styled from "styled-components"
 
+const TItleSpan = styled.span`
+  font-size: 26px;
+  font-weight: 900;
+
+  text-decoration: none;
+`
+const DateSpan = styled.span`
+  font-size: 18px;
+  font-weight: 900;
+  color: #e22e96;
+  text-decoration: none;
+`
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
@@ -22,8 +35,9 @@ class BlogIndex extends React.Component {
           const title = node.frontmatter.title || node.fields.slug
           return (
             <article key={node.fields.slug}>
+              <div style={{ height: "30px" }}></div>
               <header>
-                <h3
+                <TItleSpan
                   style={{
                     marginBottom: rhythm(1 / 4),
                   }}
@@ -31,8 +45,9 @@ class BlogIndex extends React.Component {
                   <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                     {title}
                   </Link>
-                </h3>
-                <small>{node.frontmatter.date}</small>
+                </TItleSpan>
+                <br></br>
+                <DateSpan>{node.frontmatter.date}</DateSpan>
               </header>
               <section>
                 <p
@@ -41,6 +56,7 @@ class BlogIndex extends React.Component {
                   }}
                 />
               </section>
+              <div style={{ height: "30px" }}></div>
             </article>
           )
         })}
@@ -66,7 +82,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "YY.MM.DD")
             title
             description
           }

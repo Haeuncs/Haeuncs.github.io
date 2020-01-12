@@ -1,0 +1,98 @@
+---
+title: Swift prefersLargeTitles 와 SearchBar 사용하기
+date: 2018-08-18 00:00:00
+categories:
+- Swift
+tags:
+- Swift
+- 스위프트
+- prefersLargeTitles
+- Realm
+- SearchBar
+---  
+
+이 포스트는 Swift4를 기준으로 작성하였습니다.<br/>
+
+# prefersLargeTitles 사용하기
+ios 11 부터 추가된 큰 네비게이션 바 입니다.
+
+먼저 적용 화면 부터 봅시다.
+
+![실행결과](/assets/images/08-18/SWIFT3/08-18-1.png)
+>크고 아름답다
+
+네비게이션 바가 화면에 크게 보이는 것을 볼 수 있습니다.
+
+적용 방법은 간단 합니다.
+
+```Swift
+override func viewWillAppear(_ animated: Bool) {
+    // largeTitle로 사용
+    navigationController?.navigationBar.prefersLargeTitles = true
+    // 검색 중 뷰가 회색으로 덮어지지 않도록
+    searchController.obscuresBackgroundDuringPresentation = false
+    title = "검색 테스트"
+    // 위에서 선언한 search controller 를 navigationItem 의 searchController 로
+    navigationItem.searchController = searchController
+//        navigationItem.hidesSearchBarWhenScrolling = false
+}
+```
+
+
+navigationController?.navigationBar.prefersLargeTitles = true 를 설정해 주면 이 네비게이션과 연결된 모든 뷰에서 largeTitle 를 볼 수 있습니다.
+물론 뷰마다 따로 설정도 가능합니다.
+
+```Swift
+navigationItem.searchController = searchController
+```
+
+이 코드는 SearchBar 를 사용하기 위해서 적었습니다.
+미리 searchController 를 선언해주고 사용합니다.
+
+```Swift
+navigationItem.hidesSearchBarWhenScrolling = false
+```
+
+기본 설정은 드래그 전까지 SearchBar 가 표시되지 않습니다.
+
+false로 설정해주면 처음 화면부터 SearchBar가 보입니다.
+
+기본 설정인 true 일 때
+![](/assets/images/08-18/SWIFT3/scroll.true.png)
+
+false 일 떄
+![](/assets/images/08-18/SWIFT3/scroll.false.png)
+
+searchController.obscuresBackgroundDuringPresentation = false 같은 경우에는 따로 설정해주지 않으면 검색 중 화면이 회색으로 변합니다.
+![회색](/assets/images/08-18/SWIFT3/obscuresBackgroundDuringPresentation.png)
+
+false 로 따로 설정해주게 되면
+![회색](/assets/images/08-18/SWIFT3/obscuresBackgroundDuringPresentation.false.png)
+홰색으로 변하지 않습니다.
+
+# 왜 이런 문제가 발생할까요?
+그리고 이게 100% 정답인 문제 해결인지 아니면 단지 코드를 잘 못 짜서 발생하는 문제인지는 모르겠지만 searchController.obscuresBackgroundDuringPresentation = false
+와 SearchBar를 함께 사용할 때 검색된 결과를 선택하면(선택 시 뷰 이동) 이동한 뷰에 navigationBar 가 없어지는 문제를 발견하였습니다.
+![문제발견](/assets/images/08-18/SWIFT3/2018-08-18_issue.gif)
+
+searchController.obscuresBackgroundDuringPresentation = true 일 땐 발생하지 않습니다.
+![문제발견](/assets/images/08-18/SWIFT3/obscuresBackgroundDuringPresentation = true.gif)
+아무리 코드를 다시 짜고 다른 방식으로 구현해도 같은 문제가 발생하였고 저는 cell 선택 시
+searchController.isActive = false
+이 실행 되도록 코드를 짜서 해결하였습니다.
+## 어째든 원하는 결과가 나오도록 하려면
+예)
+```Swift
+func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
+        searchController.isActive = false
+```
+
+혹시 정확한 해결 방법이나 잘못 코드를 짠 부분이 있다면 알려주세요!
+
+# 소스코드
+이 포스트에 쓰인 소스 코드는 [GitHub](https://github.com/Haeuncs/Swift_github_post/tree/master/SWIFT_3_prefersLargeTitles%26SearchBar)에서 보실 수 있습니다.
+
+## Any question?🙋‍
+Please email me with any questions or concerns! 😃<br/>
+💌 : sch.haeun@gmail.com

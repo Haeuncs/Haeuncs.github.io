@@ -1,0 +1,18 @@
+---
+title: swift 에서 OpenCV 사용하여 글자 영역 찾기
+date: 2018-12-15 00:00:00
+categories:
+- Swift
+tags:
+- Swift
+- 스위프트
+- openCV
+---
+
+
+먼저 openCV 셋팅 하기 위해서는<br/>
+
+[OpenCV with Swift - step by step
+Go to the profile of Yiwei Ni](https://medium.com/@yiweini/opencv-with-swift-step-by-step-c3cc1d1ee5f1)
+
+위의 포스트에서 정말 잘! 설명해주었다

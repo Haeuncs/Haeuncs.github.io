@@ -3,9 +3,9 @@ module.exports = {
     title: `@_@`,
     author: `Haeuncs`,
     description: `뚜둔`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    siteUrl: `https://haeuncs.github.io`,
     social: {
-      twitter: `Haeuncs`,
+      twitter: ``,
     },
   },
   plugins: [
@@ -63,7 +63,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/smile.ico`,
       },
     },
     `gatsby-plugin-react-helmet`,

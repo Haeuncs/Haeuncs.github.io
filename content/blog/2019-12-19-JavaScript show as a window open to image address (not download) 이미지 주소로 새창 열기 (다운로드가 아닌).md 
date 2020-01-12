@@ -1,0 +1,40 @@
+---
+title: TIL_03_JavaScript_show as a window open to image address (not download) 이미지 주소로 새창 열기 (다운로드가 아닌).md
+date: 2019-12-19 00:00:00
+categories:
+  - Reactjs
+  - TIL
+  - JavaScript
+tags:
+  - JavaScript
+---
+
+이미지 주소로 새창을 열고 싶을 때 주소 확장자가 jpg나 png 로 되어있으면 바로 다운로드로 넘어가는 것 같다.
+
+```JavaScript
+window.open(
+  `${data.getIn([
+    "answerpictures",
+    "pictures",
+    index0
+  ])}`,
+  "_blank"
+);
+```
+
+그래서 어떻게 하면 새창으로 이미지 볼 수 있나 궁금했는데<br/>
+아래처럼 이미지 객체를 만들어서 window에 쓰는 방식으로 코드를 작성하니 잘 된다. 🔥
+
+```JavaScript
+var image = new Image();
+image.src = `${data.getIn([
+  "answerpictures",
+  "pictures",
+  index0
+])}`;
+var w = window.open("", "_blank");
+w.document.write(image.outerHTML);
+w.document.close();
+```
+
+끝!
