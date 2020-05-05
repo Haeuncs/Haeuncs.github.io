@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: http://Haeuncs.github.io/sitemap.xml
