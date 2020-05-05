@@ -1,229 +1,172 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[@_@]]></title><description><![CDATA[뚜둔]]></description><link>https://haeuncs.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 11 Apr 2020 02:24:54 GMT</lastBuildDate><item><title><![CDATA[TIL_01_Reactjs로 얼굴 인식하고 블러처리하기]]></title><description><![CDATA[🚀 TIL 01 🚀 실행결과~_~ 작업의 순서는 아래와 같다. 마무리]]></description><link>https://haeuncs.github.io/2019-11-01-Reactjs로 얼굴 인식하고 블러처리하기/</link><guid isPermaLink="false">https://haeuncs.github.io/2019-11-01-Reactjs로 얼굴 인식하고 블러처리하기/</guid><pubDate>Fri, 01 Nov 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;🚀 TIL 01 🚀&lt;/h1&gt;
-&lt;br/&gt;
-&lt;br/&gt;
-오늘 해야하는 작업은 웹에서 사용자가 입력한 이미지에서 얼굴을 인식하고 인식된 얼굴 부분을 블러 처리해서 처리된 이미지를 출력하는 웹 개발이었다.&lt;br/&gt;
-당연하게도 서버를 사용해서 Python으로 바로 실행하는게 낫긴 하지만.. 하지만 요청된 기능은 웹으로만 동작해야했기 때문에 조금 삽질을 했다.🗿
-&lt;br/&gt;
-&lt;h1&gt;실행결과~_~&lt;/h1&gt;
-&lt;br/&gt;
-blur 처리된 내 얼굴
-&lt;!-- &lt;img src=&quot;../assets/images/191101/blured.png&quot; width=&quot;300&quot;&gt; --&gt;
-&lt;br/&gt;
-&lt;h1&gt;작업의 순서는 아래와 같다.&lt;/h1&gt;
-&lt;br/&gt;
-1. 사용자가 이미지 올림
-2. 이미지를 tensorflow모델에 입력값으로 넣어 출력된 좌표값을 저장
-3. 이미지를 canvas에 그리고, 좌표 배열을 읽어 좌표에 맞는 블러 처리된 타원을 canvas에 그린다.
-&lt;br/&gt;
-처음 생각했던 방법은 div 안에 자식 img와 blur처리하는 div를 한번에 이미지화하는 방법을 생각했는데, blur처리된 div는 이미지로 저장이 안되었다.&lt;br/&gt;
-그래서 두번째로 생각했던 방법은 canvas를 사용하여 blur 처리하는 방법이었고 이 방법으로 100% 요구된 기능을 구현하였다.&lt;br/&gt;
-canvas를 처음 사용했기 때문에 조금 공부를 해야했긴 했지만 어렵지는 않았다.&lt;br/&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// 학습 모델 결과 값을 canvas 에 그린다.&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;printToFile&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;// useRef 로 ref를 미리 선언한거를 가져온다.&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; canvas &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; myRef&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;current&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; ctx &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; canvas&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getContext&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;2d&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; img &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; imageRef&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;current&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; imageURL&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; detections&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; match &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; initState&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-    canvas&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;width &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; img&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;width&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    canvas&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;height &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; img&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;height&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token comment&quot;&gt;// resize를 하는 이유는 화면 크기에 따른 이미지 크기를 보여주기 위함&lt;/span&gt;
-    &lt;span class=&quot;token function&quot;&gt;resize&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token comment&quot;&gt;// 아래 3줄은 &apos;원본&apos; 이미지를 그리는 소스&lt;/span&gt;
-    ctx&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;clearRect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; canvas&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;width&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; canvas&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;height&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    ctx&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;filter &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;none&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    ctx&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;drawImage&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;img&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token comment&quot;&gt;// detections은 얼굴 인식된 값을 가지고 있음&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;detections&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      detections&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;detection&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; i&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; _H &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; detection&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;box&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;height&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; _W &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; detection&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;box&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;width&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; _X &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; detection&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;box&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;_x&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; _Y &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; detection&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;box&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;_y&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; centerX &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; _X &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; _W &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; centerY &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; _Y &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; _H &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token comment&quot;&gt;// blur 처리&lt;/span&gt;
-        ctx&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;filter &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;blur(10px)&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        ctx&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;beginPath&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token comment&quot;&gt;// parameter&lt;/span&gt;
-        &lt;span class=&quot;token comment&quot;&gt;// centerX, centerY, raduis, 0, 2*Math.PI(는 타원));&lt;/span&gt;
-        ctx&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;arc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;centerX&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; centerY&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; _H &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; Math&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;PI&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        ctx&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;clip&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        ctx&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;drawImage&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;img&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; temp &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;initState &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    temp&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;loading &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token function&quot;&gt;setInitState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;temp&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;token comment&quot;&gt;// 동적으로 뷰를 뿌리기 위해서 사용하는 부분&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;resize&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;resize&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; canvas &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; myRef&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;current&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; ratio &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; canvas&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;width &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; canvas&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;height&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; canvas_height &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; window&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;innerHeight&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; canvas_width &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; canvas_height &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; ratio&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;canvas_width &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; window&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;innerWidth&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      canvas_width &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; window&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;innerWidth&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-      canvas_height &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; canvas_width &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; ratio&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-    canvas&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;style&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;width &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; canvas_width &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;px&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    canvas&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;style&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;height &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; canvas_height &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;px&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;br/&gt;
-&lt;br/&gt;
-&lt;h1&gt;마무리&lt;/h1&gt;
-&lt;br/&gt;
-canvas의 사용법을 공부했다 :0
-```</content:encoded></item><item><title><![CDATA[New Beginnings]]></title><description><![CDATA[Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts. Separated they live in…]]></description><link>https://haeuncs.github.io/new-beginnings/</link><guid isPermaLink="false">https://haeuncs.github.io/new-beginnings/</guid><pubDate>Thu, 28 May 2015 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-right at the coast of the Semantics, a large language ocean. A small river named
-Duden flows by their place and supplies it with the necessary regelialia.&lt;/p&gt;
-&lt;h2&gt;On deer horse aboard tritely yikes and much&lt;/h2&gt;
-&lt;p&gt;The Big Oxmox advised her not to do so, because there were thousands of bad
-Commas, wild Question Marks and devious Semikoli, but the Little Blind Text
-didn’t listen. She packed her seven versalia, put her initial into the belt and
-made herself on the way.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;This however showed weasel&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Well uncritical so misled&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;this is very interesting&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Goodness much until that fluid owl&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;When she reached the first hills of the &lt;strong&gt;Italic Mountains&lt;/strong&gt;, she had a last
-view back on the skyline of her hometown &lt;em&gt;Bookmarksgrove&lt;/em&gt;, the headline of
-&lt;a href=&quot;http://google.com&quot;&gt;Alphabet Village&lt;/a&gt; and the subline of her own road, the Line
-Lane. Pityful a rhetoric question ran over her cheek, then she continued her
-way. On her way she met a copy.&lt;/p&gt;
-&lt;h3&gt;Overlaid the jeepers uselessly much excluding&lt;/h3&gt;
-&lt;p&gt;But nothing the copy said could convince her and so it didn’t take long until a
-few insidious Copy Writers ambushed her, made her drunk with
-&lt;a href=&quot;http://google.com&quot;&gt;Longe and Parole&lt;/a&gt; and dragged her into their agency, where
-they abused her for their projects again and again. And if she hasn’t been
-rewritten, then they are still using her.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-right at the coast of the Semantics, a large language ocean.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;It is a paradisematic country, in which roasted parts of sentences fly into your
-mouth. Even the all-powerful Pointing has no control about the blind texts it is
-an almost unorthographic life One day however a small line of blind text by the
-name of Lorem Ipsum decided to leave for the far World of Grammar.&lt;/p&gt;
-&lt;h3&gt;According a funnily until pre-set or arrogant well cheerful&lt;/h3&gt;
-&lt;p&gt;The Big Oxmox advised her not to do so, because there were thousands of bad
-Commas, wild Question Marks and devious Semikoli, but the Little Blind Text
-didn’t listen. She packed her seven versalia, put her initial into the belt and
-made herself on the way.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;So baboon this&lt;/li&gt;
-&lt;li&gt;Mounted militant weasel gregariously admonishingly straightly hey&lt;/li&gt;
-&lt;li&gt;Dear foresaw hungry and much some overhung&lt;/li&gt;
-&lt;li&gt;Rash opossum less because less some amid besides yikes jeepers frenetic
-impassive fruitlessly shut&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;When she reached the first hills of the Italic Mountains, she had a last view
-back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet
-Village and the subline of her own road, the Line Lane. Pityful a rhetoric
-question ran over her cheek, then she continued her way. On her way she met a
-copy.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;The copy warned the Little Blind Text, that where it came from it would have
-been rewritten a thousand times and everything that was left from its origin
-would be the word “and” and the Little Blind Text should turn around and
-return to its own, safe country.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;But nothing the copy said could convince her and so it didn’t take long until a
-few insidious Copy Writers ambushed her, made her drunk with Longe and Parole
-and dragged her into their agency, where they abused her for their projects
-again and again. And if she hasn’t been rewritten, then they are still using
-her. Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts.&lt;/p&gt;
-&lt;h4&gt;Silent delightfully including because before one up barring chameleon&lt;/h4&gt;
-&lt;p&gt;Separated they live in Bookmarksgrove right at the coast of the Semantics, a
-large language ocean. A small river named Duden flows by their place and
-supplies it with the necessary regelialia. It is a paradisematic country, in
-which roasted parts of sentences fly into your mouth.&lt;/p&gt;
-&lt;p&gt;Even the all-powerful Pointing has no control about the blind texts it is an
-almost unorthographic life One day however a small line of blind text by the
-name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox
-advised her not to do so, because there were thousands of bad Commas, wild
-Question Marks and devious Semikoli, but the Little Blind Text didn’t listen.&lt;/p&gt;
-&lt;h5&gt;Wherever far wow thus a squirrel raccoon jeez jaguar this from along&lt;/h5&gt;
-&lt;p&gt;She packed her seven versalia, put her initial into the belt and made herself on
-the way. When she reached the first hills of the Italic Mountains, she had a
-last view back on the skyline of her hometown Bookmarksgrove, the headline of
-Alphabet Village and the subline of her own road, the Line Lane. Pityful a
-rhetoric question ran over her cheek, then she continued her way. On her way she
-met a copy.&lt;/p&gt;
-&lt;h6&gt;Slapped cozy a that lightheartedly and far&lt;/h6&gt;
-&lt;p&gt;The copy warned the Little Blind Text, that where it came from it would have
-been rewritten a thousand times and everything that was left from its origin
-would be the word “and” and the Little Blind Text should turn around and return
-to its own, safe country. But nothing the copy said could convince her and so it
-didn’t take long until a few insidious Copy Writers ambushed her, made her drunk
-with Longe and Parole and dragged her into their agency, where they abused her
-for their projects again and again.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[My Second Post!]]></title><description><![CDATA[Wow! I love blogging so much already. Did you know that “despite its name, salted duck eggs can also be made from
-chicken eggs, though the…]]></description><link>https://haeuncs.github.io/my-second-post/</link><guid isPermaLink="false">https://haeuncs.github.io/my-second-post/</guid><pubDate>Wed, 06 May 2015 23:46:37 GMT</pubDate><content:encoded>&lt;p&gt;Wow! I love blogging so much already.&lt;/p&gt;
-&lt;p&gt;Did you know that “despite its name, salted duck eggs can also be made from
-chicken eggs, though the taste and texture will be somewhat different, and the
-egg yolk will be less rich.”?
-(&lt;a href=&quot;https://en.wikipedia.org/wiki/Salted_duck_egg&quot;&gt;Wikipedia Link&lt;/a&gt;)&lt;/p&gt;
-&lt;p&gt;Yeah, I didn’t either.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Hello World]]></title><description><![CDATA[This is my first post on my new fake blog! How exciting! I’m sure I’ll write a lot more interesting things in the future. Oh, and here’s a…]]></description><link>https://haeuncs.github.io/hello-world/</link><guid isPermaLink="false">https://haeuncs.github.io/hello-world/</guid><pubDate>Fri, 01 May 2015 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;This is my first post on my new fake blog! How exciting!&lt;/p&gt;
-&lt;p&gt;I’m sure I’ll write a lot more interesting things in the future.&lt;/p&gt;
-&lt;p&gt;Oh, and here’s a great quote from this Wikipedia on
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Salted_duck_egg&quot;&gt;salted duck eggs&lt;/a&gt;.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;A salted duck egg is a Chinese preserved food product made by soaking duck
-eggs in brine, or packing each egg in damp, salted charcoal. In Asian
-supermarkets, these eggs are sometimes sold covered in a thick layer of salted
-charcoal paste. The eggs may also be sold with the salted paste removed,
-wrapped in plastic, and vacuum packed. From the salt curing process, the
-salted duck eggs have a briny aroma, a gelatin-like egg white and a
-firm-textured, round yolk that is bright orange-red in color.&lt;/p&gt;
-&lt;/blockquote&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[⭐️]]></title><description><![CDATA[iOS 개발자의 그냥 쓰는 블로그]]></description><link>https://haeuncs.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 05 May 2020 10:43:29 GMT</lastBuildDate><item><title><![CDATA[2020 목표 🏞]]></title><description><![CDATA[5월이 된 지금에야 목표를 세운다는 것이 이상하지만 갑자기 계획의 필요성을 깨달아서 한번 생각해봤다. 단기적인 목표 혹은 주어진 일 같은 부분에 있어서는 계획을 잘 세우는 편인데 나의 중, 장기적인 목표(여기서 장기 목표란…]]></description><link>https://haeuncs.github.io/2020/2020/</link><guid isPermaLink="false">https://haeuncs.github.io/2020/2020/</guid><pubDate>Tue, 05 May 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;5월이 된 지금에야 목표를 세운다는 것이 이상하지만 갑자기 계획의 필요성을 깨달아서 한번 생각해봤다.&lt;/p&gt;
+&lt;p&gt;단기적인 목표 혹은 주어진 일 같은 부분에 있어서는 계획을 잘 세우는 편인데 나의 중, 장기적인 목표(여기서 장기 목표란 1년을 의미)를 정한 기억조차 없다.&lt;/p&gt;
+&lt;h3&gt;그래서&lt;/h3&gt;
+&lt;p&gt;나는 2020년 어떤 목표를 가지고 살아야 할까?&lt;/p&gt;
+&lt;h3&gt;1. 학자금 대출 갚기&lt;/h3&gt;
+&lt;p&gt;좀 계획적으로 학자금을 갚아야 할 것 같아서 학자금 대출이 1순위 목표이다.&lt;/p&gt;
+&lt;p&gt;2020년에 지금 남은 대출의 70%를 갚는 것! (현 5학기 정도의 학자금 대출이 남아있음😂)&lt;/p&gt;
+&lt;h3&gt;2. 블로그 꾸준히 쓰기&lt;/h3&gt;
+&lt;p&gt;개인적으로 정리한 글들을 블로그에 꾸준히 올리는 것이 목표이다.&lt;/p&gt;
+&lt;p&gt;Swift 언어에 관련되어 정리한 글이나 개발을 하면서 알게 된 것들을 항상 기록하고 있는데 공개적으로 다시 작성하려고 한다.&lt;/p&gt;
+&lt;p&gt;나 자신과 다른 사람들에게 도움이 되기 위해서!😛&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/8058f3f26913fea3b6a89a73344fe94a/e1596/salty_egg.jpg&quot;
+    href=&quot;/static/703ac42b915ebb323cf07e37d8104e49/f79fa/Untitled.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMB/8QAFwEAAwEAAAAAAAAAAAAAAAAAAAEEBf/aAAwDAQACEAMQAAABgik0dXC//8QAGRABAAMBAQAAAAAAAAAAAAAAAQACEhEy/9oACAEBAAEFAkqW2DlnRj73yf/EABcRAQADAAAAAAAAAAAAAAAAAAAREkH/2gAIAQMBAT8B1WX/xAAWEQEBAQAAAAAAAAAAAAAAAAAAEQL/2gAIAQIBAT8Bi6f/xAAbEAABBAMAAAAAAAAAAAAAAAAAAQIRISIxMv/aAAgBAQAGPwK9GNocyS8hCj//xAAbEAADAQADAQAAAAAAAAAAAAABESEAMUGBof/aAAgBAQABPyGxNMfrLHmCDZmAzzvJJDjEQCHv/9oADAMBAAIAAwAAABDIL//EABYRAQEBAAAAAAAAAAAAAAAAAAERAP/aAAgBAwEBPxARhylZv//EABgRAAIDAAAAAAAAAAAAAAAAAAABESFR/9oACAECAQE/EFoktI//xAAdEAEBAAICAwEAAAAAAAAAAAABEQAxIWFBcYHh/9oACAEBAAE/EEbMLQ0fMHDVaPIXyI4pk4JUnWacNCtO8ojDE9TGIYES7/Jn/9k=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 158.10810810810813%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAgCAYAAAASYli2AAAACXBIWXMAAAsSAAALEgHS3X78AAACJElEQVRIx6WWiXKDMAxE+f//TNJ0ErC5CRDVT8YudDqpnTKjQDiWXa0kU0zTJF3XyTD0st+ez6e8sxXTNIqpKrHWKnDT1PJ4TAfQHPAChlVVOpCHcDyOoyzL8jbTYl1X6fveAQ1OdohemfKCAJoaBQ/AqizvKp29tUb3sM7OYQBEtjGV1HUt9/vdAZbSto10bbvltlH2/ZZnVHG9ddf1vq5VAgqINIA6vdjqxXn2OeUmYnRgIc+A+XwPMe/Eui4+hzA6n05yuZzl43KRz89rZElULhWRoQM77r9zzzkF5IHz+STX69XJNmJdVJrPMgKjgAeQT4Tjn+dUMlJ4ALkcz/McHX7LlCmaYhyjm5pzu930JRQ+uUJJVtkgEyDfhoOegzG5IwBMqcldHZIn+1JOStfEskEqTF69PQVUXaYwYfeqM1J7umAQaFHvitkb4YPjnKlThBsZX8jGbdhijm+t5gD4p+RwA87iMsB938UyyZbMjx9hnQfcugSmlI1PwZTOMLgMmLadNcqS/wrsygn5qUzjgAUEMPIXAtA9u2SXmW+AVbq2bMNBp0ypTmebQq/iJkxDhKGJ3H3bJS1SyF2W+bA4/auwvRFGC/w/bXdYUwD7jVVuLWoO/bJJR6yar9+KOlky09nXny8VX4NGHQ6GZEvGVdZhWPqlwPdwvX2e5LAsyB9DgV5+5XCyZGYgPYs0HCd+rh/ZE3twkkMv+08Rm1XM++0LI53VwycLm7wAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;Chinese Salty Egg&quot;
-        title=&quot;Chinese Salty Egg&quot;
-        src=&quot;/static/8058f3f26913fea3b6a89a73344fe94a/1c72d/salty_egg.jpg&quot;
-        srcset=&quot;/static/8058f3f26913fea3b6a89a73344fe94a/a80bd/salty_egg.jpg 148w,
-/static/8058f3f26913fea3b6a89a73344fe94a/1c91a/salty_egg.jpg 295w,
-/static/8058f3f26913fea3b6a89a73344fe94a/1c72d/salty_egg.jpg 590w,
-/static/8058f3f26913fea3b6a89a73344fe94a/a8a14/salty_egg.jpg 885w,
-/static/8058f3f26913fea3b6a89a73344fe94a/fbd2c/salty_egg.jpg 1180w,
-/static/8058f3f26913fea3b6a89a73344fe94a/e1596/salty_egg.jpg 2048w&quot;
+        alt=&quot;2020/Untitled.png&quot;
+        title=&quot;2020/Untitled.png&quot;
+        src=&quot;/static/703ac42b915ebb323cf07e37d8104e49/fcda8/Untitled.png&quot;
+        srcset=&quot;/static/703ac42b915ebb323cf07e37d8104e49/12f09/Untitled.png 148w,
+/static/703ac42b915ebb323cf07e37d8104e49/e4a3f/Untitled.png 295w,
+/static/703ac42b915ebb323cf07e37d8104e49/fcda8/Untitled.png 590w,
+/static/703ac42b915ebb323cf07e37d8104e49/efc66/Untitled.png 885w,
+/static/703ac42b915ebb323cf07e37d8104e49/f79fa/Untitled.png 940w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;</content:encoded></item></channel></rss>
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/2f774571f839accb0c4c2bd446668830/6f278/Untitled%201.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 106.08108108108108%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAVCAYAAABG1c6oAAAACXBIWXMAAAsSAAALEgHS3X78AAAC2klEQVQ4y42UaW/aQBCG/f//TNUj7acm/VBFbaWGpE2ahBuDAYPxhY05M91nzFKbqlJXssC7ntl5jxnn29cvcvHurbx5/UoWi4VcX3+WT1eX8uH9hVxdfpTlMhXWy8uL/M9y1uu1CVpKURSyXheSZZmkaSp5nuve4XCoJeT3/KmeO5sik5k/lclkLOOxJ0mSyGaz0ceu86DzVT130iTShPP5TOazmURReDqMwlCrPw9iL44j/Xa73dYqd0ajkdzd3crT06M83P+U5vOTwuRpt1synU40gHcbNBy60mo1NWa1ymuVOlEUKdSx54lnkvMxHHKYpokkcXzisVohiGIT6xt0xMx8v0y4WATS7/fEHQxk0O8LF8AfScaTiTSbzxIEge7t93sNomr2u52O9HpdGQ2HQh4VJTQ8USHVzQyHdpFwtVpphWG4MGe+qs6CvyCYa5VcVoOcZUvdTJJYFa7agdvharfb/aXoP33ougNp3HyXeyPI4+OvE1/AG42G0mm3jaUmylVojE/CbrdTCmhg/zCCPhsh+b83F6uxgQKM2MCzFZAQW/jTqXheScduty05NMlxQKfTVujkoBFOtmk0bmr8WcjskQzTn/sTOkDnGXfAJeegc4ABhKHrKrTctJ4VBTu0Wy19UNImTA0ad9BXq+EQqgSlVogQqAhEXM/vH8ilmtiESu2ggM+BSQjHxNJhFKaioOLtbUM5qBr4cCg5xC5TUzkmthXybWbMbduyZhsswc3cYn1mOaSCXrfkiorwK/u8I4gVsNqWDtzRNuc+Az6W0aExnyt0moBzIHMRvNpePo0v+IF8AquQ8RRqMnQDk5D+rvYySRGlikoTIgqEAwmeEMNOGyqCPyCWcOVYoa/V2dFV45DbIL6EVvbm8lgN7xg7O1rpGKYXPDzcq7JFsVLx8rz8xmEAkBTl+EU9qmS60FLMSsxbmO+Ah4hMFkRpmXajY3TyGC8T8xue20PiQaMNNAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;2020/Untitled%201.png&quot;
+        title=&quot;2020/Untitled%201.png&quot;
+        src=&quot;/static/2f774571f839accb0c4c2bd446668830/fcda8/Untitled%201.png&quot;
+        srcset=&quot;/static/2f774571f839accb0c4c2bd446668830/12f09/Untitled%201.png 148w,
+/static/2f774571f839accb0c4c2bd446668830/e4a3f/Untitled%201.png 295w,
+/static/2f774571f839accb0c4c2bd446668830/fcda8/Untitled%201.png 590w,
+/static/2f774571f839accb0c4c2bd446668830/efc66/Untitled%201.png 885w,
+/static/2f774571f839accb0c4c2bd446668830/c83ae/Untitled%201.png 1180w,
+/static/2f774571f839accb0c4c2bd446668830/6f278/Untitled%201.png 1488w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;지금까지 정리한 것들의 일부분&lt;/p&gt;
+&lt;p&gt;이제 이것들을 공개적으로 보여줄 수 있는 글로 정리하여 올릴려고 한다.&lt;/p&gt;
+&lt;h3&gt;3. 배움&lt;/h3&gt;
+&lt;p&gt;개발 관련 인터넷 강의도 보고 개발 책도 보고 성장하는 그런 개발자가 되는 것이 2020년의 나의 마지막 목표이다.&lt;/p&gt;
+&lt;p&gt;인강을 한번도 제대로 들어 본 적도 없고 개발 언어나 예제를 설명하는 책을 읽은 적이 없다. (개발자 자기계발 책은 또 많이 읽음) 물론 학교를 다녔을 땐 책을 사고 읽고 공부를 했지만 뭔가 개인적으로 공부를 할 때는 구글 검색에 의존해서 공부를 했었다.&lt;/p&gt;
+&lt;p&gt;최근에 이러한 공부 방식의 한계를 느껴서 이제는 책도 좀 보고 인강도 구매해서 들으려고 한다.😀&lt;/p&gt;
+&lt;h3&gt;4. 개발 동아리 재도전!&lt;/h3&gt;
+&lt;p&gt;혼자 iOS 개발을 하면서 너무너무 외로웠다😢&lt;/p&gt;
+&lt;p&gt;그래서 제작년부터 여러 개발 동아리에 도전했는데 전부 탈락했었다.&lt;/p&gt;
+&lt;p&gt;하지만 여기서 멈추는 것이 아닌 다시 개발 동아리에 도전하려고 한다! 🤓&lt;/p&gt;
+&lt;h1&gt;끝&lt;/h1&gt;
+&lt;p&gt;과연 나는 남은 반년간 목표를 이룰 수 있을까?!&lt;/p&gt;
+&lt;p&gt;결과는 7개월 뒤 2020년 회고에서 봅시다.✨&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Reference Type VS Value Type, Class VS Struct]]></title><description><![CDATA[Reference Type VS Value Type value type을 전달할 경우, 해당 변수는 데이터의 복사값을 생성합니다. reference type을 전달할 경우, 해당 변수는 메모리에 있는 원래의 데이터를 가리킵니다. Reference…]]></description><link>https://haeuncs.github.io/Reference-Value/</link><guid isPermaLink="false">https://haeuncs.github.io/Reference-Value/</guid><pubDate>Sat, 02 May 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Reference Type VS Value Type&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;value type을 전달할 경우, 해당 변수는 데이터의 복사값을 생성합니다.&lt;/li&gt;
+&lt;li&gt;reference type을 전달할 경우, 해당 변수는 메모리에 있는 원래의 데이터를 가리킵니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Reference Type&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- Class
+- Closure
+- function&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Value Type&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- Struct
+- enum
+- Array
+- String
+- Dictionary
+- int&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;스위프트 표준 라이브러리에 포함되어 있는 기본 타입은 모두 구조체로 구현되어 있음 ⇒ 모두 값 타입&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;Class와 struct의 차이는 무엇인가요?&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/swift/blog/?id=10&quot;&gt;Value and Reference Types - Swift Blog&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;언제 어느 것을 사용해야하는지 몇가지 예를 들기&lt;/p&gt;
+&lt;p&gt;상속 → 클래스, 타입캐스팅 → 클래스의 인스턴스에서만, deinitializer 사용은 클래스&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;메모리 (Stack, Heap) 에 유지되는 방법&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br/&gt;
+&lt;hr&gt;
+&lt;h3&gt;Class&lt;/h3&gt;
+&lt;p&gt;Reference Type (참조)&lt;/p&gt;
+&lt;p&gt;Class 는 heap 영역에, 그 인스턴스의 &lt;strong&gt;주소값&lt;/strong&gt;은 Stack 영역에 쌓임&lt;/p&gt;
+&lt;p&gt;더는 참조할 필요가 없을 때 메모리에서 해제 (=소멸)되기 직전 deinit 메서드가 호출된다.&lt;/p&gt;
+&lt;p&gt;런타임에 할당되고 &lt;strong&gt;레퍼런스 카운팅&lt;/strong&gt;을 통해 참조 해제 관리&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;swift&quot;&gt;&lt;pre class=&quot;language-swift&quot;&gt;&lt;code class=&quot;language-swift&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// Reference type example&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;C&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; data&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;Int&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; x &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; y &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; x						&lt;span class=&quot;token comment&quot;&gt;// x is copied to y&lt;/span&gt;
+x&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;data &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;42&lt;/span&gt;						&lt;span class=&quot;token comment&quot;&gt;// changes the instance referred to by x (and y)&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token delimiter variable&quot;&gt;\(&lt;/span&gt;x&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;data&lt;span class=&quot;token delimiter variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token delimiter variable&quot;&gt;\(&lt;/span&gt;y&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;data&lt;span class=&quot;token delimiter variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// prints &quot;42, 42&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;h3&gt;Struct&lt;/h3&gt;
+&lt;p&gt;Value Type (값)&lt;/p&gt;
+&lt;p&gt;Struct 는 &lt;strong&gt;값 타입&lt;/strong&gt;이기 때문에 인스턴스를 생성할 때, 인스턴스를 새로 다른 공간에 &lt;strong&gt;새롭게 복사한 인자&lt;/strong&gt;를 전달&lt;/p&gt;
+&lt;p&gt;그렇기 때문에 &lt;strong&gt;Stack&lt;/strong&gt; 에 쌓인다&lt;/p&gt;
+&lt;p&gt;컴파일 시간에 컴파일러가 언제 메모리를 할당 및 해제해야 하는지 알고 있다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;swift&quot;&gt;&lt;pre class=&quot;language-swift&quot;&gt;&lt;code class=&quot;language-swift&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// Value type example&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;struct&lt;/span&gt; S &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; data&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;Int&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;S&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; b &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; a						&lt;span class=&quot;token comment&quot;&gt;// a is copied to b&lt;/span&gt;
+a&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;data &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;42&lt;/span&gt;						&lt;span class=&quot;token comment&quot;&gt;// Changes a, not b&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token delimiter variable&quot;&gt;\(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;data&lt;span class=&quot;token delimiter variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token delimiter variable&quot;&gt;\(&lt;/span&gt;b&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;data&lt;span class=&quot;token delimiter variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// prints &quot;42, -1&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;hr&gt;
+&lt;h3&gt;예시&lt;/h3&gt;
+&lt;p&gt;Class 에 인스턴스를 만들고 변수의 값을 바꾸면 → 해당 인스턴스의 값이 변경&lt;/p&gt;
+&lt;p&gt;Struct 에 인스턴스를 만들고 변수의 값을 바꾸면 → 해당 인스턴스 값이 변경되지 않음&lt;/p&gt;
+&lt;p&gt;⇒ 구조체와 클래스의 차이는 상수를 처리하는 방식, 구조체 자체가 상수임으로 변수의 값을 바꿀 수 없다.&lt;/p&gt;
+&lt;p&gt;Class 를 let 상수로 선언해도 내부 프로퍼티의 값을 변경할 수 있음&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Struct 는 안됨&lt;/strong&gt;
+&lt;br/&gt;
+&lt;br/&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;구조체와 클래스의 &lt;strong&gt;공통점&lt;/strong&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;값을 저장하기 위한 프로퍼티 정의&lt;/li&gt;
+&lt;li&gt;기능 실행을 위한 메서드 정의&lt;/li&gt;
+&lt;li&gt;서브스크립트 문법을 통해 클래스 혹은 구조체가 갖는 값(프로퍼티)에 접근할 수 있다.&lt;/li&gt;
+&lt;li&gt;초기화될 떄 상태를 지정하기 위해 이니셜라이즈를 정을할 수 있음&lt;/li&gt;
+&lt;li&gt;기능 추가를 위해 extension으로 확장 가능&lt;/li&gt;
+&lt;li&gt;특정 기능을 실행하기 위해 특정 프로토콜 준수 가능
+&lt;br/&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;strong&gt;언제 구조체를 사용?&lt;/strong&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;연관된 간단한 값의 집합을 &lt;strong&gt;캡슐화&lt;/strong&gt; 하는 것만이 목적일 때&lt;/li&gt;
+&lt;li&gt;값을 참조보다는 &lt;strong&gt;복사&lt;/strong&gt;하는 것이 합당할 때&lt;/li&gt;
+&lt;li&gt;구조체에 저장된 프로퍼티의 값이 &lt;strong&gt;값 타입&lt;/strong&gt;일 때&lt;/li&gt;
+&lt;li&gt;다른 타입으로부터 &lt;strong&gt;상속받거나&lt;/strong&gt; 자신을 &lt;strong&gt;상속할&lt;/strong&gt; 필요가 없을 때&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item></channel></rss>
