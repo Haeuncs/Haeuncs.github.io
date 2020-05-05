@@ -1,0 +1,111 @@
+---
+title: TIL_01_Reactjs로 얼굴 인식하고 블러처리하기
+date: 2019-11-01 00:00:00
+categories:
+  - Reactjs
+  - TIL
+tags:
+  - canvas
+  - tensorflow
+---
+
+# 🚀 TIL 01 🚀
+
+<br/>
+<br/>
+오늘 해야하는 작업은 웹에서 사용자가 입력한 이미지에서 얼굴을 인식하고 인식된 얼굴 부분을 블러 처리해서 처리된 이미지를 출력하는 웹 개발이었다.<br/>
+당연하게도 서버를 사용해서 Python으로 바로 실행하는게 낫긴 하지만.. 하지만 요청된 기능은 웹으로만 동작해야했기 때문에 조금 삽질을 했다.🗿
+
+<br/>
+
+# 실행결과~\_~
+
+<br/>
+blur 처리된 내 얼굴
+
+<!-- <img src="../assets/images/191101/blured.png" width="300"> -->
+
+<br/>
+
+# 작업의 순서는 아래와 같다.
+
+<br/>
+1. 사용자가 이미지 올림
+2. 이미지를 tensorflow모델에 입력값으로 넣어 출력된 좌표값을 저장
+3. 이미지를 canvas에 그리고, 좌표 배열을 읽어 좌표에 맞는 블러 처리된 타원을 canvas에 그린다.
+<br/>
+처음 생각했던 방법은 div 안에 자식 img와 blur처리하는 div를 한번에 이미지화하는 방법을 생각했는데, blur처리된 div는 이미지로 저장이 안되었다.<br/>
+그래서 두번째로 생각했던 방법은 canvas를 사용하여 blur 처리하는 방법이었고 이 방법으로 100% 요구된 기능을 구현하였다.<br/>
+canvas를 처음 사용했기 때문에 조금 공부를 해야했긴 했지만 어렵지는 않았다.<br/>
+
+```JavaScript
+// 학습 모델 결과 값을 canvas 에 그린다.
+const printToFile = () => {
+// useRef 로 ref를 미리 선언한거를 가져온다.
+const canvas = myRef.current;
+const ctx = canvas.getContext("2d");
+const img = imageRef.current;
+
+    const { imageURL, detections, match } = initState;
+
+    canvas.width = img.width;
+    canvas.height = img.height;
+    // resize를 하는 이유는 화면 크기에 따른 이미지 크기를 보여주기 위함
+    resize();
+    // 아래 3줄은 '원본' 이미지를 그리는 소스
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.filter = "none";
+    ctx.drawImage(img, 0, 0);
+    // detections은 얼굴 인식된 값을 가지고 있음
+    if (!!detections) {
+      detections.map((detection, i) => {
+        let _H = detection.box.height;
+        let _W = detection.box.width;
+        let _X = detection.box._x;
+        let _Y = detection.box._y;
+        var centerX = _X + _W / 2;
+        var centerY = _Y + _H / 2;
+        // blur 처리
+        ctx.filter = "blur(10px)";
+        ctx.beginPath();
+        // parameter
+        // centerX, centerY, raduis, 0, 2*Math.PI(는 타원));
+        ctx.arc(centerX, centerY, _H / 2, 0, 2 * Math.PI);
+        ctx.clip();
+        ctx.drawImage(img, 0, 0);
+      });
+    }
+    const temp = { ...initState };
+    temp.loading = false;
+    setInitState(temp);
+
+};
+
+    // 동적으로 뷰를 뿌리기 위해서 사용하는 부분
+
+const resize = () => {
+console.log("resize");
+const canvas = myRef.current;
+
+    var ratio = canvas.width / canvas.height;
+    var canvas_height = window.innerHeight;
+    var canvas_width = canvas_height * ratio;
+    if (canvas_width > window.innerWidth) {
+      canvas_width = window.innerWidth;
+      canvas_height = canvas_width / ratio;
+    }
+
+    canvas.style.width = canvas_width + "px";
+    canvas.style.height = canvas_height + "px";
+
+};
+```
+
+<br/>
+<br/>
+
+# 마무리
+
+<br/>
+canvas의 사용법을 공부했다 :0
+```

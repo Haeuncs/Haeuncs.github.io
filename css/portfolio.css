@@ -1,0 +1,19 @@
+img {
+}
+
+.modalShow {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%, 0);
+  position: fixed;
+  transform: translate(0%);
+  transition: 0.5s;
+}
+.modalHide {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%, 0);
+  position: fixed;
+  transform: translate(100%);
+  transition: 0.5s;
+}
