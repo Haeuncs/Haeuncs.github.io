@@ -61,7 +61,7 @@ window.___loader = _loader.publicLoader; // Let the site/plugins run code very e
 
     let Root = preferDefault(require(`./root`));
     (0, _domready.default)(() => {
-      renderer(_react.default.createElement(Root, null), rootElement, () => {
+      renderer( /*#__PURE__*/_react.default.createElement(Root, null), rootElement, () => {
         (0, _apiRunnerBrowser.apiRunner)(`onInitialClientRender`);
       });
     });

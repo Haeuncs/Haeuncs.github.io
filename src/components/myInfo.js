@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import media from "styled-media-query";
 import { Link } from "gatsby";
+import withSizes from "react-sizes";
 
 const Span = styled.span`
   font-family: AppleSDGothicNeo;
@@ -32,8 +33,11 @@ const MobileHideDiv = styled.div`
   height: 0;
 `}
 `;
+const mapSizesToProps = ({ width }) => ({
+  isMobile: width > 480,
+});
 
-const MyInfo = (props) => {
+const MyInfo = ({ isMobile }) => {
   return (
     <Span>
       <Link
@@ -48,24 +52,26 @@ const MyInfo = (props) => {
         iOS Developer 👻<br></br>
         <br></br>
       </Link>
-      <MobileHideDiv>
-        <SmallSpan>
-          모든 질문은 아래 메일로 주세요 🤗<br></br>
-          <a href={`mailto:haeun.developer@gmail.com`}>
-            haeun.developer@gmail.com
-          </a>
-        </SmallSpan>
-        <Link to={`/portfolio`}>
-          <a>
-            <h6 style={{ backgroundColor: "black" }}>HERE IS!</h6>
-            <h1 style={{ backgroundColor: "black" }}>🔎 MY PORTFOLIO</h1>
-          </a>
-        </Link>
-      </MobileHideDiv>
+      {isMobile && (
+        <>
+          <SmallSpan>
+            모든 질문은 아래 메일로 주세요 🤗<br></br>
+            <a href={`mailto:haeun.developer@gmail.com`}>
+              haeun.developer@gmail.com
+            </a>
+          </SmallSpan>
+          <Link to={`/portfolio`}>
+            <a>
+              <h6 style={{ backgroundColor: "black" }}>HERE IS!</h6>
+              <h1 style={{ backgroundColor: "black" }}>🔎 MY PORTFOLIO</h1>
+            </a>
+          </Link>
+        </>
+      )}
     </Span>
   );
 };
 
 MyInfo.propTypes = {};
 
-export default MyInfo;
+export default withSizes(mapSizesToProps)(MyInfo);

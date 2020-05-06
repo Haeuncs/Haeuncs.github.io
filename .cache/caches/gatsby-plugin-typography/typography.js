@@ -1,1 +1,1 @@
-module.exports = require("/Users/leehaeun/Haeuncs.github.io__/src/utils/typography")
+module.exports = require("/Users/leehaeun/test/Haeuncs.github.io/src/utils/typography")

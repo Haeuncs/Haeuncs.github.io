@@ -1,12 +1,12 @@
-import React, { useRef, useEffect, useState } from "react"
-import styled from "styled-components"
-import media from "styled-media-query"
+import React, { useRef, useEffect, useState } from "react";
+import styled from "styled-components";
+import media from "styled-media-query";
 
-import { Link } from "gatsby"
+import { Link } from "gatsby";
 
-import { rhythm, scale } from "../utils/typography"
-import MyInfo from "./myInfo"
-import "../../css/layout.css"
+import { rhythm, scale } from "../utils/typography";
+import MyInfo from "./myInfo";
+import "../../css/layout.css";
 
 const Wrapper = styled.div`
   display: flex;
@@ -15,7 +15,7 @@ const Wrapper = styled.div`
   ${media.lessThan("medium")`
     flex-direction: column-reverse;
   `}
-`
+`;
 const MainWrapper = styled.div`
   flex: 1;
   display: flex;
@@ -35,36 +35,27 @@ const MainWrapper = styled.div`
   margin-right: 30px;
 
 `}
-`
+`;
 const MyInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 30px;
+  padding: 10px;
   ${media.greaterThan("medium")`
   maxWidth: 300px
   paddingRight: 30px
   `};
-`
-const MyInfoWrapper_Hide = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 30px;
-  overflow: hidden;
-`
+`;
+const Layout = (props) => {
+  const testRef = useRef();
+  const { location, title, children } = props;
+  const rootPath = `${__PATH_PREFIX__}/`;
+  let header;
 
-const Layout = props => {
-  const testRef = useRef()
-  const { location, title, children } = props
-  const rootPath = `${__PATH_PREFIX__}/`
-  let header
+  const [showInfo, setShowInfo] = useState(true);
+  const [offset, SetOffset] = useState(0);
 
-  const [showInfo, setShowInfo] = useState(true)
-  const [offset, SetOffset] = useState(0)
-
-  const myInfoHeightRef = useRef()
+  const myInfoHeightRef = useRef();
 
   if (location.pathname === rootPath) {
     header = (
@@ -86,7 +77,7 @@ const Layout = props => {
           {title}
         </Link>
       </h1>
-    )
+    );
   } else {
     header = (
       <></>
@@ -107,7 +98,7 @@ const Layout = props => {
       //     {title}
       //   </Link>
       // </h3>
-    )
+    );
   }
   return (
     <Wrapper className="test">
@@ -123,25 +114,20 @@ const Layout = props => {
           ref={testRef}
           onScroll={() => {
             if (testRef.current.scrollTop < 261) {
-              SetOffset(testRef.current.scrollTop)
+              SetOffset(testRef.current.scrollTop);
             }
           }}
         >
           <header>{header}</header>
           <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
         </div>
       </MainWrapper>
       <MyInfoWrapper ref={myInfoHeightRef}>
         <MyInfo></MyInfo>
       </MyInfoWrapper>
     </Wrapper>
-  )
-}
+  );
+};
 // class Layout extends React.Component {
 //   render() {
 //     return (
@@ -189,4 +175,4 @@ const Layout = props => {
 //   }
 // }
 
-export default Layout
+export default Layout;

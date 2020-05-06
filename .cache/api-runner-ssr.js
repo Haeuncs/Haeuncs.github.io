@@ -1,20 +1,20 @@
 var plugins = [{
-      plugin: require('/Users/leehaeun/Haeuncs.github.io__/node_modules/gatsby-plugin-google-analytics/gatsby-ssr'),
+      plugin: require('/Users/leehaeun/test/Haeuncs.github.io/node_modules/gatsby-plugin-google-analytics/gatsby-ssr'),
       options: {"plugins":[]},
     },{
-      plugin: require('/Users/leehaeun/Haeuncs.github.io__/node_modules/gatsby-plugin-feed/gatsby-ssr'),
+      plugin: require('/Users/leehaeun/test/Haeuncs.github.io/node_modules/gatsby-plugin-feed/gatsby-ssr'),
       options: {"plugins":[]},
     },{
-      plugin: require('/Users/leehaeun/Haeuncs.github.io__/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
+      plugin: require('/Users/leehaeun/test/Haeuncs.github.io/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
       options: {"plugins":[],"name":"Gatsby Starter Blog","short_name":"GatsbyJS","start_url":"/","background_color":"#ffffff","theme_color":"#663399","display":"minimal-ui","icon":"static/icon.svg"},
     },{
-      plugin: require('/Users/leehaeun/Haeuncs.github.io__/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
+      plugin: require('/Users/leehaeun/test/Haeuncs.github.io/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
     },{
-      plugin: require('/Users/leehaeun/Haeuncs.github.io__/node_modules/gatsby-plugin-typography/gatsby-ssr'),
+      plugin: require('/Users/leehaeun/test/Haeuncs.github.io/node_modules/gatsby-plugin-typography/gatsby-ssr'),
       options: {"plugins":[],"pathToConfigModule":"src/utils/typography"},
     },{
-      plugin: require('/Users/leehaeun/Haeuncs.github.io__/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
+      plugin: require('/Users/leehaeun/test/Haeuncs.github.io/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
       options: {"plugins":[]},
     }]
 // During bootstrap, we write requires at top of this file which looks like:

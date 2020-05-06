@@ -2,4 +2,4 @@
 import "typeface-montserrat";
 import "typeface-merriweather";
 
-import "prismjs/themes/prism-synthwave84.css";
+import "prismjs/themes/prism copy.css";

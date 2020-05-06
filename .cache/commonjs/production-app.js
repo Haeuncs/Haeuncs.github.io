@@ -55,38 +55,39 @@ window.___loader = _loader.publicLoader;
   // Remove this in v3
 
 
-  const RouteHandler = props => _react.default.createElement(_router.BaseContext.Provider, {
+  const RouteHandler = props => /*#__PURE__*/_react.default.createElement(_router.BaseContext.Provider, {
     value: {
       baseuri: `/`,
       basepath: `/`
     }
-  }, _react.default.createElement(_pageRenderer.default, props));
+  }, /*#__PURE__*/_react.default.createElement(_pageRenderer.default, props));
 
   class LocationHandler extends _react.default.Component {
     render() {
       const {
         location
       } = this.props;
-      return _react.default.createElement(_ensureResources.default, {
-        location: location
-      }, ({
-        pageResources,
-        location
-      }) => _react.default.createElement(_navigation.RouteUpdates, {
-        location: location
-      }, _react.default.createElement(_gatsbyReactRouterScroll.ScrollContext, {
-        location: location,
-        shouldUpdateScroll: _navigation.shouldUpdateScroll
-      }, _react.default.createElement(_router.Router, {
-        basepath: __BASE_PATH__,
-        location: location,
-        id: "gatsby-focus-wrapper"
-      }, _react.default.createElement(RouteHandler, (0, _extends2.default)({
-        path: pageResources.page.path === `/404.html` ? (0, _stripPrefix.default)(location.pathname, __BASE_PATH__) : encodeURI(pageResources.page.matchPath || pageResources.page.path)
-      }, this.props, {
-        location: location,
-        pageResources: pageResources
-      }, pageResources.json))))));
+      return (/*#__PURE__*/_react.default.createElement(_ensureResources.default, {
+          location: location
+        }, ({
+          pageResources,
+          location
+        }) => /*#__PURE__*/_react.default.createElement(_navigation.RouteUpdates, {
+          location: location
+        }, /*#__PURE__*/_react.default.createElement(_gatsbyReactRouterScroll.ScrollContext, {
+          location: location,
+          shouldUpdateScroll: _navigation.shouldUpdateScroll
+        }, /*#__PURE__*/_react.default.createElement(_router.Router, {
+          basepath: __BASE_PATH__,
+          location: location,
+          id: "gatsby-focus-wrapper"
+        }, /*#__PURE__*/_react.default.createElement(RouteHandler, (0, _extends2.default)({
+          path: pageResources.page.path === `/404.html` ? (0, _stripPrefix.default)(location.pathname, __BASE_PATH__) : encodeURI(pageResources.page.matchPath || pageResources.page.path)
+        }, this.props, {
+          location: location,
+          pageResources: pageResources
+        }, pageResources.json))))))
+      );
     }
 
   }
@@ -115,11 +116,11 @@ window.___loader = _loader.publicLoader;
 
     window.___webpackCompilationHash = page.page.webpackCompilationHash;
 
-    const Root = () => _react.default.createElement(_router.Location, null, locationContext => _react.default.createElement(LocationHandler, locationContext));
+    const Root = () => /*#__PURE__*/_react.default.createElement(_router.Location, null, locationContext => /*#__PURE__*/_react.default.createElement(LocationHandler, locationContext));
 
     const WrappedRoot = (0, _apiRunnerBrowser.apiRunner)(`wrapRootElement`, {
-      element: _react.default.createElement(Root, null)
-    }, _react.default.createElement(Root, null), ({
+      element: /*#__PURE__*/_react.default.createElement(Root, null)
+    }, /*#__PURE__*/_react.default.createElement(Root, null), ({
       result
     }) => {
       return {
@@ -131,7 +132,7 @@ window.___loader = _loader.publicLoader;
 
     const renderer = (0, _apiRunnerBrowser.apiRunner)(`replaceHydrateFunction`, undefined, _reactDom.default.hydrate)[0];
     (0, _domready.default)(() => {
-      renderer(_react.default.createElement(NewRoot, null), typeof window !== `undefined` ? document.getElementById(`___gatsby`) : void 0, () => {
+      renderer( /*#__PURE__*/_react.default.createElement(NewRoot, null), typeof window !== `undefined` ? document.getElementById(`___gatsby`) : void 0, () => {
         (0, _apiRunnerBrowser.apiRunner)(`onInitialClientRender`);
       });
     });
