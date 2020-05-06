@@ -37,6 +37,7 @@ logs
 **/*.backup.*
 **/*.back.*
 
+public
 node_modules
 bower_components
 
