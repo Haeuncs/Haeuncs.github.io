@@ -1,8 +1,8 @@
-import React from "react"
-import PropTypes from "prop-types"
-import styled from "styled-components"
-import media from "styled-media-query"
-import { Link } from "gatsby"
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import media from "styled-media-query";
+import { Link } from "gatsby";
 
 const Span = styled.span`
   font-family: AppleSDGothicNeo;
@@ -17,23 +17,23 @@ const Span = styled.span`
   ${media.lessThan("medium")`
   font-size: 20px;
   `}
-`
+`;
 const SmallSpan = styled.span`
   font-size: 18px;
   font-weight: 600;
   ${media.lessThan("medium")`
   font-size: 14px;
   `}
-`
+`;
 
 const MobileHideDiv = styled.div`
   ${media.lessThan("medium")`
   opacity: 0;
   height: 0;
 `}
-`
+`;
 
-const MyInfo = props => {
+const MyInfo = (props) => {
   return (
     <Span>
       <Link
@@ -63,9 +63,9 @@ const MyInfo = props => {
         </Link>
       </MobileHideDiv>
     </Span>
-  )
-}
+  );
+};
 
-MyInfo.propTypes = {}
+MyInfo.propTypes = {};
 
-export default MyInfo
+export default MyInfo;

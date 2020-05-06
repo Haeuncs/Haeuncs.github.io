@@ -1,38 +1,40 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from "react";
+import { Link, graphql } from "gatsby";
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+import Bio from "../components/bio";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import { rhythm } from "../utils/typography";
 
-import "../../css/style.css"
-import styled from "styled-components"
+import "../../css/style.css";
+import styled from "styled-components";
 
 const TItleSpan = styled.span`
   font-size: 26px;
   font-weight: 900;
 
   text-decoration: none;
-`
+`;
 const DateSpan = styled.span`
   font-size: 18px;
   font-weight: 900;
   color: #e22e96;
   text-decoration: none;
-`
+`;
 class BlogIndex extends React.Component {
   render() {
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMarkdownRemark.edges
-
+    const { data } = this.props;
+    const siteTitle = data.site.siteMetadata.title;
+    const posts = data.allMarkdownRemark.edges;
+    var postIndex = 0;
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
         {/* <Bio /> */}
         {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
+          postIndex = postIndex + 1;
+
+          const title = node.frontmatter.title || node.fields.slug;
           return (
             <article key={node.fields.slug}>
               <div style={{ height: "30px" }}></div>
@@ -56,16 +58,27 @@ class BlogIndex extends React.Component {
                   }}
                 />
               </section>
-              <div style={{ height: "30px" }}></div>
+              <div
+                style={{
+                  height: "40px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                {postIndex !== posts.length && (
+                  <p style={{ marginBottom: "0px" }}>🧀</p>
+                )}
+              </div>
             </article>
-          )
+          );
         })}
       </Layout>
-    )
+    );
   }
 }
 
-export default BlogIndex
+export default BlogIndex;
 
 export const pageQuery = graphql`
   query {
@@ -82,7 +95,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "YY.MM.DD")
+            date(formatString: "YYYY년MM월DD일")
             title
             description
           }
@@ -90,4 +103,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
