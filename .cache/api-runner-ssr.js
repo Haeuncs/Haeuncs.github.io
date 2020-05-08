@@ -1,4 +1,7 @@
 var plugins = [{
+      plugin: require('/Users/leehaeun/test/Haeuncs.github.io/node_modules/gatsby-plugin-sitemap/gatsby-ssr'),
+      options: {"plugins":[],"output":"/sitemap.xml","sitemapSize":5000},
+    },{
       plugin: require('/Users/leehaeun/test/Haeuncs.github.io/node_modules/gatsby-plugin-google-analytics/gatsby-ssr'),
       options: {"plugins":[]},
     },{

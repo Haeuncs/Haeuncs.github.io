@@ -5,11 +5,11 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import Image from "gatsby-image";
 
-import { rhythm } from "../utils/typography"
+import { rhythm } from "../utils/typography";
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -30,9 +30,9 @@ const Bio = () => {
         }
       }
     }
-  `)
+  `);
 
-  const { author, social } = data.site.siteMetadata
+  const { author, social } = data.site.siteMetadata;
   return (
     <div
       style={{
@@ -45,7 +45,7 @@ const Bio = () => {
           Haeuncs<br></br>
         </h1>
         iOS 개발을 하고 있습니다. <br></br>
-        가끔 ReactJS 웹 개발도 하고 딥러닝에도 관심이 있습니다. <br></br>
+        가볍게 작성하는 블로그를 지향하고 있습니다. 👩🏻‍🔬<br></br>
         항상 성장하는 개발자가 되고 싶습니다 🌱<br></br>
         <a href={`https://github.com/Haeuncs`}>Github</a>
         <br></br>
@@ -54,7 +54,7 @@ const Bio = () => {
         </a>
       </p>
     </div>
-  )
-}
+  );
+};
 
-export default Bio
+export default Bio;

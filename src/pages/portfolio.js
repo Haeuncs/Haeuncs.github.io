@@ -1,13 +1,13 @@
-import React, { useRef, useState } from "react"
-import styled from "styled-components"
-import PortDevType from "../components/PortDevType"
-import PortfolioModal from "../components/portfolioModal"
-import media from "styled-media-query"
+import React, { useRef, useState } from "react";
+import styled from "styled-components";
+import PortDevType from "../components/PortDevType";
+import PortfolioModal from "../components/portfolioModal";
+import media from "styled-media-query";
 
-import "../../css/layout.css"
-import "../../css/style.css"
+import "../../css/layout.css";
+import "../../css/style.css";
 
-const Portfolio = props => {
+const Portfolio = (props) => {
   const data1 = [
     {
       img: require("../../static/fitco@3x.png"),
@@ -45,7 +45,7 @@ const Portfolio = props => {
       git: "https://github.com/Haeuncs/MoodDiary",
       date: "2019",
     },
-  ]
+  ];
   const funProj1 = [
     {
       img: require("../../static/moody@3x.png"),
@@ -68,7 +68,7 @@ const Portfolio = props => {
       git: "https://github.com/Haeuncs/HangulTensorflow",
       date: "2018",
     },
-  ]
+  ];
   const data2 = [
     {
       img: require("../../static/fitco@3x.png"),
@@ -80,7 +80,7 @@ const Portfolio = props => {
       thumb: require("../../static/stylistWeb.png"),
       date: "2019",
     },
-  ]
+  ];
   const funProj2 = [
     {
       name: "얼굴 블러 처리",
@@ -93,22 +93,22 @@ const Portfolio = props => {
       thumb: require("../../static/faceblur.png"),
       demoUrl: "https://haeuncs.github.io/Face_Blur/",
     },
-  ]
+  ];
 
-  const portfolioRef = useRef(null)
-  const iOSAPPRef = useRef(null)
-  const inAppStoreRef = useRef(null)
-  const iOSFunRef = useRef(null)
-  const reactJSRef = useRef(null)
-  const reactJSProjRef = useRef(null)
-  const reactFunRef = useRef(null)
-  const eduRef = useRef(null)
-  const aboutRef = useRef(null)
-  const [showCate, setShowCate] = useState(false)
+  const portfolioRef = useRef(null);
+  const iOSAPPRef = useRef(null);
+  const inAppStoreRef = useRef(null);
+  const iOSFunRef = useRef(null);
+  const reactJSRef = useRef(null);
+  const reactJSProjRef = useRef(null);
+  const reactFunRef = useRef(null);
+  const eduRef = useRef(null);
+  const aboutRef = useRef(null);
+  const [showCate, setShowCate] = useState(false);
   const [showScreen, setShowScreen] = useState({
     url: null,
     show: false,
-  })
+  });
   return (
     <div>
       <button
@@ -189,7 +189,7 @@ const Portfolio = props => {
                 transform: "translate(-50%, 0)",
               }}
               onClick={() => {
-                window.scrollTo(0, portfolioRef.current.offsetTop)
+                window.scrollTo(0, portfolioRef.current.offsetTop);
               }}
             >
               MY PORTFOLIO ⬇️
@@ -210,11 +210,11 @@ const Portfolio = props => {
             <SubType ref={inAppStoreRef}>-In App Store</SubType>
             {data1.map((data, index) => (
               <PortDevType
-                showThumbHandler={thumb => {
+                showThumbHandler={(thumb) => {
                   setShowScreen({
                     url: thumb,
                     show: !showScreen.show,
-                  })
+                  });
                 }}
                 data={data}
                 key={index}
@@ -223,11 +223,11 @@ const Portfolio = props => {
             <SubType ref={iOSFunRef}>-Fun Project 🎶</SubType>
             {funProj1.map((data, index) => (
               <PortDevType
-                showThumbHandler={thumb => {
+                showThumbHandler={(thumb) => {
                   setShowScreen({
                     url: thumb,
                     show: !showScreen.show,
-                  })
+                  });
                 }}
                 data={data}
                 key={index}
@@ -237,11 +237,11 @@ const Portfolio = props => {
             <SubType ref={reactJSProjRef}>-Project</SubType>
             {data2.map((data, index) => (
               <PortDevType
-                showThumbHandler={thumb => {
+                showThumbHandler={(thumb) => {
                   setShowScreen({
                     url: thumb,
                     show: !showScreen.show,
-                  })
+                  });
                 }}
                 data={data}
                 key={index}
@@ -250,11 +250,11 @@ const Portfolio = props => {
             <SubType ref={reactFunRef}>-Fun Project 🎶</SubType>
             {funProj2.map((data, index) => (
               <PortDevType
-                showThumbHandler={thumb => {
+                showThumbHandler={(thumb) => {
                   setShowScreen({
                     url: thumb,
                     show: !showScreen.show,
-                  })
+                  });
                 }}
                 data={data}
                 key={index}
@@ -282,7 +282,7 @@ const Portfolio = props => {
         <a
           style={{ color: "e22e96" }}
           onClick={() => {
-            window.scrollTo(0, 0)
+            window.scrollTo(0, 0);
           }}
         >
           TOP
@@ -290,21 +290,21 @@ const Portfolio = props => {
         <a
           style={{ color: "e22e96" }}
           onClick={() => {
-            window.scrollTo(0, portfolioRef.current.offsetTop)
+            window.scrollTo(0, portfolioRef.current.offsetTop);
           }}
         >
           Portfolio
         </a>
         <a
           onClick={() => {
-            window.scrollTo(0, iOSAPPRef.current.offsetTop)
+            window.scrollTo(0, iOSAPPRef.current.offsetTop);
           }}
         >
           1. iOS APPS
         </a>
         <a
           onClick={() => {
-            window.scrollTo(0, inAppStoreRef.current.offsetTop)
+            window.scrollTo(0, inAppStoreRef.current.offsetTop);
           }}
           style={{ marginLeft: 20 }}
         >
@@ -312,7 +312,7 @@ const Portfolio = props => {
         </a>
         <a
           onClick={() => {
-            window.scrollTo(0, iOSFunRef.current.offsetTop)
+            window.scrollTo(0, iOSFunRef.current.offsetTop);
           }}
           style={{ marginLeft: 20 }}
         >
@@ -321,14 +321,14 @@ const Portfolio = props => {
         <a
           style={{ color: "e22e96" }}
           onClick={() => {
-            window.scrollTo(0, reactJSRef.current.offsetTop)
+            window.scrollTo(0, reactJSRef.current.offsetTop);
           }}
         >
           2. ReactJS web
         </a>
         <a
           onClick={() => {
-            window.scrollTo(0, reactJSProjRef.current.offsetTop)
+            window.scrollTo(0, reactJSProjRef.current.offsetTop);
           }}
           style={{ marginLeft: 20 }}
         >
@@ -336,7 +336,7 @@ const Portfolio = props => {
         </a>
         <a
           onClick={() => {
-            window.scrollTo(0, reactFunRef.current.offsetTop)
+            window.scrollTo(0, reactFunRef.current.offsetTop);
           }}
           style={{ marginLeft: 20 }}
         >
@@ -345,7 +345,7 @@ const Portfolio = props => {
         <a
           style={{ color: "e22e96" }}
           onClick={() => {
-            window.scrollTo(0, eduRef.current.offsetTop)
+            window.scrollTo(0, eduRef.current.offsetTop);
           }}
         >
           Education
@@ -353,7 +353,7 @@ const Portfolio = props => {
         <a
           style={{ color: "e22e96" }}
           onClick={() => {
-            window.scrollTo(0, aboutRef.current.offsetTop)
+            window.scrollTo(0, aboutRef.current.offsetTop);
           }}
         >
           About
@@ -369,14 +369,14 @@ const Portfolio = props => {
             setShowScreen({
               url: null,
               show: false,
-            })
+            });
           }}
         ></PortfolioModal>
       </div>
       {/* )} */}
     </div>
-  )
-}
+  );
+};
 const MyInfo = styled.div`
   ${media.lessThan("medium")`
   margin-left: 20px;
@@ -384,7 +384,7 @@ const MyInfo = styled.div`
   text-align: left;
   font-size: 1.4rem;
   `}
-`
+`;
 
 const WrapperRow = styled.div`
   display: flex;
@@ -393,13 +393,13 @@ const WrapperRow = styled.div`
   margin-left: 16px;
   margin-right: 16px;
   `}
-`
+`;
 
 const WrapperColumn = styled.div`
   display: flex;
   flex-direction: column;
   overflow: auto;
-`
+`;
 // const TextSpan = styled.span`
 //   font-stretch: normal;
 //   font-style: normal;
@@ -423,7 +423,7 @@ const PortfolioSpan = styled.span`
   letter-spacing: normal;
   /* text-align: left; */
   color: #e22e96;
-`
+`;
 const DevType = styled.span`
   font-size: 30px;
   font-weight: 800;
@@ -433,7 +433,7 @@ const DevType = styled.span`
   letter-spacing: normal;
   text-align: left;
   color: #e2a42e;
-`
+`;
 const SubType = styled.span`
   font-size: 28px;
   font-weight: 800;
@@ -444,7 +444,7 @@ const SubType = styled.span`
   text-align: left;
   color: #2e81e2;
   margin-bottom: 40px;
-`
+`;
 const SubTitle = styled.span`
   font-size: 28px;
   font-weight: 900;
@@ -454,9 +454,9 @@ const SubTitle = styled.span`
   letter-spacing: normal;
   text-align: left;
   color: #1a1a1a;
-`
+`;
 const Spacing = styled.div`
   height: 16px;
-`
+`;
 
-export default Portfolio
+export default Portfolio;
