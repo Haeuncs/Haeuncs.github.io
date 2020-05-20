@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 <url> <loc>https://haeuncs.github.io/ARC/ARC/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://haeuncs.github.io/bug/No account with App Store connect access have been found for team/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://haeuncs.github.io/Instance Method VS Type Method/Instance Method VS Type Method/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://haeuncs.github.io/라인면접/라인면접/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://haeuncs.github.io/Delegate-Notification-KVO/Delegate vs Notification vs KVO/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://haeuncs.github.io/2020/2020/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://haeuncs.github.io/defer/defer/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://haeuncs.github.io/BaseFramework/Framework/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://haeuncs.github.io/bug/No account with App Store connect access have been found for team/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://haeuncs.github.io/Reference-Value/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://haeuncs.github.io/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://haeuncs.github.io/portfolio_2/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
