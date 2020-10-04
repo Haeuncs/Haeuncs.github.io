@@ -48,22 +48,20 @@ const MyInfo = ({ isMobile }) => {
         }}
         to={`/`}
       >
-        Haeun Lee 😎<br></br>
-        iOS Developer 👻<br></br>
+        Lee Haeun<br></br>
+        iOS Developer<br></br>
         <br></br>
       </Link>
       {isMobile && (
         <>
           <SmallSpan>
-            모든 질문은 아래 메일로 주세요 🤗<br></br>
             <a href={`mailto:haeun.developer@gmail.com`}>
               haeun.developer@gmail.com
             </a>
           </SmallSpan>
           <Link to={`/portfolio`}>
             <a>
-              <h6 style={{ backgroundColor: "black" }}>HERE IS!</h6>
-              <h1 style={{ backgroundColor: "black" }}>🔎 MY PORTFOLIO</h1>
+              <h1 style={{ backgroundColor: "black" }}>About me</h1>
             </a>
           </Link>
         </>

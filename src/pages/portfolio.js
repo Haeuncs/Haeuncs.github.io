@@ -111,37 +111,6 @@ const Portfolio = (props) => {
   });
   return (
     <div>
-      <button
-        style={{
-          right: 10,
-          position: "fixed",
-          cursor: "pointer",
-          textAlign: "right",
-          zIndex: 100,
-          backgroundColor: "transparent",
-          WebkitTapHighlightColor: "transparent",
-          border: "0 none",
-          boxShadow: "none",
-          outline: "none",
-        }}
-        onClick={() => setShowCate(!showCate)}
-      >
-        <h1>
-          {showCate ? (
-            <>
-              목차<br></br>
-              끄기<br></br>
-              😞
-            </>
-          ) : (
-            <>
-              목차<br></br>
-              보기<br></br>
-              👀
-            </>
-          )}
-        </h1>
-      </button>
       <WrapperColumn>
         <div
           className="test"
@@ -171,209 +140,47 @@ const Portfolio = (props) => {
               }}
             >
               <MyInfo>
-                안녕하세요. 저는 이하은 입니다.<br></br>
-                아름다운 디자인을 코드로 구현하는 것을 좋아합니다.<br></br>
-                iOS Developer<br></br>
+                Hi. I'm Lee Haeun.<br></br>I like to develop and improve
+                products with beautiful UI. <br></br>I'm trying to become a good
+                developer.<br></br>
                 📧 haeun.developer@gmail.com<br></br>
-                📞 010.6387.8945<br></br>
               </MyInfo>
             </h1>
-            <h2
-              className="forCursor"
-              style={{
-                color: "white",
-                position: "absolute",
-                bottom: "1.875rem",
-                left: "50%",
-                marginRight: "-50%",
-                transform: "translate(-50%, 0)",
-              }}
-              onClick={() => {
-                window.scrollTo(0, portfolioRef.current.offsetTop);
-              }}
-            >
-              MY PORTFOLIO ⬇️
-            </h2>
           </WrapperColumn>
         </div>
         <WrapperRow>
           <WrapperColumn
-            ref={portfolioRef}
             style={{
               marginLeft: "auto",
               marginRight: "auto",
               maxWidth: "600px",
             }}
           >
-            <PortfolioSpan>Portfolio</PortfolioSpan>
-            <DevType ref={iOSAPPRef}>iOS APPS</DevType>
-            <SubType ref={inAppStoreRef}>-In App Store</SubType>
-            {data1.map((data, index) => (
-              <PortDevType
-                showThumbHandler={(thumb) => {
-                  setShowScreen({
-                    url: thumb,
-                    show: !showScreen.show,
-                  });
-                }}
-                data={data}
-                key={index}
-              ></PortDevType>
-            ))}
-            <SubType ref={iOSFunRef}>-Fun Project 🎶</SubType>
-            {funProj1.map((data, index) => (
-              <PortDevType
-                showThumbHandler={(thumb) => {
-                  setShowScreen({
-                    url: thumb,
-                    show: !showScreen.show,
-                  });
-                }}
-                data={data}
-                key={index}
-              ></PortDevType>
-            ))}
-            <DevType ref={reactJSRef}>ReactJS Web</DevType>
-            <SubType ref={reactJSProjRef}>-Project</SubType>
-            {data2.map((data, index) => (
-              <PortDevType
-                showThumbHandler={(thumb) => {
-                  setShowScreen({
-                    url: thumb,
-                    show: !showScreen.show,
-                  });
-                }}
-                data={data}
-                key={index}
-              ></PortDevType>
-            ))}
-            <SubType ref={reactFunRef}>-Fun Project 🎶</SubType>
-            {funProj2.map((data, index) => (
-              <PortDevType
-                showThumbHandler={(thumb) => {
-                  setShowScreen({
-                    url: thumb,
-                    show: !showScreen.show,
-                  });
-                }}
-                data={data}
-                key={index}
-              ></PortDevType>
-            ))}
-            <PortfolioSpan ref={eduRef}>Education</PortfolioSpan>
-            <p>
-              순천향대학교<br></br>
-              컴퓨터공학과 학사<br></br>
-              2020.02 졸업
-            </p>
-            <div style={{ height: "100px" }}></div>
-            <PortfolioSpan ref={aboutRef}>About</PortfolioSpan>
-            <p>
-              저는 우연히 접한 아이패드의 playground 앱으로 swift 공부하며 앱을
-              만들기 시작했습니다.<br></br>
-              아름다운 디자인을 코드로 구현할 때의 성취감을 좋아합니다. 😀
-              <br></br>
-            </p>
-            <div style={{ height: "100px" }}></div>
+            <PortfolioSpan>WORK as iOS Developer👩‍🔧</PortfolioSpan>
+            <table>
+              <tbody>
+                <tr>
+                  <td>&nbsp;2020.05 ~ present</td>
+                  <td>&nbsp;LINE</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;2019.05 ~ 2020.05</td>
+                  <td>&nbsp;Startup</td>
+                </tr>
+              </tbody>
+            </table>
+            <PortfolioSpan>STUDY✍️</PortfolioSpan>
+            <table>
+              <tbody>
+                <tr>
+                  <td>&nbsp;2015 - 2020</td>
+                  <td>&nbsp;Bachelor of Computer Science Engineering</td>
+                </tr>
+              </tbody>
+            </table>
           </WrapperColumn>
         </WrapperRow>
       </WrapperColumn>
-      <WrapperColumn className={showCate ? "categoryShow" : "categoryHide"}>
-        <a
-          style={{ color: "e22e96" }}
-          onClick={() => {
-            window.scrollTo(0, 0);
-          }}
-        >
-          TOP
-        </a>
-        <a
-          style={{ color: "e22e96" }}
-          onClick={() => {
-            window.scrollTo(0, portfolioRef.current.offsetTop);
-          }}
-        >
-          Portfolio
-        </a>
-        <a
-          onClick={() => {
-            window.scrollTo(0, iOSAPPRef.current.offsetTop);
-          }}
-        >
-          1. iOS APPS
-        </a>
-        <a
-          onClick={() => {
-            window.scrollTo(0, inAppStoreRef.current.offsetTop);
-          }}
-          style={{ marginLeft: 20 }}
-        >
-          1.1 In App Store
-        </a>
-        <a
-          onClick={() => {
-            window.scrollTo(0, iOSFunRef.current.offsetTop);
-          }}
-          style={{ marginLeft: 20 }}
-        >
-          1.2 Fun Project
-        </a>
-        <a
-          style={{ color: "e22e96" }}
-          onClick={() => {
-            window.scrollTo(0, reactJSRef.current.offsetTop);
-          }}
-        >
-          2. ReactJS web
-        </a>
-        <a
-          onClick={() => {
-            window.scrollTo(0, reactJSProjRef.current.offsetTop);
-          }}
-          style={{ marginLeft: 20 }}
-        >
-          2.1 Project
-        </a>
-        <a
-          onClick={() => {
-            window.scrollTo(0, reactFunRef.current.offsetTop);
-          }}
-          style={{ marginLeft: 20 }}
-        >
-          2.2 Fun Project
-        </a>
-        <a
-          style={{ color: "e22e96" }}
-          onClick={() => {
-            window.scrollTo(0, eduRef.current.offsetTop);
-          }}
-        >
-          Education
-        </a>
-        <a
-          style={{ color: "e22e96" }}
-          onClick={() => {
-            window.scrollTo(0, aboutRef.current.offsetTop);
-          }}
-        >
-          About
-        </a>
-      </WrapperColumn>
-      <div
-        className={!!showScreen.show ? "modalShow" : "modalHide"}
-        style={{ zIndex: 999 }}
-      >
-        <PortfolioModal
-          imgData={showScreen.url}
-          closeHandler={() => {
-            setShowScreen({
-              url: null,
-              show: false,
-            });
-          }}
-        ></PortfolioModal>
-      </div>
-      {/* )} */}
     </div>
   );
 };
@@ -422,7 +229,6 @@ const PortfolioSpan = styled.span`
   line-height: 1.2;
   letter-spacing: normal;
   /* text-align: left; */
-  color: #e22e96;
 `;
 const DevType = styled.span`
   font-size: 30px;
