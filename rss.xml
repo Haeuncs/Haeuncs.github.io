@@ -1,4 +1,31 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[⭐️]]></title><description><![CDATA[iOS 개발자의 그냥 쓰는 블로그]]></description><link>https://haeuncs.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 22 Oct 2020 08:19:09 GMT</lastBuildDate><item><title><![CDATA[DDD. 동아리를 마치며]]></title><description><![CDATA[DDD. 동아리를 마치며 2020년 버킷리스트 중 하나인 개발 동아리를 완료했다. 7월부터 10월까지 약 3개월간 열심히 개발을 했다. 나는 항상 개발 동아리를 하고 싶었는데 매번 면접에서 탈락의 고배를 마셨던 슬픈 기억이 있다.…]]></description><link>https://haeuncs.github.io/DDD/DDD 동아리를 마치며/</link><guid isPermaLink="false">https://haeuncs.github.io/DDD/DDD 동아리를 마치며/</guid><pubDate>Thu, 22 Oct 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;DDD. 동아리를 마치며&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[⭐️]]></title><description><![CDATA[iOS 개발자의 그냥 쓰는 블로그]]></description><link>https://haeuncs.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 01 Nov 2020 12:14:43 GMT</lastBuildDate><item><title><![CDATA[SwiftUI Canvas Preview bug]]></title><description><![CDATA[SwiftUI Canvas Preview bug 어느날부터 SwiftUI canvas가 표시되지 않는 버그에 빠져버렸다.
+아마 pod 을 추가한 이후로 이런 현상이 발생했던것 같고 구글링을 통해서 여러가지 해결 방법들을 찾아봤다. 1. Edit…]]></description><link>https://haeuncs.github.io/SwiftUICanvasBug/Instance Method VS Type Method/</link><guid isPermaLink="false">https://haeuncs.github.io/SwiftUICanvasBug/Instance Method VS Type Method/</guid><pubDate>Sun, 01 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;SwiftUI Canvas Preview bug&lt;/h1&gt;
+&lt;p&gt;어느날부터 SwiftUI canvas가 표시되지 않는 버그에 빠져버렸다.&lt;/br&gt;
+아마 pod 을 추가한 이후로 이런 현상이 발생했던것 같고 구글링을 통해서 여러가지 해결 방법들을 찾아봤다.&lt;/p&gt;
+&lt;h3&gt;1. Edit Scheme&lt;/h3&gt;
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/de85a8eb352c39b8ab7b6fec88a6832d/d61c2/1.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 56.08108108108109%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAABnklEQVQoz61S226cMBDl/yP1Nyo1/YQ+V1VfGjXKS5MNdZcFc7PBxoDBcDJ2FrJJqj51pNHYM2fO4OFE6SlBfPiF+8cYh8cDjuw34jgGYwxVVQWv6xpCiBCrqqRIuXPt0vM8R9SoHkkm0RjArkA/WBhj0Pc9xnEMUSlFJAJaVLCygJR01hrTNMEOI6y14dw0DaKafUP28yPU/TXM4RNcX2AzD/RkuutQixodkWBZ4JzDvDjCTnC82/Ed4aLy4QvY1w/g368gf1zBKhaK67pQ7xKe2nKBPOWQjYQiUk1DfG2ZZizaYj0T+q+OVGfxwAqo4Tm5BrJ1Py9EPMoO/Jgi4xxZloHTrla82IZv2xaRVi2yNIHpFFVcmLwBDD0hJxIRE0mSoiCinOeoeYm1HffhGz482S8eF4VQPI+f/cKVwbS57jGZIeScsa/6dsJhGN4RXoL+ZW+xrwj/hwVCrzkvA6+jeZ73uPvb+1/c9zj6415iUdu04LT4JElQlmVInk6ncPfaE8cCf2IGQWKWQgYZ7U5iF7qBuEsgPt+iumF4AiSQUIm5ODQyAAAAAElFTkSuQmCC&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;photo1&quot; title=&quot;photo1&quot; src=&quot;/static/de85a8eb352c39b8ab7b6fec88a6832d/fcda8/1.png&quot; srcset=&quot;/static/de85a8eb352c39b8ab7b6fec88a6832d/12f09/1.png 148w,
+/static/de85a8eb352c39b8ab7b6fec88a6832d/e4a3f/1.png 295w,
+/static/de85a8eb352c39b8ab7b6fec88a6832d/fcda8/1.png 590w,
+/static/de85a8eb352c39b8ab7b6fec88a6832d/efc66/1.png 885w,
+/static/de85a8eb352c39b8ab7b6fec88a6832d/c83ae/1.png 1180w,
+/static/de85a8eb352c39b8ab7b6fec88a6832d/d61c2/1.png 1800w&quot; sizes=&quot;(max-width: 590px) 100vw, 590px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;p&gt;Edit scheme에서 code coverage를 all targets으로 변경하는 것&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1차 실패&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. podfile 에 코드 추가&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/9275#issuecomment-691032405&quot;&gt;Unable to see XCode/SwiftUI Previews within CocoaPods frameworks&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2차 실패&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;3. Other Linker Flags에 -fprofile-instr-generate 추가&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/a/58973469&quot;&gt;stackoverflow&lt;/a&gt; 를 따라 -fprofile-instr-generate 를 추가하여 해결했다.&lt;/p&gt;
+&lt;p&gt;😆&lt;/p&gt;</content:encoded></item><item><title><![CDATA[DDD. 동아리를 마치며]]></title><description><![CDATA[DDD. 동아리를 마치며 2020년 버킷리스트 중 하나인 개발 동아리를 완료했다. 7월부터 10월까지 약 3개월간 열심히 개발을 했다. 나는 항상 개발 동아리를 하고 싶었는데 매번 면접에서 탈락의 고배를 마셨던 슬픈 기억이 있다.…]]></description><link>https://haeuncs.github.io/DDD/DDD 동아리를 마치며/</link><guid isPermaLink="false">https://haeuncs.github.io/DDD/DDD 동아리를 마치며/</guid><pubDate>Thu, 22 Oct 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;DDD. 동아리를 마치며&lt;/h1&gt;
 &lt;p&gt;2020년 버킷리스트 중 하나인 개발 동아리를 완료했다.&lt;/p&gt;
 &lt;p&gt;7월부터 10월까지 약 3개월간 열심히 개발을 했다. 나는 항상 개발 동아리를 하고 싶었는데 매번 면접에서 탈락의 고배를 마셨던 슬픈 기억이 있다. 3수 끝에 하게 된 동아리여서 그런지 더 더 프로젝트에 애착이 갔던 것 같다.&lt;/p&gt;
 &lt;p&gt;개발 동아리 전에 만들었던 사이드 프로젝트는 혼자 기획하고 디자인 했었기 때문에 완성도 측면에서 2% 부족한 느낌을 받았었다. &lt;/p&gt;
