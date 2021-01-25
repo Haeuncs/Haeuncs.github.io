@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[2021]]></title><description><![CDATA[iOS 개발자의 그냥 쓰는 블로그]]></description><link>https://haeuncs.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 01 Jan 2021 11:13:43 GMT</lastBuildDate><item><title><![CDATA[2021 목표 🏞]]></title><description><![CDATA[202…]]></description><link>https://haeuncs.github.io/2021/2021계획/</link><guid isPermaLink="false">https://haeuncs.github.io/2021/2021계획/</guid><pubDate>Fri, 01 Jan 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;2020의 나는 어떤 계획을 세웠을까?&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[2021]]></title><description><![CDATA[ARCHIEVE]]></description><link>https://haeuncs.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 25 Jan 2021 12:54:01 GMT</lastBuildDate><item><title><![CDATA[2021 목표 🏞]]></title><description><![CDATA[202…]]></description><link>https://haeuncs.github.io/2021/2021계획/</link><guid isPermaLink="false">https://haeuncs.github.io/2021/2021계획/</guid><pubDate>Fri, 01 Jan 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;2020의 나는 어떤 계획을 세웠을까?&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;학자금 대출 갚기&lt;/li&gt;
 &lt;li&gt;블로그 꾸준히 쓰기&lt;/li&gt;
@@ -34,11 +34,10 @@
 &lt;li&gt;혐오사회&lt;/li&gt;
 &lt;li&gt;낙인찍힌 몸&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;페미니즘. 여성과 남성은 같다. 라는게 왜 문제가 되는건지&lt;/p&gt;
-&lt;p&gt;이것의 연장선이 인종차별이고 여기에 대해서도 읽고 공부하려 한다.&lt;/p&gt;
 &lt;p&gt;&lt;b&gt;나는 현재를 살아가는 사회의 구성원으로서 우리는 모두 과거 뿌리 깊게 남아있는 그릇된 생각들을 고쳐야 하는 목표가 있다고 생각한다.&lt;/b&gt;&lt;/p&gt;
-&lt;p&gt;만약 인간이 스스로 발전하지 못했다면 앞서 언급한 철학책의 다수 철학자들의 여혐 사상이 지금까지 그대로 내려왔겠지만 인간은 하루하루 발전한다. &lt;/p&gt;
-&lt;p&gt;그렇기 때문에 나는 항상 차별적인 발언이 있을 때 목소리를 내려고 한다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[SwiftUI Canvas Preview bug]]></title><description><![CDATA[SwiftUI Canvas Preview bug 어느날부터 SwiftUI canvas가 표시되지 않는 버그에 빠져버렸다.
+&lt;p&gt;만약 인간이 스스로 발전하지 못했다면 앞서 언급한 철학책의 다수 철학자들의 여혐 사상이 지금까지 그대로 내려왔겠지만 인간은 하루하루 발전하고 옳고 그름을 판단할 수 있는 지적 능력을 가지고 있으니까..&lt;/p&gt;
+&lt;p&gt;이렇게 목표를 말하고자 했는데 연설로 끝을..&lt;/p&gt;
+&lt;p&gt;모두 세운 계획 다 complete 하시길..&lt;/p&gt;</content:encoded></item><item><title><![CDATA[SwiftUI Canvas Preview bug]]></title><description><![CDATA[SwiftUI Canvas Preview bug 어느날부터 SwiftUI canvas가 표시되지 않는 버그에 빠져버렸다.
 아마 pod 을 추가한 이후로 이런 현상이 발생했던것 같고 구글링을 통해서 여러가지 해결 방법들을 찾아봤다. 1. Edit…]]></description><link>https://haeuncs.github.io/SwiftUICanvasBug/Instance Method VS Type Method/</link><guid isPermaLink="false">https://haeuncs.github.io/SwiftUICanvasBug/Instance Method VS Type Method/</guid><pubDate>Sun, 01 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;SwiftUI Canvas Preview bug&lt;/h1&gt;
 &lt;p&gt;어느날부터 SwiftUI canvas가 표시되지 않는 버그에 빠져버렸다.&lt;/br&gt;
 아마 pod 을 추가한 이후로 이런 현상이 발생했던것 같고 구글링을 통해서 여러가지 해결 방법들을 찾아봤다.&lt;/p&gt;
@@ -155,24 +154,7 @@
 &lt;h3&gt;&lt;em&gt;다 해도 다 안됨 🤯&lt;/em&gt;&lt;/h3&gt;
 &lt;p&gt;원인은 회사 랜 문제였음.. 핸드폰 핫스팟 연결해서 시도하니 바로 됨 ^^..🤪&lt;/p&gt;
 &lt;p&gt;인터넷 문제인지 빠르게 확인하는 방법은 App Store 에서 transporter 깔아서 로그인 시도해보면 됨&lt;/p&gt;
-&lt;p&gt;로그인 시도 시 오류나면 여러분도 방화벽 문제(?)일 확률 99%임&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Swift의 Instance Method VS Type Method]]></title><description><![CDATA[Instance Method VS Type Method Instance method 특정 클래스, 구조체 또는 열거형의 인스턴스에 속하는 함수 구조체에서는 해당 인스턴스 메소드 안에서 프로퍼티를 수정할 수 없어요. ⇒ mutating…]]></description><link>https://haeuncs.github.io/Instance Method VS Type Method/Instance Method VS Type Method/</link><guid isPermaLink="false">https://haeuncs.github.io/Instance Method VS Type Method/Instance Method VS Type Method/</guid><pubDate>Thu, 07 May 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Instance Method VS Type Method&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;Instance method&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;특정 클래스, 구조체 또는 열거형의 인스턴스에 속하는 &lt;strong&gt;함수&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;구조체&lt;/strong&gt;에서는 해당 인스턴스 메소드 안에서 &lt;strong&gt;프로퍼티를 수정할 수 없어&lt;/strong&gt;요. ⇒ &lt;strong&gt;mutating&lt;/strong&gt; 키워드로 해결 (mutating은 아래 설명)&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Type method(static)&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;타입 자체에서 호출되는 메소드&lt;/p&gt;
-&lt;p&gt;클래스의 인스턴스를 생성하지 않고 바로 &lt;strong&gt;타입을 통해서 메소드를 호출&lt;/strong&gt;할 수 있다.&lt;/p&gt;
-&lt;p&gt;func 키워드 앞에 &lt;strong&gt;static&lt;/strong&gt; 키워드를 작성하여 타입 메소드를 나타내자&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;class&lt;/strong&gt; 키워드를 사용하면 하위 클래스가 슈퍼 클래스의 해당 메소드를 &lt;strong&gt;재정의&lt;/strong&gt; 할 수 있도록 허용&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3&gt;mutating 키워드는 무엇을 의미하는가?&lt;/h3&gt;
-&lt;p&gt;swift 의 class 는 참조 유형, struct 와 enum 은 값 유형&lt;/p&gt;
-&lt;p&gt;The properties of value types cannot be modified within its instance methods by default.&lt;/p&gt;
-&lt;p&gt;기본적으로 인스턴스 메소드 내에서 값 타입의 속성을 수정할 수 없음.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;값 타입의 속성을 수정하려면 인스턴스 메소드에서 mutating 키워드를 사용한다.&lt;/strong&gt;&lt;/p&gt;
-&lt;br/&gt;
-&lt;p&gt;이해하기 쉬운 코드는 아래를 참조🙂&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://medium.com/the-andela-way/swift-understanding-mutating-functions-in-two-minutes-d9e363904e3a&quot;&gt;Swift: Understanding Mutating Functions in Two Minutes&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Swift 에서 객체간 통신 방법들]]></title><description><![CDATA[Delegate vs Notification vs KVO 왜 Swift…]]></description><link>https://haeuncs.github.io/Delegate-Notification-KVO/Delegate vs Notification vs KVO/</link><guid isPermaLink="false">https://haeuncs.github.io/Delegate-Notification-KVO/Delegate vs Notification vs KVO/</guid><pubDate>Thu, 07 May 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Delegate vs Notification vs KVO&lt;/h1&gt;
+&lt;p&gt;로그인 시도 시 오류나면 여러분도 방화벽 문제(?)일 확률 99%임&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Swift 에서 객체간 통신 방법들]]></title><description><![CDATA[Delegate vs Notification vs KVO 왜 Swift…]]></description><link>https://haeuncs.github.io/Delegate-Notification-KVO/Delegate vs Notification vs KVO/</link><guid isPermaLink="false">https://haeuncs.github.io/Delegate-Notification-KVO/Delegate vs Notification vs KVO/</guid><pubDate>Thu, 07 May 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Delegate vs Notification vs KVO&lt;/h1&gt;
 &lt;p&gt;왜 Swift 에는 이러한 세가지 패턴들이 있을까요?&lt;/p&gt;
 &lt;p&gt;바로 특정 이벤트가 발생했을 때 다른 객체(혹은 다수의 객체들)에게 알려주고 싶을 때 사용합니다. &lt;/p&gt;
 &lt;p&gt;즉 객체 간 소통이 필요할 때 사용합니다.&lt;/p&gt;
@@ -260,7 +242,24 @@ observer &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; collectionV
 &lt;p&gt;실제 프로젝트를 진행하다 보면 어느 부분에서 이 방식을 써야지 하고 생각하고 느끼게 됩니다.(가끔 이 판단이 틀릴 때도 있지만… 그때는 리팩토링..)&lt;/p&gt;
 &lt;p&gt;때에 따라 최적의 방식을 사용하면 될 것 같습니다.
 &lt;br/&gt;
-&lt;br/&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[2020 목표 🏞]]></title><description><![CDATA[5월이 된 지금에야 목표를 세운다는 것이 이상하지만 갑자기 계획의 필요성을 깨달아서 한번 생각해봤다. 단기적인 목표 혹은 주어진 일 같은 부분에 있어서는 계획을 잘 세우는 편인데 나의 중, 장기적인 목표(여기서 장기 목표란…]]></description><link>https://haeuncs.github.io/2020/2020/</link><guid isPermaLink="false">https://haeuncs.github.io/2020/2020/</guid><pubDate>Tue, 05 May 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;5월이 된 지금에야 목표를 세운다는 것이 이상하지만 갑자기 계획의 필요성을 깨달아서 한번 생각해봤다.&lt;/p&gt;
+&lt;br/&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Swift의 Instance Method VS Type Method]]></title><description><![CDATA[Instance Method VS Type Method Instance method 특정 클래스, 구조체 또는 열거형의 인스턴스에 속하는 함수 구조체에서는 해당 인스턴스 메소드 안에서 프로퍼티를 수정할 수 없어요. ⇒ mutating…]]></description><link>https://haeuncs.github.io/Instance Method VS Type Method/Instance Method VS Type Method/</link><guid isPermaLink="false">https://haeuncs.github.io/Instance Method VS Type Method/Instance Method VS Type Method/</guid><pubDate>Thu, 07 May 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Instance Method VS Type Method&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Instance method&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;특정 클래스, 구조체 또는 열거형의 인스턴스에 속하는 &lt;strong&gt;함수&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;구조체&lt;/strong&gt;에서는 해당 인스턴스 메소드 안에서 &lt;strong&gt;프로퍼티를 수정할 수 없어&lt;/strong&gt;요. ⇒ &lt;strong&gt;mutating&lt;/strong&gt; 키워드로 해결 (mutating은 아래 설명)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Type method(static)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;타입 자체에서 호출되는 메소드&lt;/p&gt;
+&lt;p&gt;클래스의 인스턴스를 생성하지 않고 바로 &lt;strong&gt;타입을 통해서 메소드를 호출&lt;/strong&gt;할 수 있다.&lt;/p&gt;
+&lt;p&gt;func 키워드 앞에 &lt;strong&gt;static&lt;/strong&gt; 키워드를 작성하여 타입 메소드를 나타내자&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;class&lt;/strong&gt; 키워드를 사용하면 하위 클래스가 슈퍼 클래스의 해당 메소드를 &lt;strong&gt;재정의&lt;/strong&gt; 할 수 있도록 허용&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;mutating 키워드는 무엇을 의미하는가?&lt;/h3&gt;
+&lt;p&gt;swift 의 class 는 참조 유형, struct 와 enum 은 값 유형&lt;/p&gt;
+&lt;p&gt;The properties of value types cannot be modified within its instance methods by default.&lt;/p&gt;
+&lt;p&gt;기본적으로 인스턴스 메소드 내에서 값 타입의 속성을 수정할 수 없음.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;값 타입의 속성을 수정하려면 인스턴스 메소드에서 mutating 키워드를 사용한다.&lt;/strong&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;p&gt;이해하기 쉬운 코드는 아래를 참조🙂&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://medium.com/the-andela-way/swift-understanding-mutating-functions-in-two-minutes-d9e363904e3a&quot;&gt;Swift: Understanding Mutating Functions in Two Minutes&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[2020 목표 🏞]]></title><description><![CDATA[5월이 된 지금에야 목표를 세운다는 것이 이상하지만 갑자기 계획의 필요성을 깨달아서 한번 생각해봤다. 단기적인 목표 혹은 주어진 일 같은 부분에 있어서는 계획을 잘 세우는 편인데 나의 중, 장기적인 목표(여기서 장기 목표란…]]></description><link>https://haeuncs.github.io/2020/2020/</link><guid isPermaLink="false">https://haeuncs.github.io/2020/2020/</guid><pubDate>Tue, 05 May 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;5월이 된 지금에야 목표를 세운다는 것이 이상하지만 갑자기 계획의 필요성을 깨달아서 한번 생각해봤다.&lt;/p&gt;
 &lt;p&gt;단기적인 목표 혹은 주어진 일 같은 부분에 있어서는 계획을 잘 세우는 편인데 나의 중, 장기적인 목표(여기서 장기 목표란 1년을 의미)를 정한 기억조차 없다.&lt;/p&gt;
 &lt;h3&gt;그래서&lt;/h3&gt;
 &lt;p&gt;나는 2020년 어떤 목표를 가지고 살아야 할까?&lt;/p&gt;
