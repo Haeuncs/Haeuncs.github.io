@@ -2,40 +2,15 @@ import React, { useRef, useEffect, useState } from "react";
 import styled from "styled-components";
 import media from "styled-media-query";
 
-import { Link } from "gatsby";
+import { Link, navigate } from "gatsby";
 
 import { rhythm, scale } from "../utils/typography";
-import MyInfo from "./myInfo";
+
 import "../../css/layout.css";
+import "../../css/marquee.css";
+import Banner from "./Banner";
+import HomeAbout from "./HomeAbout";
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  height: 100vh;
-  ${media.lessThan("medium")`
-    flex-direction: column-reverse;
-  `}
-`;
-const MainWrapper = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-  border-radius: 15px;
-  box-shadow: 10px 10px 99px 0 rgba(178, 159, 55, 0.16);
-  background-color: #ffffff;
-  overflow: auto;
-  ${media.greaterThan("medium")`
-  margin-bottom: 70px;
-  margin-top: 70px;
-  margin-left: 30px;
-  margin-right: 30px;
-
-`}
-`;
 const MyInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -46,6 +21,49 @@ const MyInfoWrapper = styled.div`
   paddingRight: 30px
   `};
 `;
+
+const BodyWrapper = styled.div`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  ${media.lessThan("medium")`
+    flex-direction: column;
+    overflow: auto;
+  `}
+`;
+
+const ArchiveWrapper = styled.div`
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  justify-content: space-between;
+
+  ${media.lessThan("medium")`
+    width: 100%;
+    overflow: initial;
+    height: initial;
+  `}
+`;
+
+const RightSideWrapper = styled.div`
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  justify-content: space-between;
+
+  ${media.lessThan("medium")`
+    width: 100%;
+    overflow: initial;
+    height: initial;
+  `}
+`;
+
 const Layout = (props) => {
   const testRef = useRef();
   const { location, title, children } = props;
@@ -101,31 +119,30 @@ const Layout = (props) => {
     );
   }
   return (
-    <Wrapper className="test">
-      <MainWrapper>
-        <div
-          id="style-15"
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            overflow: "auto",
-            padding: "30px",
-          }}
-          ref={testRef}
-          onScroll={() => {
-            if (testRef.current.scrollTop < 261) {
-              SetOffset(testRef.current.scrollTop);
-            }
-          }}
-        >
-          <header>{header}</header>
-          <main>{children}</main>
-        </div>
-      </MainWrapper>
-      <MyInfoWrapper ref={myInfoHeightRef}>
-        <MyInfo></MyInfo>
-      </MyInfoWrapper>
-    </Wrapper>
+    <div className="customBorder h-screen w-screen flex flex-col overflow-auto">
+      <div
+        className="customBorder w-full"
+        style={{
+          borderLeft: "none",
+          borderRight: "none",
+          height: "50px",
+        }}
+      >
+        <Banner />
+      </div>
+      <BodyWrapper>
+        <ArchiveWrapper>
+          <div className="flex-1 customBorder m-20 flex flex-col overflow-auto justify-between ">
+            <HomeAbout className="flex-1" />
+          </div>
+        </ArchiveWrapper>
+        <RightSideWrapper>
+          <div className="flex-1 customBorder m-20 flex overflow-auto">
+            <div className="flex-1">{children}</div>
+          </div>
+        </RightSideWrapper>
+      </BodyWrapper>
+    </div>
   );
 };
 // class Layout extends React.Component {

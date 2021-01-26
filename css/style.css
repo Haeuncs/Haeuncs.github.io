@@ -1,4 +1,103 @@
 html {
+  color: #000;
+  background: #fff;
+}
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+fieldset,
+img {
+  border: 0;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+li {
+  list-style: none;
+}
+caption,
+th {
+  text-align: left;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+q:before,
+q:after {
+  content: "";
+}
+abbr,
+acronym {
+  border: 0;
+  font-variant: normal;
+}
+sup {
+  vertical-align: text-top;
+}
+sub {
+  vertical-align: text-bottom;
+}
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+input,
+textarea,
+select {
+  *font-size: 100%;
+}
+legend {
+  color: #000;
+}
+
+html {
   margin: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -14,8 +113,8 @@ body {
   font-weight: 500;
   margin: 0;
   font-size: 1rem;
-  font-family: Montserrat, -apple-system;
-  color: #333;
+  font-family: "Times New Roman", serif, -apple-system;
+  color: #000000;
   line-height: 1.5;
   background-color: #fff;
 }
@@ -24,7 +123,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: Montserrat, sans-serif;
+  font-family: "Times New Roman", serif, sans-serif;
 
   /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; */
@@ -62,7 +161,7 @@ dl {
 }
 
 a {
-  color: #e2a42e;
+  color: #f50ff5;
   cursor: url("../static/star.svg"), auto;
 }
 
@@ -72,7 +171,7 @@ a {
 
 a:hover,
 a:focus {
-  color: #e22e96;
+  color: #07de44;
   text-decoration: underline;
 }
 
@@ -227,4 +326,14 @@ article img {
   h3 {
     font-size: 1rem;
   }
+}
+
+.customBorder {
+  border: 3px solid;
+}
+
+.emphasis {
+  text-shadow: 0 0 5px #f50ff5, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
+    0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 100px #49ff18;
+  color: #ffffff;
 }

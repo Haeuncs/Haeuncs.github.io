@@ -1,8 +1,10 @@
+// const tailwindConfig = require("./tailwind.config.js");
+
 module.exports = {
   siteMetadata: {
-    title: `⭐️`,
+    title: `2021`,
     author: `Haeuncs`,
-    description: `iOS 개발자의 그냥 쓰는 블로그`,
+    description: `ARCHIEVE`,
     siteUrl: `https://haeuncs.github.io`,
     social: {
       twitter: ``,
@@ -85,6 +87,8 @@ module.exports = {
       resolve: `gatsby-plugin-styled-components`,
       options: {},
     },
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-postcss`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

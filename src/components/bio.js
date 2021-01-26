@@ -44,9 +44,8 @@ const Bio = () => {
         <h1>
           Haeuncs<br></br>
         </h1>
-        iOS 개발을 하고 있습니다. <br></br>
-        가볍게 작성하는 블로그를 지향하고 있습니다. 👩🏻‍🔬<br></br>
-        항상 성장하는 개발자가 되고 싶습니다 🌱<br></br>
+        어쩌다 이 누추한 곳까지 찾아오셨을까요. 반갑습니다.
+        <br />
         <a href={`https://github.com/Haeuncs`}>Github</a>
         <br></br>
         <a href={`mailto:haeun.developer@gmail.com`}>

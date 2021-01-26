@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, graphql } from "gatsby";
 
 import Bio from "../components/bio";
@@ -10,6 +10,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark;
   const siteTitle = data.site.siteMetadata.title;
   const { previous, next } = pageContext;
+  const [pageType, setPageType] = useState("post");
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -17,7 +18,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article>
+      <article className="m-10">
         <header>
           <h1
             style={{
@@ -93,7 +94,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "YYYY년MM월DD일")
+        date(formatString: "YYYY年MM月DD日")
         description
       }
     }

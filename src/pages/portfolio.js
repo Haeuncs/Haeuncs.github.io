@@ -118,7 +118,7 @@ const Portfolio = (props) => {
             width: "100vw",
             height: "100vh",
             zIndex: 0,
-            // backgroundColor: "#e2a42e",
+            // backgroundColor: "#F50FF5",
             justifyContent: "center",
             alignItems: "center",
           }}
@@ -140,10 +140,10 @@ const Portfolio = (props) => {
               }}
             >
               <MyInfo>
-                Hi. I'm Lee Haeun.<br></br>I like to develop and improve
-                products with beautiful UI. <br></br>I'm trying to become a good
-                developer.<br></br>
-                📧 haeun.developer@gmail.com<br></br>
+                애플이 좋아서 iOS 개발을 시작하게 되었는데 운좋게 적성에 맞았다.
+                <br />
+                그냥 가끔씩 재미로 개인 프로젝트도 개발하고 있다.
+                <br />
               </MyInfo>
             </h1>
           </WrapperColumn>
@@ -238,7 +238,7 @@ const DevType = styled.span`
   line-height: 1.2;
   letter-spacing: normal;
   text-align: left;
-  color: #e2a42e;
+  color: #f50ff5;
 `;
 const SubType = styled.span`
   font-size: 28px;
