@@ -10,6 +10,10 @@ import "../../css/layout.css";
 import "../../css/marquee.css";
 import Banner from "./Banner";
 import HomeAbout from "./HomeAbout";
+import image1 from "../../static/Profile-1.jpg";
+import image2 from "../../static/Profile-2.jpg";
+import image3 from "../../static/Profile-3.jpg";
+import image4 from "../../static/Profile-4.jpg";
 
 const MyInfoWrapper = styled.div`
   display: flex;
@@ -68,12 +72,9 @@ const Layout = (props) => {
   const testRef = useRef();
   const { location, title, children } = props;
   const rootPath = `${__PATH_PREFIX__}/`;
+
+  const [isFunBackground, setIsFunBackground] = useState(false);
   let header;
-
-  const [showInfo, setShowInfo] = useState(true);
-  const [offset, SetOffset] = useState(0);
-
-  const myInfoHeightRef = useRef();
 
   if (location.pathname === rootPath) {
     header = (
@@ -118,8 +119,39 @@ const Layout = (props) => {
       // </h3>
     );
   }
+
+  const imageList = [image1, image2, image3, image4];
+
+  const Test = styled.div`
+    background: url(${(props) => props.img}) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index: -1;
+  `;
+
+  const random = () => {
+    return (
+      <div
+        className="h-screen w-screen absolute"
+        style={{
+          background:
+            "url(../../static/Profile-1.jpg) no-repeat center center fixed",
+          backgroundSize: "auto",
+        }}
+      ></div>
+    );
+  };
   return (
     <div className="customBorder h-screen w-screen flex flex-col overflow-auto">
+      {isFunBackground && (
+        <Test
+          className="h-screen w-screen absolute"
+          img={imageList[Math.floor(Math.random() * imageList.length)]}
+        ></Test>
+      )}
+
       <div
         className="customBorder w-full"
         style={{
@@ -133,7 +165,10 @@ const Layout = (props) => {
       <BodyWrapper>
         <ArchiveWrapper>
           <div className="flex-1 customBorder m-20 flex flex-col overflow-auto justify-between ">
-            <HomeAbout className="flex-1" />
+            <HomeAbout
+              className="flex-1"
+              funBackgroundHandler={(bool) => setIsFunBackground(bool)}
+            />
           </div>
         </ArchiveWrapper>
         <RightSideWrapper>

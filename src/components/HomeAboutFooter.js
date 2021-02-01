@@ -15,7 +15,7 @@ export default class HomeAboutFooter extends Component {
           }}
         >
           <button
-            className="flex-1 bg-white"
+            className="flex-1 bg-transparent"
             style={{ border: "none" }}
             onClick={() => navigate("/")}
           >
@@ -28,7 +28,7 @@ export default class HomeAboutFooter extends Component {
             }}
           ></div>
           <button
-            className="flex-1 bg-white"
+            className="flex-1 bg-transparent"
             style={{ border: "none" }}
             onClick={() => navigate("/GuestBook")}
           >
