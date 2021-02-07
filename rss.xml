@@ -1,4 +1,158 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[2021]]></title><description><![CDATA[ARCHIEVE]]></description><link>https://haeuncs.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 06 Feb 2021 15:10:17 GMT</lastBuildDate><item><title><![CDATA[[Clean Code] 2. 의미 있는 이름]]></title><description><![CDATA[클린코드…]]></description><link>https://haeuncs.github.io/2021-cleancode-1/CleanCode2/</link><guid isPermaLink="false">https://haeuncs.github.io/2021-cleancode-1/CleanCode2/</guid><pubDate>Sat, 06 Feb 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;클린코드 2장 - 의미 있는이름&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[2021]]></title><description><![CDATA[ARCHIEVE]]></description><link>https://haeuncs.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 07 Feb 2021 12:36:02 GMT</lastBuildDate><item><title><![CDATA[ARCHIVE 2020년 1월]]></title><description><![CDATA[ARCHIVE 2020년 1월 블로그 디자인 개편 기존 디자인은 노란색에서 초록색으로 배경이 animate 되는 깔끔한 블로그였다.  이전 디자인에 불만은 없었지만, 근데 전부터 좋아하는 brutalism…]]></description><link>https://haeuncs.github.io/2021/ARCHIVE 2020 1 d3a1a91658a84920adf755d753892c05/</link><guid isPermaLink="false">https://haeuncs.github.io/2021/ARCHIVE 2020 1 d3a1a91658a84920adf755d753892c05/</guid><pubDate>Sun, 07 Feb 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;ARCHIVE 2020년 1월&lt;/h1&gt;
+&lt;h1&gt;블로그 디자인 개편&lt;/h1&gt;
+&lt;p&gt;기존 디자인은 노란색에서 초록색으로 배경이 animate 되는 깔끔한 블로그였다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/29aa57c5b5b2a8b26ba55ca224569110/f7859/1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 54.72972972972974%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAACCElEQVQoz42SyW7TUBiF/RIsSAmlTQUPwBvAgqFU6gqC4F3Ys4ItC1igLBAIgYTEgk3bOKhA3YbG0EzOUNpmdhwPsRMPhxPHCVUlBFf67m//sr577r0W9OxV6D9WMZBvkJvQ5FvoR6i52+jlVtENuYMOaefW0N5fQ2tCbh0n0nXUMjHUPsdQzSxAcJrPAbgIOE84PcJeEBCcYdLzw2/0tozy1iIqlCqZCxDsRgqBNYRv9xGMNPjOAP5IZ+WzO4zMwZ/VIutM2NPyKKSXoIgxlMQ4BKOeglHvwuocwdRO4NoqhQN4DhfwHPxtzIQto4if4jLK4gLy6YsQrOZrCkABJSOTEqbyHaaziRXK/bHBSsbmfDHfG4XCdq+AA3EF4rsYPr3ilvVaCla9A7NVh9E/ht77xaQNeEzq2T3SjSpx1Hl/JtT6RXz9mMD2+zi2PyxCMJtvpgmZzhvbUbWi7Qb/3PJoWMKLp3E8eXQOzx6fh6BVX8KoNmA0KzD7R1NUplTrGJrq/EanBKfevVBo8Qzl9GXs86a/by3zUppvEbiThAZcpnPHPD8GC+EU+O5UgrO/jh8JS8huXsHe5iWSgKAqTKgc8wwP4RgNyi3835gex9AoY5dCaWOJUFiTruEw9wC17F0ou0lU9pKs90LKpMReSUqiSArSfeQjDnaI9BDyl3XsbKyQBL6x/ga2JhDxqsfx6AAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;1&quot;
+        title=&quot;1&quot;
+        src=&quot;/static/29aa57c5b5b2a8b26ba55ca224569110/fcda8/1.png&quot;
+        srcset=&quot;/static/29aa57c5b5b2a8b26ba55ca224569110/12f09/1.png 148w,
+/static/29aa57c5b5b2a8b26ba55ca224569110/e4a3f/1.png 295w,
+/static/29aa57c5b5b2a8b26ba55ca224569110/fcda8/1.png 590w,
+/static/29aa57c5b5b2a8b26ba55ca224569110/efc66/1.png 885w,
+/static/29aa57c5b5b2a8b26ba55ca224569110/c83ae/1.png 1180w,
+/static/29aa57c5b5b2a8b26ba55ca224569110/f7859/1.png 3484w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;이전 디자인에 불만은 없었지만,&lt;/p&gt;
+&lt;p&gt;근데 전부터 좋아하는 brutalism 을 구현하는 웹사이트를 만들고 싶어서 시작했다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;거기에 읽는 이를 불편하게 하는 가독성이라고 찾을 수 없는 그런 웹사이트.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;블로그에는 정보를 전달해야 하니 가독성이 뛰어나야 하는 게 맞다. 근데 내 블로그에 정보가 있는가? 에 대한 반성으로 불편하게 만들어봤다는 헛소리다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;결론적으로 처음 생각과 매우 다른 웹사이트가 만들어졌다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/6aacb9ad1caad40e62e6fc2a2540fc9e/7f6ba/2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 55.4054054054054%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAABlUlEQVQoz3VSi47iMAzk/7/uJCRehwrawpY2faVJ2tAHcxn3qNhl19LIeTj2jOPVbrfD6XRCFEW/4nw+CyTuFM7OkXjuj8cjNpsNttst1us1VkopjOOIvu8xDIP4+/2+gGdN06DRDbwLZ65HbwLo/78hpmmSuFVZlng8HssFk3835xx0raHSAo0yGN04Yxglnu+YQ2s9M9zv90KZ8g+HgwTQGESz1kp1qy1MbeAqB2ecFCJ433Ud6rrGKk1T6VOWZZKAFemfeGWYpyWsspj0hNGPIpN4qhLJTBTHMfIif5P6ytA0BiYwLIMs1wVWZGe/MhTJTJgkCT4+YlziC8j4druhqqqvDCuNW5pDtxaBO8Zp7t8bw1zluBYR/qZ/kOaf8P6+fND3HrJvbdOirQO4btt3hmVZURwmePE/mWsd6qpGelWokyD5GqQWbZBtl8lgcWFIiUM/hEotfOelEvvjvZfqnEVWZg9tM/+yNVaSGWOWn2b8MjakrFSGoijAuWRfuWZvuec4lHmFJM6gyTCbZb7KfSb8B+w+TERvqgL8AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;2&quot;
+        title=&quot;2&quot;
+        src=&quot;/static/6aacb9ad1caad40e62e6fc2a2540fc9e/fcda8/2.png&quot;
+        srcset=&quot;/static/6aacb9ad1caad40e62e6fc2a2540fc9e/12f09/2.png 148w,
+/static/6aacb9ad1caad40e62e6fc2a2540fc9e/e4a3f/2.png 295w,
+/static/6aacb9ad1caad40e62e6fc2a2540fc9e/fcda8/2.png 590w,
+/static/6aacb9ad1caad40e62e6fc2a2540fc9e/efc66/2.png 885w,
+/static/6aacb9ad1caad40e62e6fc2a2540fc9e/c83ae/2.png 1180w,
+/static/6aacb9ad1caad40e62e6fc2a2540fc9e/7f6ba/2.png 3486w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;가독성을 ㅍr괴하는 목적은 달성했다고 볼 수 있다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/1cbec0b7a0a80063fcb76a2e1b7afbf4/f4d59/3.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 55.4054054054054%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAACsUlEQVQozx2T7U9SYRjGz6ecm00ZzTmTRbyrEAdwcQQOoOImLzrQlaCiLZABqUS6MpniViuDZoh9EFrx4mb/QH71S/9W51xxP1+e8+zZ9fzu577u63D1el1qNBrwer3y7OwsjEYjBEGASqWCw+HA+Pg4JiYmUKvVcNW4gugVYTQZ4fP72Pnw8DCcTifT0V3u5uZGOj8/h9VqlZeWlpgoFothcnISLpcLNpuN7budLr59rWFGnAE/yUP7SIu5uTn4fD6mo+IM2Gw2pVKpBIPBIPegMJvNIPD8/DwT0RkJLy7qeP+2hCd6K3gjD5vJRl2xgtSNzW6HVqsFl8lkpEQiAY1GIw8ODmJoaAhutxt7e3vI5XLY3NxENBpFPp9HLpuHUqFE/71+TE9Po3cXW1tbsPdgpFteXgYXDAalhYUF8kCml6yurqJarTJAPB7H9vY2dnd3sRhZxLNYHBaNBaJVRMAXwOX3S1Z4amqKFS8UCuB6i3RwcIBe2/LKygr8fj+Ojo6Y0GKxsNbT6TT23+zj5LiM49MyUukUXu3soNVqIRKJkF0Ih8NMx3U6Hen2zy3KJ2WZnqzT6TAyMsJg5KUoijBbzGj9bOHu7i8+Vs6QSr3Eu8NDhIIhNl2TycSSQV+u3WpLv37/QDAZkB2CHXqdnkHIS5ogDYng7XYb3VYXgkNAMBBCci3JYFYrT/5DrVYzLXfdvZbOqp/hmhFkwSVAoVCg5ytCoRB4nmdT1Bv0aDSa+HD6CU/NToTdIcSjcSgfKOHxeJie4ATmKpWKVHxdhOqhSqbxj42NIRAIMO+oKoWWwJUvVRQLRWjVWnhcHhhMBoyOjjIg+UgRok64nm//NjY2KEtyX18f85BilM1mQX8OGb22lkD8eQKpFxnYTQ5YHpsxcH+A5Y+0pFlfX0cymcR/YeOc+RYXDBQAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;3&quot;
+        title=&quot;3&quot;
+        src=&quot;/static/1cbec0b7a0a80063fcb76a2e1b7afbf4/fcda8/3.png&quot;
+        srcset=&quot;/static/1cbec0b7a0a80063fcb76a2e1b7afbf4/12f09/3.png 148w,
+/static/1cbec0b7a0a80063fcb76a2e1b7afbf4/e4a3f/3.png 295w,
+/static/1cbec0b7a0a80063fcb76a2e1b7afbf4/fcda8/3.png 590w,
+/static/1cbec0b7a0a80063fcb76a2e1b7afbf4/efc66/3.png 885w,
+/static/1cbec0b7a0a80063fcb76a2e1b7afbf4/c83ae/3.png 1180w,
+/static/1cbec0b7a0a80063fcb76a2e1b7afbf4/f4d59/3.png 3493w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;나만 재미있는 이스터에그도 있다.&lt;/p&gt;
+&lt;p&gt;사진은 개발하면서 갑자기 생각난 아이디어로 그 자리에서 급하게 찍었다.&lt;/p&gt;
+&lt;h1&gt;제노사이드&lt;/h1&gt;
+&lt;p&gt;드디어 제노사이드를 다 읽었다.&lt;/p&gt;
+&lt;p&gt;2020년 1월 8일에 구매했는데 읽는데 한 달 정도 걸렸다. &lt;/p&gt;
+&lt;p&gt;자기 전 누워서 읽으니 3장만 읽어도 자연스럽게 수면상태가 돼버려서 다 읽는 데 너무 오래 걸렸다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;재미있는 사실&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;무려 2017년 6월 14일부터 이 책을 읽고 싶어 했다.&lt;/p&gt;
+&lt;p&gt;그 아래 과거의 내가 작성한 유시민 작가 책은 뭘 의미한 걸까?&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/3e4c810280a80cef2ca8b650ece24c32/c679a/4.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 58.78378378378378%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAIAAADtbgqsAAAACXBIWXMAABYlAAAWJQFJUiTwAAACeklEQVQozx2RW2vUQBiG86MEXcSFgoXiRRUq0oJ4KCgqBaEo9KKCF70SvBJKe9Ntt4fdZDeTTE6TZDLJTA6TZA/ZnvbQKoiC/8Np4WWYuXh4vvcbaf3d0vr7pQ+ri69WFp4uzj2afzBXr9Vq9+7crd29X6/V5+sPHy8srjx5trr8Yu3lm89v1zY/ftra2Pz+dWtbGvfsad+Z9NFF6YxyZ5ijQe4NSzIasNNhejEqxufDy4uz8eX5dDyeTa9nk1+z6e/Z5M/V7J/0dxL/PCUXJTor0FnPrwp/mHtVSao+rfqs6sdVLylzliUsYTGNKFB1ACyou4wW0lWFy1DFxkFon5SxwanBmVEkdpm6PEYJdeLI5omXUJcRN8Io8JzQ92kQUEKk6xGZVcHViJwXaJBaZWIWsVHEVh47WWyHWPNshYVGQq0Q66GnY6QFSJwQO5o0jOEosyLrOCcqDwFBbRcexgEoUpQnQmsKBij7EBx2Wnue3QFKUz5uUGxiG0gcd065zZxWTkDBYE51TrWMwoxZGbVoAAVswZYBjjDq3l5OkKGocjNAQKoSowhVIa9SixPQPdqByp5vy5xZqdD6QEyuyg213UCW7NoKMuTQ0xzY9u2OBI93PLDPg26P6nmkKc1tU90P3Q6nVnYLEw/0MlesIAp0SmBCDIr1yNcI6koDpg9jo8+gSBmb4p97qZUzM42MJDQirIWuuvPjW+twV7QIPVU8BYbtTmDJUi/UeKDeFCZAmLmozWBG9VsYUgyEpNXc1TsHN4O4qm8r2FZ8U8awJRbWTX0RlWNV8EWk5xTyCGYRTKMbmAU6aDdeP1/+srHOfM0z257R9vQTkf/KH/VD1Xd2HwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;다이어리&quot;
+        title=&quot;다이어리&quot;
+        src=&quot;/static/3e4c810280a80cef2ca8b650ece24c32/fcda8/4.png&quot;
+        srcset=&quot;/static/3e4c810280a80cef2ca8b650ece24c32/12f09/4.png 148w,
+/static/3e4c810280a80cef2ca8b650ece24c32/e4a3f/4.png 295w,
+/static/3e4c810280a80cef2ca8b650ece24c32/fcda8/4.png 590w,
+/static/3e4c810280a80cef2ca8b650ece24c32/efc66/4.png 885w,
+/static/3e4c810280a80cef2ca8b650ece24c32/c83ae/4.png 1180w,
+/static/3e4c810280a80cef2ca8b650ece24c32/c679a/4.png 2460w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h1&gt;현대미술&lt;/h1&gt;
+&lt;p&gt;우연히 류성실 작가를 알게 되었다.&lt;/p&gt;
+&lt;p&gt;유튜브 추천 영상에 떠서 눌렀다가 정말 재미있는 작업물에 놀랐다. BJ 체리장에서는 가짜 뉴스, 대왕트래블 칭쳰투어에서는 나오는 주인공의 하이퍼리얼리즘.. 불편하다고 생각하는 모든 것들이 칭쳰투어에 담겨있었다.&lt;/p&gt;
+&lt;p&gt;현대에 이슈가 되는 것들을 예술로 풀어내는 것들이 대단하고 멋지다.&lt;/p&gt;
+&lt;p&gt;다음에 오프라인 전시가 있으면 꼭 보고 싶다.&lt;/p&gt;
+&lt;p&gt;⬇ 칭쳰 𝓣𝓞𝓤𝓡 가는길 ⬇&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.bigkingtravel.com/&quot;&gt;https://www.bigkingtravel.com/&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[Clean Code] 2. 의미 있는 이름]]></title><description><![CDATA[클린코드…]]></description><link>https://haeuncs.github.io/2021-cleancode-1/CleanCode2/</link><guid isPermaLink="false">https://haeuncs.github.io/2021-cleancode-1/CleanCode2/</guid><pubDate>Sat, 06 Feb 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;클린코드 2장 - 의미 있는이름&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;의도를 분명하게 밝혀라&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;변수나 함수 그리고 클래스 이름은 다음과 같은 굵직한 질문에 모두 답해야한다. 변수(혹은 함수나 클래스)의 존재 이유는? 수행 기능은? 사용방법은? 따로 주석이 필요하다면 의도를 드러내지 못했다는 말이다.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;그릇된 정보를 피하라&lt;/strong&gt;&lt;/p&gt;
