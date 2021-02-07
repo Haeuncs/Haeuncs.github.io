@@ -70,10 +70,26 @@ const onRouteUpdate = (location, prevLocation) => {
       location,
       prevLocation
     });
+
+    if (process.env.GATSBY_EXPERIMENTAL_QUERY_ON_DEMAND && process.env.GATSBY_QUERY_ON_DEMAND_LOADING_INDICATOR === `true`) {
+      _emitter.default.emit(`onRouteUpdate`, {
+        location,
+        prevLocation
+      });
+    }
   }
 };
 
 const navigate = (to, options = {}) => {
+  // Support forward/backward navigation with numbers
+  // navigate(-2) (jumps back 2 history steps)
+  // navigate(2)  (jumps forward 2 history steps)
+  if (typeof to === `number`) {
+    _history.globalHistory.navigate(to);
+
+    return;
+  }
+
   let {
     pathname
   } = (0, _gatsbyLink.parsePath)(to);
@@ -129,7 +145,6 @@ const navigate = (to, options = {}) => {
           });
         }
 
-        console.log(`Site has changed on server. Reloading browser`);
         window.location = pathname;
       }
     }
@@ -153,7 +168,7 @@ function shouldUpdateScroll(prevRouterProps, {
     routerProps: {
       location
     },
-    getSavedScrollPosition: args => this._stateStorage.read(args)
+    getSavedScrollPosition: args => [0, this._stateStorage.read(args, args.key)]
   });
 
   if (results.length > 0) {
@@ -203,7 +218,7 @@ function init() {
 class RouteAnnouncer extends _react.default.Component {
   constructor(props) {
     super(props);
-    this.announcementRef = _react.default.createRef();
+    this.announcementRef = /*#__PURE__*/_react.default.createRef();
   }
 
   componentDidUpdate(prevProps, nextProps) {
@@ -221,22 +236,38 @@ class RouteAnnouncer extends _react.default.Component {
       }
 
       const newAnnouncement = `Navigated to ${pageName}`;
-      const oldAnnouncement = this.announcementRef.current.innerText;
 
-      if (oldAnnouncement !== newAnnouncement) {
-        this.announcementRef.current.innerText = newAnnouncement;
+      if (this.announcementRef.current) {
+        const oldAnnouncement = this.announcementRef.current.innerText;
+
+        if (oldAnnouncement !== newAnnouncement) {
+          this.announcementRef.current.innerText = newAnnouncement;
+        }
       }
     });
   }
 
   render() {
-    return (/*#__PURE__*/_react.default.createElement("div", (0, _extends2.default)({}, _routeAnnouncerProps.RouteAnnouncerProps, {
-        ref: this.announcementRef
-      }))
-    );
+    return /*#__PURE__*/_react.default.createElement("div", (0, _extends2.default)({}, _routeAnnouncerProps.RouteAnnouncerProps, {
+      ref: this.announcementRef
+    }));
   }
 
-} // Fire on(Pre)RouteUpdate APIs
+}
+
+const compareLocationProps = (prevLocation, nextLocation) => {
+  var _prevLocation$state, _nextLocation$state;
+
+  if (prevLocation.href !== nextLocation.href) {
+    return true;
+  }
+
+  if ((prevLocation === null || prevLocation === void 0 ? void 0 : (_prevLocation$state = prevLocation.state) === null || _prevLocation$state === void 0 ? void 0 : _prevLocation$state.key) !== (nextLocation === null || nextLocation === void 0 ? void 0 : (_nextLocation$state = nextLocation.state) === null || _nextLocation$state === void 0 ? void 0 : _nextLocation$state.key)) {
+    return true;
+  }
+
+  return false;
+}; // Fire on(Pre)RouteUpdate APIs
 
 
 class RouteUpdates extends _react.default.Component {
@@ -249,14 +280,8 @@ class RouteUpdates extends _react.default.Component {
     onRouteUpdate(this.props.location, null);
   }
 
-  componentDidUpdate(prevProps, prevState, shouldFireRouteUpdate) {
-    if (shouldFireRouteUpdate) {
-      onRouteUpdate(this.props.location, prevProps.location);
-    }
-  }
-
-  getSnapshotBeforeUpdate(prevProps) {
-    if (this.props.location.pathname !== prevProps.location.pathname) {
+  shouldComponentUpdate(prevProps) {
+    if (compareLocationProps(prevProps.location, this.props.location)) {
       onPreRouteUpdate(this.props.location, prevProps.location);
       return true;
     }
@@ -264,11 +289,16 @@ class RouteUpdates extends _react.default.Component {
     return false;
   }
 
+  componentDidUpdate(prevProps) {
+    if (compareLocationProps(prevProps.location, this.props.location)) {
+      onRouteUpdate(this.props.location, prevProps.location);
+    }
+  }
+
   render() {
-    return (/*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, this.props.children, /*#__PURE__*/_react.default.createElement(RouteAnnouncer, {
-        location: location
-      }))
-    );
+    return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, this.props.children, /*#__PURE__*/_react.default.createElement(RouteAnnouncer, {
+      location: location
+    }));
   }
 
 }

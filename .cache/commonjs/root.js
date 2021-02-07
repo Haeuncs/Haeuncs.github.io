@@ -23,7 +23,11 @@ var _queryResultStore = require("./query-result-store");
 
 var _ensureResources = _interopRequireDefault(require("./ensure-resources"));
 
+var _fastRefreshOverlay = _interopRequireDefault(require("./fast-refresh-overlay"));
+
 var _errorOverlayHandler = require("./error-overlay-handler");
+
+var _loadingIndicator = require("./loading-indicator");
 
 // TODO: Remove entire block when we make fast-refresh the default
 // In fast-refresh, this logic is all moved into the `error-overlay-handler`
@@ -70,21 +74,20 @@ class LocationHandler extends _react.default.Component {
     } = this.props;
 
     if (!_loader.default.isPageNotFound(location.pathname)) {
-      return (/*#__PURE__*/_react.default.createElement(_ensureResources.default, {
-          location: location
-        }, locationAndPageResources => /*#__PURE__*/_react.default.createElement(_navigation.RouteUpdates, {
-          location: location
-        }, /*#__PURE__*/_react.default.createElement(_gatsbyReactRouterScroll.ScrollContext, {
-          location: location,
-          shouldUpdateScroll: _navigation.shouldUpdateScroll
-        }, /*#__PURE__*/_react.default.createElement(_router.Router, {
-          basepath: __BASE_PATH__,
-          location: location,
-          id: "gatsby-focus-wrapper"
-        }, /*#__PURE__*/_react.default.createElement(RouteHandler, (0, _extends2.default)({
-          path: encodeURI(locationAndPageResources.pageResources.page.matchPath || locationAndPageResources.pageResources.page.path)
-        }, this.props, locationAndPageResources))))))
-      );
+      return /*#__PURE__*/_react.default.createElement(_ensureResources.default, {
+        location: location
+      }, locationAndPageResources => /*#__PURE__*/_react.default.createElement(_navigation.RouteUpdates, {
+        location: location
+      }, /*#__PURE__*/_react.default.createElement(_gatsbyReactRouterScroll.ScrollContext, {
+        location: location,
+        shouldUpdateScroll: _navigation.shouldUpdateScroll
+      }, /*#__PURE__*/_react.default.createElement(_router.Router, {
+        basepath: __BASE_PATH__,
+        location: location,
+        id: "gatsby-focus-wrapper"
+      }, /*#__PURE__*/_react.default.createElement(RouteHandler, (0, _extends2.default)({
+        path: encodeURI(locationAndPageResources.pageResources.page.matchPath || locationAndPageResources.pageResources.page.path)
+      }, this.props, locationAndPageResources))))));
     }
 
     const dev404PageResources = _loader.default.loadPageSync(`/dev-404-page`);
@@ -99,19 +102,18 @@ class LocationHandler extends _react.default.Component {
       }));
     }
 
-    return (/*#__PURE__*/_react.default.createElement(_navigation.RouteUpdates, {
-        location: location
-      }, /*#__PURE__*/_react.default.createElement(_router.Router, {
-        basepath: __BASE_PATH__,
-        location: location,
-        id: "gatsby-focus-wrapper"
-      }, /*#__PURE__*/_react.default.createElement(RouteHandler, {
-        path: location.pathname,
-        location: location,
-        pageResources: dev404PageResources,
-        custom404: custom404
-      })))
-    );
+    return /*#__PURE__*/_react.default.createElement(_navigation.RouteUpdates, {
+      location: location
+    }, /*#__PURE__*/_react.default.createElement(_router.Router, {
+      basepath: __BASE_PATH__,
+      location: location,
+      id: "gatsby-focus-wrapper"
+    }, /*#__PURE__*/_react.default.createElement(RouteHandler, {
+      path: location.pathname,
+      location: location,
+      pageResources: dev404PageResources,
+      custom404: custom404
+    })));
   }
 
 }
@@ -130,6 +132,16 @@ const WrappedRoot = (0, _apiRunnerBrowser.apiRunner)(`wrapRootElement`, {
   };
 }).pop();
 
-var _default = () => /*#__PURE__*/_react.default.createElement(_queryResultStore.StaticQueryStore, null, WrappedRoot);
+const ConditionalFastRefreshOverlay = ({
+  children
+}) => {
+  if (process.env.GATSBY_HOT_LOADER === `fast-refresh`) {
+    return /*#__PURE__*/_react.default.createElement(_fastRefreshOverlay.default, null, children);
+  }
+
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, children);
+};
+
+var _default = () => /*#__PURE__*/_react.default.createElement(ConditionalFastRefreshOverlay, null, /*#__PURE__*/_react.default.createElement(_queryResultStore.StaticQueryStore, null, WrappedRoot), process.env.GATSBY_EXPERIMENTAL_QUERY_ON_DEMAND && process.env.GATSBY_QUERY_ON_DEMAND_LOADING_INDICATOR === `true` && /*#__PURE__*/_react.default.createElement(_loadingIndicator.LoadingIndicatorEventHandler, null));
 
 exports.default = _default;

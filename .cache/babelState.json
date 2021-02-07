@@ -3,6 +3,10 @@
     "develop": {
       "plugins": [
         {
+          "name": "babel-plugin-lodash",
+          "options": {}
+        },
+        {
           "name": "babel-plugin-styled-components",
           "stage": "develop",
           "options": {
@@ -27,7 +31,10 @@
         {
           "name": "/Users/leehaeun/test/Haeuncs.github.io/node_modules/@babel/preset-typescript/lib/index.js",
           "options": {
-            "plugins": []
+            "plugins": [],
+            "allExtensions": false,
+            "isTSX": false,
+            "jsxPragma": "React"
           }
         }
       ],
@@ -38,6 +45,10 @@
     },
     "develop-html": {
       "plugins": [
+        {
+          "name": "babel-plugin-lodash",
+          "options": {}
+        },
         {
           "name": "/Users/leehaeun/test/Haeuncs.github.io/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
           "options": {}
@@ -63,7 +74,10 @@
         {
           "name": "/Users/leehaeun/test/Haeuncs.github.io/node_modules/@babel/preset-typescript/lib/index.js",
           "options": {
-            "plugins": []
+            "plugins": [],
+            "allExtensions": false,
+            "isTSX": false,
+            "jsxPragma": "React"
           }
         }
       ],
@@ -74,6 +88,10 @@
     },
     "build-html": {
       "plugins": [
+        {
+          "name": "babel-plugin-lodash",
+          "options": {}
+        },
         {
           "name": "/Users/leehaeun/test/Haeuncs.github.io/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
           "options": {}
@@ -99,7 +117,10 @@
         {
           "name": "/Users/leehaeun/test/Haeuncs.github.io/node_modules/@babel/preset-typescript/lib/index.js",
           "options": {
-            "plugins": []
+            "plugins": [],
+            "allExtensions": false,
+            "isTSX": false,
+            "jsxPragma": "React"
           }
         }
       ],
@@ -110,6 +131,10 @@
     },
     "build-javascript": {
       "plugins": [
+        {
+          "name": "babel-plugin-lodash",
+          "options": {}
+        },
         {
           "name": "/Users/leehaeun/test/Haeuncs.github.io/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
           "options": {}
@@ -135,7 +160,10 @@
         {
           "name": "/Users/leehaeun/test/Haeuncs.github.io/node_modules/@babel/preset-typescript/lib/index.js",
           "options": {
-            "plugins": []
+            "plugins": [],
+            "allExtensions": false,
+            "isTSX": false,
+            "jsxPragma": "React"
           }
         }
       ],

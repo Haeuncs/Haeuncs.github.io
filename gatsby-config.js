@@ -87,22 +87,6 @@ module.exports = {
       resolve: `gatsby-plugin-styled-components`,
       options: {},
     },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-autolink-headers`,
-            options: {
-              className: `class-name`,
-              maintainCase: false,
-              removeAccents: true,
-              elements: [`h2`, "h3", `h4`],
-            },
-          },
-        ],
-      },
-    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
