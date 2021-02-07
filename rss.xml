@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[2021]]></title><description><![CDATA[ARCHIEVE]]></description><link>https://haeuncs.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 07 Feb 2021 12:59:33 GMT</lastBuildDate><item><title><![CDATA[ARCHIVE 2021년 1월]]></title><description><![CDATA[ARCHIVE 2021년 1월 블로그 디자인 개편 기존 디자인은 노란색에서 초록색으로 배경이 animate 되는 특징을 가진 깔끔한 블로그였다.  이전 디자인에 불만은 없었다. 근데 전부터 좋아하는 brutalism…]]></description><link>https://haeuncs.github.io/2021/ARCHIVE 2020 1/</link><guid isPermaLink="false">https://haeuncs.github.io/2021/ARCHIVE 2020 1/</guid><pubDate>Sun, 07 Feb 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;ARCHIVE 2021년 1월&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[2021]]></title><description><![CDATA[ARCHIEVE]]></description><link>https://haeuncs.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 07 Feb 2021 13:20:30 GMT</lastBuildDate><item><title><![CDATA[ARCHIVE 2021년 1월]]></title><description><![CDATA[ARCHIVE 2021년 1월 블로그 디자인 개편 기존 디자인은 노란색에서 초록색으로 배경이 animate 되는 특징을 가진 깔끔한 블로그였다.  이전 디자인에 불만은 없었다. 근데 전부터 좋아하는 brutalism…]]></description><link>https://haeuncs.github.io/2021/ARCHIVE 2020 1/</link><guid isPermaLink="false">https://haeuncs.github.io/2021/ARCHIVE 2020 1/</guid><pubDate>Sun, 07 Feb 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;ARCHIVE 2021년 1월&lt;/h1&gt;
 &lt;h1&gt;블로그 디자인 개편&lt;/h1&gt;
 &lt;p&gt;기존 디자인은 노란색에서 초록색으로 배경이 animate 되는 특징을 가진 깔끔한 블로그였다.&lt;/p&gt;
 &lt;p&gt;&lt;span
@@ -107,9 +107,12 @@
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;나만 재미있는 이스터에그도 있다.&lt;/p&gt;
 &lt;p&gt;사진은 개발하면서 갑자기 생각난 아이디어로 그 자리에서 급하게 찍었다.&lt;/p&gt;
+&lt;p&gt;목차 기능, 태그 기능 추가하고 싶은데 기력이 소진되어 1차 개발은 여기서 멈췄다. &lt;/p&gt;
+&lt;p&gt;phase 2에서는 더욱 가독성이 파괴되도록 마진을 랜덤으로 넣어볼까 생각하고 있다.&lt;/p&gt;
+&lt;p&gt;어쩌면 지금 디자인을 다 갈아 엎고 진짜 90년대 같은 디자인으로 개편될 수도. (예: &lt;a href=&quot;https://websitesfromhell.net/&quot;&gt;https://websitesfromhell.net/&lt;/a&gt;)&lt;/p&gt;
 &lt;h1&gt;제노사이드&lt;/h1&gt;
 &lt;p&gt;드디어 제노사이드를 다 읽었다.&lt;/p&gt;
-&lt;p&gt;2020년 1월 8일에 구매했는데 읽는데 한 달 정도 걸렸다. &lt;/p&gt;
+&lt;p&gt;2021년 1월 8일에 구매했는데 읽는데 한 달 정도 걸렸다. &lt;/p&gt;
 &lt;p&gt;자기 전 누워서 읽으니 3장만 읽어도 자연스럽게 수면상태가 돼버려서 다 읽는 데 너무 오래 걸렸다.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;재미있는 사실&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;무려 2017년 6월 14일부터 이 책을 읽고 싶어 했다.&lt;/p&gt;
@@ -152,7 +155,10 @@
 &lt;p&gt;현재 이슈가 되는 것들을 예술로 풀어내는 것들이 대단하고 멋지다.&lt;/p&gt;
 &lt;p&gt;다음에 오프라인 전시가 있으면 꼭 보고 싶다.&lt;/p&gt;
 &lt;p&gt;⬇ 칭쳰 𝓣𝓞𝓤𝓡 가는길 ⬇&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.bigkingtravel.com/&quot;&gt;https://www.bigkingtravel.com/&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[Clean Code] 2. 의미 있는 이름]]></title><description><![CDATA[클린코드…]]></description><link>https://haeuncs.github.io/2021-cleancode-1/CleanCode2/</link><guid isPermaLink="false">https://haeuncs.github.io/2021-cleancode-1/CleanCode2/</guid><pubDate>Sat, 06 Feb 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;클린코드 2장 - 의미 있는이름&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.bigkingtravel.com/&quot;&gt;https://www.bigkingtravel.com/&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;끝&lt;/h1&gt;
+&lt;p&gt;글을 쓰는데 계속 2021년을 2020년으로 쓰고 있다. 2월인데 아직도 익숙해지지가 않다.&lt;/p&gt;
+&lt;p&gt;익숙해지면 또 다음해가 오겠지.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[Clean Code] 2. 의미 있는 이름]]></title><description><![CDATA[클린코드…]]></description><link>https://haeuncs.github.io/2021-cleancode-1/CleanCode2/</link><guid isPermaLink="false">https://haeuncs.github.io/2021-cleancode-1/CleanCode2/</guid><pubDate>Sat, 06 Feb 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;클린코드 2장 - 의미 있는이름&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;의도를 분명하게 밝혀라&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;변수나 함수 그리고 클래스 이름은 다음과 같은 굵직한 질문에 모두 답해야한다. 변수(혹은 함수나 클래스)의 존재 이유는? 수행 기능은? 사용방법은? 따로 주석이 필요하다면 의도를 드러내지 못했다는 말이다.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;그릇된 정보를 피하라&lt;/strong&gt;&lt;/p&gt;
