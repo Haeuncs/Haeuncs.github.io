@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[2021]]></title><description><![CDATA[ARCHIEVE]]></description><link>https://haeuncs.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 07 Feb 2021 12:36:02 GMT</lastBuildDate><item><title><![CDATA[ARCHIVE 2020년 1월]]></title><description><![CDATA[ARCHIVE 2020년 1월 블로그 디자인 개편 기존 디자인은 노란색에서 초록색으로 배경이 animate 되는 깔끔한 블로그였다.  이전 디자인에 불만은 없었지만, 근데 전부터 좋아하는 brutalism…]]></description><link>https://haeuncs.github.io/2021/ARCHIVE 2020 1 d3a1a91658a84920adf755d753892c05/</link><guid isPermaLink="false">https://haeuncs.github.io/2021/ARCHIVE 2020 1 d3a1a91658a84920adf755d753892c05/</guid><pubDate>Sun, 07 Feb 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;ARCHIVE 2020년 1월&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[2021]]></title><description><![CDATA[ARCHIEVE]]></description><link>https://haeuncs.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 07 Feb 2021 12:37:33 GMT</lastBuildDate><item><title><![CDATA[ARCHIVE 2020년 1월]]></title><description><![CDATA[ARCHIVE 2020년 1월 블로그 디자인 개편 기존 디자인은 노란색에서 초록색으로 배경이 animate 되는 특징을 가진 깔끔한 블로그였다.  이전 디자인에 불만은 없었다. 근데 전부터 좋아하는 brutalism…]]></description><link>https://haeuncs.github.io/2021/ARCHIVE 2020 1 d3a1a91658a84920adf755d753892c05/</link><guid isPermaLink="false">https://haeuncs.github.io/2021/ARCHIVE 2020 1 d3a1a91658a84920adf755d753892c05/</guid><pubDate>Sun, 07 Feb 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;ARCHIVE 2020년 1월&lt;/h1&gt;
 &lt;h1&gt;블로그 디자인 개편&lt;/h1&gt;
-&lt;p&gt;기존 디자인은 노란색에서 초록색으로 배경이 animate 되는 깔끔한 블로그였다.&lt;/p&gt;
+&lt;p&gt;기존 디자인은 노란색에서 초록색으로 배경이 animate 되는 특징을 가진 깔끔한 블로그였다.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
@@ -33,7 +33,7 @@
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;이전 디자인에 불만은 없었지만,&lt;/p&gt;
+&lt;p&gt;이전 디자인에 불만은 없었다.&lt;/p&gt;
 &lt;p&gt;근데 전부터 좋아하는 brutalism 을 구현하는 웹사이트를 만들고 싶어서 시작했다.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;거기에 읽는 이를 불편하게 하는 가독성이라고 찾을 수 없는 그런 웹사이트.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
