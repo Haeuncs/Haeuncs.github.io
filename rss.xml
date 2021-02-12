@@ -1,4 +1,46 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[2021]]></title><description><![CDATA[ARCHIEVE]]></description><link>https://haeuncs.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 07 Feb 2021 13:20:30 GMT</lastBuildDate><item><title><![CDATA[ARCHIVE 2021년 1월]]></title><description><![CDATA[ARCHIVE 2021년 1월 블로그 디자인 개편 기존 디자인은 노란색에서 초록색으로 배경이 animate 되는 특징을 가진 깔끔한 블로그였다.  이전 디자인에 불만은 없었다. 근데 전부터 좋아하는 brutalism…]]></description><link>https://haeuncs.github.io/2021/ARCHIVE 2020 1/</link><guid isPermaLink="false">https://haeuncs.github.io/2021/ARCHIVE 2020 1/</guid><pubDate>Sun, 07 Feb 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;ARCHIVE 2021년 1월&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[2021]]></title><description><![CDATA[ARCHIEVE]]></description><link>https://haeuncs.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 12 Feb 2021 10:38:24 GMT</lastBuildDate><item><title><![CDATA[[Clean Code] 3.함수]]></title><description><![CDATA[작게 만들어라! 가로 150자를 넘으면 안 되고, 함수는 20줄도 길다. 얼마나 짧아야 좋은가? 모든 함수가 2 ~ 4줄 각 함수가 이야기 하나를 표현하도록 블록과 들여쓰기 if 문/else 문/while…]]></description><link>https://haeuncs.github.io/2021-cleancode-1/CleanCode3/</link><guid isPermaLink="false">https://haeuncs.github.io/2021-cleancode-1/CleanCode3/</guid><pubDate>Fri, 12 Feb 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;작게 만들어라!&lt;/h3&gt;
+&lt;p&gt;가로 150자를 넘으면 안 되고, 함수는 20줄도 길다.&lt;/p&gt;
+&lt;p&gt;얼마나 짧아야 좋은가? 모든 함수가 2 ~ 4줄 각 함수가 이야기 하나를 표현하도록&lt;/p&gt;
+&lt;p&gt;블록과 들여쓰기&lt;/p&gt;
+&lt;p&gt;if 문/else 문/while문 등에 들어가는 블록은 한 줄 이어야 한다. 대개 거기서 함수를 호출한다.&lt;/p&gt;
+&lt;p&gt;블록 안에서 호출하는 함수의 이름을 적절히 짓는다면, 코드를 이해하기 쉬워진다.&lt;/p&gt;
+&lt;p&gt;중첩 구조가 생길만큼 함수가 커져서는 안된다. 함수에서 들여쓰기 수준은 1단이나 2단을 넘어서면 안 된다. 그래야 함수는 읽고 이해하기 쉬워진다.&lt;/p&gt;
+&lt;h3&gt;한 가지만 해라&lt;/h3&gt;
+&lt;p&gt;함수는 한 가지를 해야 한다. 그 한 가지를 잘 해야 한다. 그 한 가지만을 해야 한다.&lt;/p&gt;
+&lt;p&gt;지정된 함수 이름 아래에서 추상화 수준이 하나인 단계만 수행한다면 그 함수는 한 가지 작업만 한다.&lt;/p&gt;
+&lt;p&gt;함수가 한 가지만 하는지 판단하는 방법은 그 함수가 의미 있는 이름으로 다른 함수를 추출할 수 있다면 그 함수는 여러 작업을 하는 셈이다.&lt;/p&gt;
+&lt;h3&gt;함수 당 추상화 수준은 하나로!&lt;/h3&gt;
+&lt;p&gt;함수가 확실히 한 가지 작업만 하려면 함수 내 모든 문장의 추상화 수준이 동일해야 한다.&lt;/p&gt;
+&lt;p&gt;한 함수 내에 추상화 수준을 섞으면 코드를 읽는 사람이 헷갈린다. 특정 표현이 근본 개념인지 아니면 세부사항인지 구분하기 어렵다.&lt;/p&gt;
+&lt;p&gt;근본 개념과 세부사항을 뒤섞기 시작하면, 깨어진 창문처럼 사람들이 함수에 세부사항을 점점 더 추가한다.&lt;/p&gt;
+&lt;h3&gt;Switch 문&lt;/h3&gt;
+&lt;p&gt;본질적으로 switch문은 N가지를 처리한다.&lt;/p&gt;
+&lt;p&gt;해결하기 위해서 switch 문을 추상 팩토리(Abstract factory)에 숨긴다. 상속 관계로 숨긴 후에 절대 다른 코드에 노출하지 않는다.&lt;/p&gt;
+&lt;h3&gt;서술적인 이름을 사용하라!&lt;/h3&gt;
+&lt;p&gt;함수가 작고 단순할수록 서술적인 이름을 고르기도 쉬워진다.&lt;/p&gt;
+&lt;p&gt;이름이 길어도 괜찮다. 길고 서술적인 이름이 짧고 어려운 이름보다 좋다. 길고 서술적인 이름이 서술적인 주석보다 좋다. 함수 이름을 정할 때는 여러 단어가 쉽게 읽히는 명명법은 사용한다. 그런 다음, 여러 단어를 사용해 함수 기능을 잘 표현하는 이름을 선택한다.&lt;/p&gt;
+&lt;p&gt;서술적인 이름은 설계가 뚜렷해지므로 코드를 개선하기 쉬워진다. 좋은 이름을 고른 후 리팩토링 하는 사례도 없지 안다.&lt;/p&gt;
+&lt;h3&gt;함수 인수&lt;/h3&gt;
+&lt;p&gt;이상적인 인수 개수는 0개, 다음 1, 그 다음2… 4새 이상은 특별한 이유가 필요하며 특별한 이유가 있어도 사용해서는 안된다.&lt;/p&gt;
+&lt;p&gt;테스트 관점에서 봐도 인수는 어렵다. 갖가지 인수 조합으로 함수를 검증하는 테스트 케이스를 작성하는 것은 어렵다.&lt;/p&gt;
+&lt;h3&gt;부수 효과를 일으키지 마라!&lt;/h3&gt;
+&lt;p&gt;함수에서 한 가지를 하겠다고 약속하고 남몰래 다른짓을 하지 마라&lt;/p&gt;
+&lt;h3&gt;명령과 조회를 분리하라!&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;public boolean set(String attribute, String value);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이 함수는 이름이 attribute인 속성을 찾아 값을 value로 설정한 후 성공하면 true, 실패하면 false를 반환한다.  그래서 다음과 같은 괴상한 코드가 나온다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;if (set(&amp;quot;username&amp;quot;, &amp;quot;unclebob&amp;quot;))&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;함수를 호출하는 코드만 봐서는 의미가 모호하다.&lt;/p&gt;
+&lt;p&gt;해결책은 명령과 조회를 분리해 혼란을 애초에 뿌리뽑는 방식이다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;if (attributeExists(&amp;quot;username&amp;quot;)) {
+	setAttrubute(&amp;quot;username&amp;quot;, &amp;quot;unclebob&amp;quot;);
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;함수를 어떻게 짜죠?&lt;/h3&gt;
+&lt;p&gt;처음에는 길고 복잡하다. 들여쓰기 단계도 많고 중복된 루프도 많다. 인수 목록도 아주 길다. 이름은 즉흥적이고 코드는 중복된다. 그런 코드를 빠짐없이 단위 테스트 케이스를 만든다.&lt;/p&gt;
+&lt;p&gt;그런 다음 코드를 다듬고, 함수를 만들고, 이름을 바꾸고, 중복을 제거한다. 메서드를 줄이고 순서를 바꾼다. 때로는 전체 클래스를 쪼개기도 한다.&lt;/p&gt;
+&lt;p&gt;최종적으로는 위와 같은 규칙을 따르는 함수가 얻어진다.&lt;/p&gt;
+&lt;h3&gt;결론&lt;/h3&gt;
+&lt;p&gt;프로그래밍의 기술은 언제나 언어 설계의 기술이다. 대가 프로그래머는 시스템을 프로그램이 아니라 이야기로 여긴다. 프로그래밍 언어라는 수단을 사용해 더 풍부하고 좀 더 표현력이 강한 언어를 만들어 이야기로 풀어간다.&lt;/p&gt;
+&lt;p&gt;함수가 분명하고 정확한 언어로 깔끔하게 같이 맞아떨어져야 이야기를 풀어가기 쉽다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[ARCHIVE 2021년 1월]]></title><description><![CDATA[ARCHIVE 2021년 1월 블로그 디자인 개편 기존 디자인은 노란색에서 초록색으로 배경이 animate 되는 특징을 가진 깔끔한 블로그였다.  이전 디자인에 불만은 없었다. 근데 전부터 좋아하는 brutalism…]]></description><link>https://haeuncs.github.io/2021/ARCHIVE 2020 1/</link><guid isPermaLink="false">https://haeuncs.github.io/2021/ARCHIVE 2020 1/</guid><pubDate>Sun, 07 Feb 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;ARCHIVE 2021년 1월&lt;/h1&gt;
 &lt;h1&gt;블로그 디자인 개편&lt;/h1&gt;
 &lt;p&gt;기존 디자인은 노란색에서 초록색으로 배경이 animate 되는 특징을 가진 깔끔한 블로그였다.&lt;/p&gt;
 &lt;p&gt;&lt;span
@@ -14,7 +56,7 @@
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 54.72972972972974%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAACCElEQVQoz42SyW7TUBiF/RIsSAmlTQUPwBvAgqFU6gqC4F3Ys4ItC1igLBAIgYTEgk3bOKhA3YbG0EzOUNpmdhwPsRMPhxPHCVUlBFf67m//sr577r0W9OxV6D9WMZBvkJvQ5FvoR6i52+jlVtENuYMOaefW0N5fQ2tCbh0n0nXUMjHUPsdQzSxAcJrPAbgIOE84PcJeEBCcYdLzw2/0tozy1iIqlCqZCxDsRgqBNYRv9xGMNPjOAP5IZ+WzO4zMwZ/VIutM2NPyKKSXoIgxlMQ4BKOeglHvwuocwdRO4NoqhQN4DhfwHPxtzIQto4if4jLK4gLy6YsQrOZrCkABJSOTEqbyHaaziRXK/bHBSsbmfDHfG4XCdq+AA3EF4rsYPr3ilvVaCla9A7NVh9E/ht77xaQNeEzq2T3SjSpx1Hl/JtT6RXz9mMD2+zi2PyxCMJtvpgmZzhvbUbWi7Qb/3PJoWMKLp3E8eXQOzx6fh6BVX8KoNmA0KzD7R1NUplTrGJrq/EanBKfevVBo8Qzl9GXs86a/by3zUppvEbiThAZcpnPHPD8GC+EU+O5UgrO/jh8JS8huXsHe5iWSgKAqTKgc8wwP4RgNyi3835gex9AoY5dCaWOJUFiTruEw9wC17F0ou0lU9pKs90LKpMReSUqiSArSfeQjDnaI9BDyl3XsbKyQBL6x/ga2JhDxqsfx6AAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 54.72972972972974%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAABYlAAAWJQFJUiTwAAAB4ElEQVQoz22RzW7TQBDH9y2QkrYpbVB5gb4AEgdoaQUXSAoPw51Tr0gICZQDIATiwIWLSVxQ1doJsdvmy02s5rv+indjr+3dZdcFgZSO/hqNtPrNf3YG+LVN/+SBp9/z9PuevuVpW4627ejblsa1c5lqqu1O67uT+s5YezRQ7vbkTPcge36QBeHoFaMRE0HZv6CMEkavcirGc8wfZpN6u5zjpCEvg2BYomhOQ5dij+AZiXyCPZoEbCGoaMFsr9EorxmVbLuyAqBZgqaFLvvIGyaBI3jeKAmvgZmAJ7B5Kq915KVGJQfQ6D3BjIRegiHjhgRzWxrPuT+JII18GkNRhw4l4ndTu3laycufMt/eLYFZr4TMKZqY0BnMrAvhH9qEK7BIwAuLY6msK9h1modf8z8+L//8sgrg6APFjNsmccAziRAfI90QXZhbjB3NW6/3V/af33j5IgPc7lvYHcHxOXL7yBkg5wLZZgDdv/v/v4WA57CllTd+Sbna93Xgjz/yEyTYTzBKYkz4WoT4kZIF8z9wVdqoSquqtA5s4w3s9NHYDP0hjeDCwa+BVem2It1UpDzoKXfM+tNe7bGhFoxq0VCfdNRCqmJbLbSUYjNVQ9k7O947U57phw+PpFtHUp7rN1nFNwptuz2XAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -35,7 +77,7 @@
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;이전 디자인에 불만은 없었다.&lt;/p&gt;
 &lt;p&gt;근데 전부터 좋아하는 brutalism 을 구현하는 웹사이트를 만들고 싶어서 시작했다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;거기에 읽는 이를 불편하게 하는 가독성이라고 찾을 수 없는 그런 웹사이트.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;거기에 읽는 이를 불편하게 하는 가독성이라고 찾을 수 없는 그런 웹사이트.&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;블로그에는 정보를 전달해야 하니 가독성이 뛰어나야 하는 게 맞다. 근데 내 블로그에 정보가 있는가? 에 대한 반성으로 불편하게 만들어봤다는 헛소리다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -53,7 +95,7 @@
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 55.4054054054054%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAABlUlEQVQoz3VSi47iMAzk/7/uJCRehwrawpY2faVJ2tAHcxn3qNhl19LIeTj2jOPVbrfD6XRCFEW/4nw+CyTuFM7OkXjuj8cjNpsNttst1us1VkopjOOIvu8xDIP4+/2+gGdN06DRDbwLZ65HbwLo/78hpmmSuFVZlng8HssFk3835xx0raHSAo0yGN04Yxglnu+YQ2s9M9zv90KZ8g+HgwTQGESz1kp1qy1MbeAqB2ecFCJ433Ud6rrGKk1T6VOWZZKAFemfeGWYpyWsspj0hNGPIpN4qhLJTBTHMfIif5P6ytA0BiYwLIMs1wVWZGe/MhTJTJgkCT4+YlziC8j4druhqqqvDCuNW5pDtxaBO8Zp7t8bw1zluBYR/qZ/kOaf8P6+fND3HrJvbdOirQO4btt3hmVZURwmePE/mWsd6qpGelWokyD5GqQWbZBtl8lgcWFIiUM/hEotfOelEvvjvZfqnEVWZg9tM/+yNVaSGWOWn2b8MjakrFSGoijAuWRfuWZvuec4lHmFJM6gyTCbZb7KfSb8B+w+TERvqgL8AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 55.4054054054054%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAABYlAAAWJQFJUiTwAAABXklEQVQoz21RDW+CMBDl//+6JS5R4xQ2VIRCv69QoLhX0OnmXprL5Xrv3us12W63WZal/wH17DOGFPfLSdP9fr8GNuvV+yqp6zqE4L3vf2MYBmOM1qYj78n3pu+p732sj+MIitY64ZxP0zTMQAn59Q4iUkqxkhtmRhpxQmQFdKINo6MynEcj281ut8MFaMsIkI02pMkoS4LI0gJrbdu2mJtUVXU4HBBBgJ/rE6KyVHUlLKOgQuhgLCovbVEZtDzPm6a5vsDOykZboZVridyrMqsuxSX/yo/HYzlDSvljWwl1KRvdEp5ye/Gzcs3qU5N+lG9lfe46vyzzTrbxzcY57ZxyDknrHLmHMraNvjB5zP5jG8pSyPLE5FnRiRx3luw4RH3cxq+Cz6EfMa+bAcIS8fOYDW8W2grR2ihpnXNLz23bKDHGsDMhRMUYb3hRFMilkrwWRV6pQlP5+Cp4Xsjfva5x4zKz4xkAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -86,7 +128,7 @@
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 55.4054054054054%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAACsUlEQVQozx2T7U9SYRjGz6ecm00ZzTmTRbyrEAdwcQQOoOImLzrQlaCiLZABqUS6MpniViuDZoh9EFrx4mb/QH71S/9W51xxP1+e8+zZ9fzu577u63D1el1qNBrwer3y7OwsjEYjBEGASqWCw+HA+Pg4JiYmUKvVcNW4gugVYTQZ4fP72Pnw8DCcTifT0V3u5uZGOj8/h9VqlZeWlpgoFothcnISLpcLNpuN7budLr59rWFGnAE/yUP7SIu5uTn4fD6mo+IM2Gw2pVKpBIPBIPegMJvNIPD8/DwT0RkJLy7qeP+2hCd6K3gjD5vJRl2xgtSNzW6HVqsFl8lkpEQiAY1GIw8ODmJoaAhutxt7e3vI5XLY3NxENBpFPp9HLpuHUqFE/71+TE9Po3cXW1tbsPdgpFteXgYXDAalhYUF8kCml6yurqJarTJAPB7H9vY2dnd3sRhZxLNYHBaNBaJVRMAXwOX3S1Z4amqKFS8UCuB6i3RwcIBe2/LKygr8fj+Ojo6Y0GKxsNbT6TT23+zj5LiM49MyUukUXu3soNVqIRKJkF0Ih8NMx3U6Hen2zy3KJ2WZnqzT6TAyMsJg5KUoijBbzGj9bOHu7i8+Vs6QSr3Eu8NDhIIhNl2TycSSQV+u3WpLv37/QDAZkB2CHXqdnkHIS5ogDYng7XYb3VYXgkNAMBBCci3JYFYrT/5DrVYzLXfdvZbOqp/hmhFkwSVAoVCg5ytCoRB4nmdT1Bv0aDSa+HD6CU/NToTdIcSjcSgfKOHxeJie4ATmKpWKVHxdhOqhSqbxj42NIRAIMO+oKoWWwJUvVRQLRWjVWnhcHhhMBoyOjjIg+UgRok64nm//NjY2KEtyX18f85BilM1mQX8OGb22lkD8eQKpFxnYTQ5YHpsxcH+A5Y+0pFlfX0cymcR/YeOc+RYXDBQAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 55.4054054054054%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAACqElEQVQozz1SW08aYRTcl8aYmIih0cRCSkEuIpcVjNxFEGtAMKBpAUVsKJeAFbWaWkKUJm1TxUahvkgbg/DAL9BXX/q7dqf7nYc+7CW7883MOTNcu90WOp0OfD6fGAgEoNfr4XQ6oVQqYbfbMT09DaPRiFarhdvOLcNBp9fBv+in7+Pj43A4HITTSWe5wWAgXF1dwWKxiGtra/QjkUhgZmYGbrcbs7OzdLDf6+P65zUCvgB4Iw/NSw2WgktYWFggHBNnZjjJnVCv16HT6USr1UpEsVgMy8vLBGLfGLDd+oXapzosWgt4PQ/ewBMZE1QoFPTUaDTgisWikE6noVarxdHRUchkMlKsVqsol8vIZrOIx+OolCsol8qQj8kx/GwYLpcLhWIBO9kd2Gw2wrHJuHA4LKysrLBRReYkmUzi8vISlUoFqVQKhUIBe3t7iEVjeJNIwqQ2w2f1IuQP4ebmhoTn5uZIfH9/H5x0E46PjyGNLW5sbMDv96NWqxGJ2Wym0fP5PI4+HuHstIHTL2fI5XPY/bCLbreLaDTK1oXV1VXCcb1eT3h8eETjtCGuJ9YxNTWFiYkJmEwmsJC8Xi+9d++6eHr6i28X58i9z+Hk8wmk6ShEg8FAzaBQ7rv3wt3gDyKZ16LdYZMItUTC9sncspCYUwmHXrcPp92BcCiMzGaGyFho0v6hUqlImOv3+8J58wfciy7R6XJiTDZGypFIBDzPU3parRad29/42viOedM8Ip4IUvEU5M/l8Hq8/50yYq7ZbAoHBwdQvFCKrMysAqFQiC6mykrLiJsXTRxWD6FWqeFxe6jck5OT8Hg8tEdWITYJJ0UtZDIZRiQODQ3RDlmNSqUSgsEgLTq9mUbqbRq5dwXYDDaYXpkwMjJC4gzLMFtbW9je3sY/S5KcVoLq7Z8AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -114,7 +156,7 @@
 &lt;p&gt;드디어 제노사이드를 다 읽었다.&lt;/p&gt;
 &lt;p&gt;2021년 1월 8일에 구매했는데 읽는데 한 달 정도 걸렸다. &lt;/p&gt;
 &lt;p&gt;자기 전 누워서 읽으니 3장만 읽어도 자연스럽게 수면상태가 돼버려서 다 읽는 데 너무 오래 걸렸다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;재미있는 사실&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;재미있는 사실&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;무려 2017년 6월 14일부터 이 책을 읽고 싶어 했다.&lt;/p&gt;
 &lt;p&gt;그 아래 과거의 내가 작성한 유시민 작가 책은 뭘 의미한 걸까?&lt;/p&gt;
 &lt;p&gt;&lt;span
