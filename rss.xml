@@ -1,4 +1,33 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[2021]]></title><description><![CDATA[ARCHIEVE]]></description><link>https://haeuncs.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 12 Feb 2021 10:46:05 GMT</lastBuildDate><item><title><![CDATA[[Clean Code] 3.함수]]></title><description><![CDATA[작게 만들어라! 가로 150자를 넘으면 안 되고, 함수는 20줄도 길다. 얼마나 짧아야 좋은가? 모든 함수가 2 ~ 4줄 각 함수가 이야기 하나를 표현하도록 블록과 들여쓰기 if 문/else 문/while…]]></description><link>https://haeuncs.github.io/2021-cleancode-1/CleanCode3/</link><guid isPermaLink="false">https://haeuncs.github.io/2021-cleancode-1/CleanCode3/</guid><pubDate>Fri, 12 Feb 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;작게 만들어라!&lt;/h3&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[2021]]></title><description><![CDATA[ARCHIEVE]]></description><link>https://haeuncs.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 14 Feb 2021 13:24:43 GMT</lastBuildDate><item><title><![CDATA[[Clean Code] 9.단위 테스트]]></title><description><![CDATA[…]]></description><link>https://haeuncs.github.io/2021-cleancode-1/CleanCode9/</link><guid isPermaLink="false">https://haeuncs.github.io/2021-cleancode-1/CleanCode9/</guid><pubDate>Sun, 14 Feb 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;깨끗한 테스트 코드 유지하기&lt;/h2&gt;
+&lt;p&gt;지저분한 테스트 코드를 내놓는 것은 테스트 코드를 작성하느니만 못하다.&lt;/p&gt;
+&lt;p&gt;실제 코드가 변경되면 테스트 코드도 변화해야 한다. 테스트 코드가 복잡하면 실제 코드를 작성하는 시간보다 테스트 케이스를 추가하는 시간이 더 걸린다.&lt;/p&gt;
+&lt;p&gt;새 버전을 출시 할 때 마다 테스트 케이스를 유지보수하는 비용이 늘어나게 되고 개발자들 사이에서 가장 큰 불만이 됨&lt;/p&gt;
+&lt;p&gt;하지만 테스트 슈트가 없으면 개발자는 자신이 수정한 코드가 제대로 도는지 확인할 방법이 없다. 테스트 슈트가 없으면 이쪽 수정에 따라 저쪽이 안전하다는 사실을 검증하지 못한다.&lt;/p&gt;
+&lt;p&gt;그렇게 되면 결함율이 높아지고 의도하지 않은 결함 수가 많아지면 개발자는 변경을 주저하게 되고, 변경하면 득보다 해가 크다 생각하여 더 이상 코드를 정리하지 않는다.&lt;/p&gt;
+&lt;p&gt;실패를 초래한 원인은 지저분한 테스트 코드, 테스트 코드를 잘 짰다면 테스트에 쏟아 부은 노력은 허사로 돌아가지 않을 것이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;교훈&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;테스트 코드는 실제 코드 못지 않게 중요하다.
+테스트 코드는 이류 시민이 아님, 테스트 코드는 사고와 설계와 주의가 필요하다.
+실제 코드 못지 않게 깨끗하게 짜야 한다.&lt;/p&gt;
+&lt;p&gt;테스트는 유연성, 유지보수성, 재사용성을 제공한다.
+테스트 케이스가 없다면 모든 변경이 잠정적인 버그다.&lt;/p&gt;
+&lt;p&gt;하지만 테스트 케이스가 있다면 공포는 사실상 사라진다. 테스트 커버리지가 높을 수록 공포는 줄어듬. 아키텍처가 부실한 코드나 설계가 모호하고 엉망인 코드라도 걱정 없이, 오히려 안심하고 변경할 수 있다.&lt;/p&gt;
+&lt;p&gt;따라서 테스트 코드가 지저분하면 코드를 변경하는 능력, 코드 구조 개선 능력이 떨어지고 실제 코드도 지저분해진다. 즉 테스트 코드를 잃어버리고 실제 코드도 망가진다.&lt;/p&gt;
+&lt;h2&gt;깨끗한 테스트 코드&lt;/h2&gt;
+&lt;p&gt;깨끗한 테스트 코드를 만들 때 필요한 3가지. 가독성 가독성 가독성&lt;/p&gt;
+&lt;p&gt;가독성을 높이려면? 명료성, 단순성, 풍부한 표현력&lt;/p&gt;
+&lt;p&gt;테스트 코드는 최소의 표현으로 많은 것을 나타내야 함&lt;/p&gt;
+&lt;h2&gt;테스트 당 개념 하나&lt;/h2&gt;
+&lt;p&gt;테스트 함수마다 한 개념만 테스트하라.&lt;/p&gt;
+&lt;p&gt;Given: input 제공
+When: 테스트 메소드 실행
+Then: output 검증&lt;/p&gt;
+&lt;h2&gt;FIRST&lt;/h2&gt;
+&lt;p&gt;Fast: 테스트는 빨라야 함&lt;/p&gt;
+&lt;p&gt;Independent: 각 테스트는 서로 의존하면 안 된다.&lt;/p&gt;
+&lt;p&gt;Repeatable: 테스트는 어떤 환경에서도 반복 가능해야 한다. (테스트는 항상 정확하게 동일한 결과를 반환해야 함(&lt;/p&gt;
+&lt;p&gt;Self-Vaildating: 테스트는 bool값으로 결과를 내야 한다.&lt;/p&gt;
+&lt;p&gt;Timely: 테스트는 적시에 작성해야 한다. 코드를 작성한 후에 테스트 코드를 작성하려하면 기존 코드가 테스트 코드를 작성할 수 없게 짜여져 있을 수 있다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[Clean Code] 3.함수]]></title><description><![CDATA[작게 만들어라! 가로 150자를 넘으면 안 되고, 함수는 20줄도 길다. 얼마나 짧아야 좋은가? 모든 함수가 2 ~ 4줄 각 함수가 이야기 하나를 표현하도록 블록과 들여쓰기 if 문/else 문/while…]]></description><link>https://haeuncs.github.io/2021-cleancode-1/CleanCode3/</link><guid isPermaLink="false">https://haeuncs.github.io/2021-cleancode-1/CleanCode3/</guid><pubDate>Fri, 12 Feb 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;작게 만들어라!&lt;/h3&gt;
 &lt;p&gt;가로 150자를 넘으면 안 되고, 함수는 20줄도 길다.&lt;/p&gt;
 &lt;p&gt;얼마나 짧아야 좋은가? 모든 함수가 2 ~ 4줄 각 함수가 이야기 하나를 표현하도록&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;블록과 들여쓰기&lt;/strong&gt;&lt;/p&gt;
