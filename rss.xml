@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[2021]]></title><description><![CDATA[ARCHIEVE]]></description><link>https://haeuncs.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 07 Mar 2021 15:17:47 GMT</lastBuildDate><item><title><![CDATA[Clean Swift]]></title><description><![CDATA[Clean Architecture 에서 나온 Architecture인 Clean Swift는 위와 같은 view - interactor - presenter 즉 VIP cycle 을 가진 architecture이다. Clean swift…]]></description><link>https://haeuncs.github.io/2021/CleanSwift/CleanSwift/</link><guid isPermaLink="false">https://haeuncs.github.io/2021/CleanSwift/CleanSwift/</guid><pubDate>Sun, 07 Mar 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[2021]]></title><description><![CDATA[ARCHIEVE]]></description><link>https://haeuncs.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 07 Mar 2021 15:21:37 GMT</lastBuildDate><item><title><![CDATA[Clean Swift]]></title><description><![CDATA[Clean Architecture 에서 나온 Architecture인 Clean Swift는 위와 같은 view - interactor - presenter 즉 VIP cycle 을 가진 architecture이다. Clean swift…]]></description><link>https://haeuncs.github.io/2021/CleanSwift/CleanSwift/</link><guid isPermaLink="false">https://haeuncs.github.io/2021/CleanSwift/CleanSwift/</guid><pubDate>Sun, 07 Mar 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
     &gt;
@@ -103,15 +103,15 @@
 &lt;p&gt;request, response, viewmodel 를 struct 로 표현한다.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;Request&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Request&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;view controller 와 request model을 구성하고 interator에게 전달request model은 text field의 텍스트 입력, picker 에서 선택된 값과 같은 user input들이 대부분 포함된다&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Response&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Response&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;interactor 가 request에 대한 작업을 마친 후, response model에서 result를 캡슐화하고 presenter 로 전달한다.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;View Model&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;View Model&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Presenter 가 Interactor로부터 response를 받은 후 string, int 와 같은 raw data 유형으로 결과를 포맷하여 view model로 넣는다. 그런 다음 view model을 다시 view controller 로 전달하여 디스플레이 한다.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
