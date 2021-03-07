@@ -48,7 +48,7 @@
         }
       }
     })
-  </script><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><link rel="icon" href="/icons/icon-48x48.png?v=e12af54926db54a0e83e68a57d78c6e8"/><link rel="manifest" href="/manifest.webmanifest"/><meta name="theme-color" content="#663399"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=e12af54926db54a0e83e68a57d78c6e8"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=e12af54926db54a0e83e68a57d78c6e8"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=e12af54926db54a0e83e68a57d78c6e8"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=e12af54926db54a0e83e68a57d78c6e8"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=e12af54926db54a0e83e68a57d78c6e8"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=e12af54926db54a0e83e68a57d78c6e8"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=e12af54926db54a0e83e68a57d78c6e8"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=e12af54926db54a0e83e68a57d78c6e8"/><title data-react-helmet="true">[Clean Code] 4. 주석 | 2021</title><meta data-react-helmet="true" name="description" content="클린 코드 읽고 정리하기"/><meta data-react-helmet="true" property="og:title" content="[Clean Code] 4. 주석"/><meta data-react-helmet="true" property="og:description" content="클린 코드 읽고 정리하기"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Haeuncs"/><meta data-react-helmet="true" name="twitter:title" content="[Clean Code] 4. 주석"/><meta data-react-helmet="true" name="twitter:description" content="클린 코드 읽고 정리하기"/><style data-styled="" data-styled-version="5.0.1">.fGpcgR{height:100%;width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;overflow:hidden;}
+  </script><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><link rel="icon" href="/icons/icon-48x48.png?v=e12af54926db54a0e83e68a57d78c6e8"/><link rel="manifest" href="/manifest.webmanifest"/><meta name="theme-color" content="#663399"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=e12af54926db54a0e83e68a57d78c6e8"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=e12af54926db54a0e83e68a57d78c6e8"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=e12af54926db54a0e83e68a57d78c6e8"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=e12af54926db54a0e83e68a57d78c6e8"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=e12af54926db54a0e83e68a57d78c6e8"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=e12af54926db54a0e83e68a57d78c6e8"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=e12af54926db54a0e83e68a57d78c6e8"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=e12af54926db54a0e83e68a57d78c6e8"/><title data-react-helmet="true">Clean Swift | 2021</title><meta data-react-helmet="true" name="description" content="Clean Swift Architecture"/><meta data-react-helmet="true" property="og:title" content="Clean Swift"/><meta data-react-helmet="true" property="og:description" content="Clean Swift Architecture"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Haeuncs"/><meta data-react-helmet="true" name="twitter:title" content="Clean Swift"/><meta data-react-helmet="true" name="twitter:description" content="Clean Swift Architecture"/><style data-styled="" data-styled-version="5.0.1">.fGpcgR{height:100%;width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;overflow:hidden;}
 @media (max-width:768px){.fGpcgR{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;overflow:auto;}}
 data-styled.g2[id="layout__BodyWrapper-sc-1xvv2zr-1"]{content:"fGpcgR,"}
 .ejfacQ{height:100%;width:50%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;overflow:auto;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;}
@@ -57,40 +57,151 @@ data-styled.g3[id="layout__ArchiveWrapper-sc-1xvv2zr-2"]{content:"ejfacQ,"}
 .fmuRMc{height:100%;width:50%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;overflow:auto;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;}
 @media (max-width:768px){.fmuRMc{width:100%;overflow:initial;height:initial;}}
 data-styled.g4[id="layout__RightSideWrapper-sc-1xvv2zr-3"]{content:"fmuRMc,"}
-</style><link as="script" rel="preload" href="/webpack-runtime-1dad612800ebaf9f3136.js"/><link as="script" rel="preload" href="/framework-a0c93c3ca6a1fb6645da.js"/><link as="script" rel="preload" href="/app-37e0565d74a3b5af16d8.js"/><link as="script" rel="preload" href="/styles-e9d24b1846c7d6eb9685.js"/><link as="script" rel="preload" href="/commons-02b94864ec7a79de20a5.js"/><link as="script" rel="preload" href="/9fb2ff794aef75179f6bc5d80ea94523212dd791-4c5cd405be30ae1358e0.js"/><link as="script" rel="preload" href="/d5d7a013bc6c1e2b6d7db819052c16d7efea5559-776e713eac1a2d0ed666.js"/><link as="script" rel="preload" href="/cd7d5f864fc9e15ed8adef086269b0aeff617554-d230b9dd79c1cdc754ef.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-6959436045a99f412334.js"/><link as="fetch" rel="preload" href="/page-data/2021-cleancode-1/CleanCode4/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/426816048.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/63159454.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="customBorder h-screen w-screen flex flex-col overflow-auto"><div class="customBorder w-full" style="border-left:none;border-right:none;height:50px"><div class="bounce"><div><span>🌹 어쩌다 이 누추한 곳까지 찾아오셨을까요. 반갑습니다. 🌹</span></div></div></div><div class="layout__BodyWrapper-sc-1xvv2zr-1 fGpcgR"><div class="layout__ArchiveWrapper-sc-1xvv2zr-2 ejfacQ"><div class="flex-1 customBorder m-20 flex flex-col overflow-auto justify-between "><div class="h-full w-full flex flex-col justify-center overflow-hidden"><div></div><div class="overflow-scroll flex-1"><div class="flex flex-col justify-center m-10"><div style="font-size:5rem">목차<br/></div><div><ul>
-<li><a href="/2021-cleancode-1/CleanCode4/#%EC%A3%BC%EC%84%9D%EC%9D%80-%EB%82%98%EC%81%9C-%EC%BD%94%EB%93%9C%EB%A5%BC-%EB%B3%B4%EC%99%84%ED%95%98%EC%A7%80-%EB%AA%BB%ED%95%9C%EB%8B%A4">주석은 나쁜 코드를 보완하지 못한다</a></li>
-<li><a href="/2021-cleancode-1/CleanCode4/#%EC%BD%94%EB%93%9C%EB%A1%9C-%EC%9D%98%EB%8F%84%EB%A5%BC-%ED%91%9C%ED%98%84%ED%95%98%EB%9D%BC">코드로 의도를 표현하라!</a></li>
-<li><a href="/2021-cleancode-1/CleanCode4/#%EC%A2%8B%EC%9D%80-%EC%A3%BC%EC%84%9D">좋은 주석</a></li>
-<li><a href="/2021-cleancode-1/CleanCode4/#%EB%82%98%EC%81%9C-%EC%A3%BC%EC%84%9D">나쁜 주석</a></li>
-</ul></div></div><div style="padding:40px"><div></div></div></div><footer><div class="customBorder w-full flex" style="height:8vh;border-left:none;border-bottom:none;border-right:none"><button class="flex-1 bg-transparent" style="border:none">글 목록 POST LIST</button><div class="bg-black h-full" style="width:5px"></div><button class="flex-1 bg-transparent" style="border:none">방명록 GUESTBOOK</button><div></div></div></footer></div></div></div><div class="layout__RightSideWrapper-sc-1xvv2zr-3 fmuRMc"><div class="flex-1 customBorder m-20 flex overflow-auto"><div class="flex-1"><article class="m-10"><header><h1 style="margin-top:1.75rem;margin-bottom:0">[Clean Code] 4. 주석</h1><p style="font-size:0.83255rem;line-height:1.75rem;display:block;margin-bottom:1.75rem">2021年02月21日</p></header><section><h2 id="주석은-나쁜-코드를-보완하지-못한다" style="position:relative;"><a href="#%EC%A3%BC%EC%84%9D%EC%9D%80-%EB%82%98%EC%81%9C-%EC%BD%94%EB%93%9C%EB%A5%BC-%EB%B3%B4%EC%99%84%ED%95%98%EC%A7%80-%EB%AA%BB%ED%95%9C%EB%8B%A4" aria-label="주석은 나쁜 코드를 보완하지 못한다 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>주석은 나쁜 코드를 보완하지 못한다</h2>
-<p>주석에 코드를 추가하는 이유는 코드 품질이 나쁘기 때문이다.</p>
-<p>표현력이 풍부하고 깔끔하며 주석이 거의 없는 코드가 주석이 달린 코드보다 낫다.</p>
-<h2 id="코드로-의도를-표현하라" style="position:relative;"><a href="#%EC%BD%94%EB%93%9C%EB%A1%9C-%EC%9D%98%EB%8F%84%EB%A5%BC-%ED%91%9C%ED%98%84%ED%95%98%EB%9D%BC" aria-label="코드로 의도를 표현하라 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>코드로 의도를 표현하라!</h2>
-<p>코드만으로 의도를 표현하기 힘든 코드가 있을 수 있다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">if ((employee.flags &amp; HOURLY_FLAG) &amp;&amp; (employee.ege &gt; 65))</code></pre></div>
-<p>이러한 코드에 의미를 설명하는 주석을 추가하기 보다는 함수로 의미를 표현해라.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">if (employee.isEligibleForFullBenefits())</code></pre></div>
-<h2 id="좋은-주석" style="position:relative;"><a href="#%EC%A2%8B%EC%9D%80-%EC%A3%BC%EC%84%9D" aria-label="좋은 주석 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>좋은 주석</h2>
+</style><link as="script" rel="preload" href="/webpack-runtime-1dad612800ebaf9f3136.js"/><link as="script" rel="preload" href="/framework-a0c93c3ca6a1fb6645da.js"/><link as="script" rel="preload" href="/app-37e0565d74a3b5af16d8.js"/><link as="script" rel="preload" href="/styles-e9d24b1846c7d6eb9685.js"/><link as="script" rel="preload" href="/commons-02b94864ec7a79de20a5.js"/><link as="script" rel="preload" href="/9fb2ff794aef75179f6bc5d80ea94523212dd791-4c5cd405be30ae1358e0.js"/><link as="script" rel="preload" href="/d5d7a013bc6c1e2b6d7db819052c16d7efea5559-776e713eac1a2d0ed666.js"/><link as="script" rel="preload" href="/cd7d5f864fc9e15ed8adef086269b0aeff617554-d230b9dd79c1cdc754ef.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-6959436045a99f412334.js"/><link as="fetch" rel="preload" href="/page-data/2021/CleanSwift/CleanSwift/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/426816048.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/63159454.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="customBorder h-screen w-screen flex flex-col overflow-auto"><div class="customBorder w-full" style="border-left:none;border-right:none;height:50px"><div class="bounce"><div><span>じl가,행복ぁłとŀ면,しŀ도행복하l~♡</span></div></div></div><div class="layout__BodyWrapper-sc-1xvv2zr-1 fGpcgR"><div class="layout__ArchiveWrapper-sc-1xvv2zr-2 ejfacQ"><div class="flex-1 customBorder m-20 flex flex-col overflow-auto justify-between "><div class="h-full w-full flex flex-col justify-center overflow-hidden"><div></div><div class="overflow-scroll flex-1"><div class="flex flex-col justify-center m-10"><div style="font-size:5rem">목차<br/></div><div><ul>
+<li><a href="/2021/CleanSwift/CleanSwift/#clean-swift-%EC%9D%98-%EC%A0%9C%EC%96%B4%ED%9D%90%EB%A6%84">Clean swift 의 제어흐름</a></li>
+<li>
+<p><a href="/2021/CleanSwift/CleanSwift/#clean-swift-component">Clean Swift Component</a></p>
 <ul>
-<li>법적인 주석</li>
-<li>정보를 제공하는 주석</li>
-<li>의도를 설명하는 주석</li>
-<li>의미를 명료하게 밝히는 주석</li>
-<li>결과를 경고하는 주석</li>
-<li>TODO 주석</li>
-<li>중요성을 강조하는 주석</li>
+<li>
+<ul>
+<li><a href="/2021/CleanSwift/CleanSwift/#view">View</a></li>
+<li><a href="/2021/CleanSwift/CleanSwift/#interactor">Interactor</a></li>
+<li><a href="/2021/CleanSwift/CleanSwift/#presenter">Presenter</a></li>
+<li><a href="/2021/CleanSwift/CleanSwift/#worker">Worker</a></li>
+<li><a href="/2021/CleanSwift/CleanSwift/#model">Model</a></li>
 </ul>
-<h2 id="나쁜-주석" style="position:relative;"><a href="#%EB%82%98%EC%81%9C-%EC%A3%BC%EC%84%9D" aria-label="나쁜 주석 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>나쁜 주석</h2>
+</li>
+</ul>
+</li>
+<li><a href="/2021/CleanSwift/CleanSwift/#%EA%B2%B0%EB%A1%A0">결론</a></li>
+</ul></div></div><div style="padding:40px"><div></div></div></div><footer><div class="customBorder w-full flex" style="height:8vh;border-left:none;border-bottom:none;border-right:none"><button class="flex-1 bg-transparent" style="border:none">글 목록 POST LIST</button><div class="bg-black h-full" style="width:5px"></div><button class="flex-1 bg-transparent" style="border:none">방명록 GUESTBOOK</button><div></div></div></footer></div></div></div><div class="layout__RightSideWrapper-sc-1xvv2zr-3 fmuRMc"><div class="flex-1 customBorder m-20 flex overflow-auto"><div class="flex-1"><article class="m-10"><header><h1 style="margin-top:1.75rem;margin-bottom:0">Clean Swift</h1><p style="font-size:0.83255rem;line-height:1.75rem;display:block;margin-bottom:1.75rem">2021年03月07日</p></header><section><p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/59256c1a344d76352b683c63345d51bf/cc418/Untitled.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 39.86486486486486%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsSAAALEgHS3X78AAABbElEQVQoz5VRTUsCURSdD2fSagS/GCsHUcECwYWgFUTtFKZgjMiYEly0FqLFQEK7yH5AtRxBcmG4SQSDCHQjNC1curOVK/0Pp+ZhhVRIi8uDc+85597zKIqi8N+iaZq8kiShVquhpJfQaDSgqqqJfw/5/X74JB8CgQDcbvdUQdvcLBR5BznlAMlUCqFgEBTLsqQpCAKaj020np5hvBjQNI3gHMeBYRiYc8xYaEpNAh7ODmYKSVzwIh6NIZnYhOgVCWYaks3PCgUULy6xyDtwfJTDfbWK69sbRILLWIvEUC6XcVUs4q5SgZLaRsi5hF6vh7d+H6PRCK12mwiaVxBDWZaRVtLgKQar8QRO8yc4z2twOZwQXR5kMvtQd/dw+BH4SigMr92F+kMdnU4H3W4Xuq5P5Er9dZbAWmGbsWLeLiDqCxMDC2f5IvMcT/L9wTVX/VyXocfhjz9qa30Dg8EAr4aB4XCIbDY7ed4v9Q7/POyhN77vmwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="img/Untitled.png"
+        title="img/Untitled.png"
+        src="/static/59256c1a344d76352b683c63345d51bf/fcda8/Untitled.png"
+        srcset="/static/59256c1a344d76352b683c63345d51bf/12f09/Untitled.png 148w,
+/static/59256c1a344d76352b683c63345d51bf/e4a3f/Untitled.png 295w,
+/static/59256c1a344d76352b683c63345d51bf/fcda8/Untitled.png 590w,
+/static/59256c1a344d76352b683c63345d51bf/efc66/Untitled.png 885w,
+/static/59256c1a344d76352b683c63345d51bf/c83ae/Untitled.png 1180w,
+/static/59256c1a344d76352b683c63345d51bf/cc418/Untitled.png 1992w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Clean Architecture 에서 나온 Architecture인 Clean Swift는 위와 같은 view - interactor - presenter 즉 VIP cycle 을 가진 architecture이다.</p>
+<h1 id="clean-swift-의-제어흐름" style="position:relative;"><a href="#clean-swift-%EC%9D%98-%EC%A0%9C%EC%96%B4%ED%9D%90%EB%A6%84" aria-label="clean swift 의 제어흐름 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Clean swift 의 제어흐름</h1>
+<p>위의 그림에서 나타낸 제어 흐름을 글로 설명하면</p>
+<ol>
+<li>view에서 interactor 에게 business logic 을 요청</li>
+<li>interactor는 business logic 또는 business logic 을 수행하는 worker 에게 도움을 요청</li>
+<li>worker 에서 networking, database 등 business를 다루고 작업이 완료</li>
+<li>완료된 작업을 interactor는 presenter를 호출하여 view에 표시</li>
+</ol>
+<p>와 같이 동작한다.</p>
+<p>이러한 모든 작업은 interactor가 presenter 에게 종속되지 않도록 의존성을 되돌리기 위해 swift protocol 을 사용한다.</p>
+<p>즉 interactor가 presenter 에 의존하는 것이 아닌 protocol에 선언된 메서드를 호출한다.</p>
+<h1 id="clean-swift-component" style="position:relative;"><a href="#clean-swift-component" aria-label="clean swift component permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Clean Swift Component</h1>
+<h3 id="view" style="position:relative;"><a href="#view" aria-label="view permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>View</h3>
 <ul>
-<li>주절거리는 주석</li>
-<li>같은 이야기를 중복하는 주석</li>
-<li>의무적으로 다는 주석</li>
-<li>있으나 마나 한 주석</li>
-<li>닫는 괄호에 다는 주석</li>
-<li>공로를 돌리거나 저자를 표시하는 주석</li>
-<li>주석으로 처리한 코드</li>
-<li>전역 정보</li>
-<li>너무 많은 정보</li>
-<li>모호한 관계</li>
-<li>함수 헤더</li>
-</ul></section><hr style="margin-bottom:1.75rem"/><footer><div style="display:flex;margin-bottom:4.375rem"><p><h1>Haeuncs<br/></h1>어쩌다 이 누추한 곳까지 찾아오셨을까요. 반갑습니다.<br/><a href="https://github.com/Haeuncs">Github</a><br/><a href="mailto:haeun.developer@gmail.com">haeun.developer@gmail.com</a></p></div></footer></article><nav><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/2021-cleancode-1/CleanCode6/">← <!-- -->[Clean Code] 6.객체와 자료 구조</a></li><li><a rel="next" href="/2021/Object-OrientedThoughtProcess12/">객체지향 설계의 SOLID 원칙<!-- --> →</a></li></ul></nav></div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/2021-cleancode-1/CleanCode4/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-7f7f3c1e6b4c7fa23345.js"],"app":["/app-37e0565d74a3b5af16d8.js"],"component---src-pages-404-js":["/component---src-pages-404-js-bd2e32990b4c56ea446f.js"],"component---src-pages-guest-book-js":["/component---src-pages-guest-book-js-ffef667d94c5d8188a69.js"],"component---src-pages-index-js":["/component---src-pages-index-js-5cd018b7d5a1e8fbb865.js"],"component---src-pages-portfolio-2-js":["/component---src-pages-portfolio-2-js-8da8a1d8999e2dbb2139.js"],"component---src-pages-portfolio-js":["/component---src-pages-portfolio-js-11110927fdb8ee2a0d3b.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-6959436045a99f412334.js"]};/*]]>*/</script><script src="/polyfill-7f7f3c1e6b4c7fa23345.js" nomodule=""></script><script src="/component---src-templates-blog-post-js-6959436045a99f412334.js" async=""></script><script src="/cd7d5f864fc9e15ed8adef086269b0aeff617554-d230b9dd79c1cdc754ef.js" async=""></script><script src="/d5d7a013bc6c1e2b6d7db819052c16d7efea5559-776e713eac1a2d0ed666.js" async=""></script><script src="/9fb2ff794aef75179f6bc5d80ea94523212dd791-4c5cd405be30ae1358e0.js" async=""></script><script src="/commons-02b94864ec7a79de20a5.js" async=""></script><script src="/styles-e9d24b1846c7d6eb9685.js" async=""></script><script src="/app-37e0565d74a3b5af16d8.js" async=""></script><script src="/framework-a0c93c3ca6a1fb6645da.js" async=""></script><script src="/webpack-runtime-1dad612800ebaf9f3136.js" async=""></script></body></html>
+<li>뷰에 관련된 로직만 처리</li>
+<li>비지니스 로직 관련은 interactor에게 요청</li>
+</ul>
+<h3 id="interactor" style="position:relative;"><a href="#interactor" aria-label="interactor permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Interactor</h3>
+<ul>
+<li>business logic 수행</li>
+<li>요청된 것이 완료되면 Presenter에게 데이터를 전송</li>
+</ul>
+<h3 id="presenter" style="position:relative;"><a href="#presenter" aria-label="presenter permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Presenter</h3>
+<ul>
+<li>interactor로부터 데이터를 받아서 UI를 위한 모델로 가공</li>
+<li>
+<p>가공된 모델을 View에게 전달</p>
+<ul>
+<li>presenter 에서 간단한 포맷팅을 하거나 worker 에게 포맷팅 작업을 인계할 수 있다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="worker" style="position:relative;"><a href="#worker" aria-label="worker permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Worker</h3>
+<ul>
+<li>interactor에서 수행해야하는 business logic 들이 실제 수행되는 곳이다.</li>
+</ul>
+<h3 id="model" style="position:relative;"><a href="#model" aria-label="model permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Model</h3>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/81819b6f688a9722da454a800a447a0f/41be6/Untitled1.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 160.13513513513513%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAgCAYAAAASYli2AAAACXBIWXMAAAsSAAALEgHS3X78AAAB0klEQVRIx+VVy27bMBDU8iGRlCzGkh/xS3WMJHUDBL21KPoN/f978g+9tdMl7QJG0iSmowABehhQooDxzuzsOsuy7CcDjN/78xT82p932ZsT0l8Q39F7qpD2hF+HLX5sW3z/UkJ9a3aVvqbCzjrcjC3WKw3Rmb4kE0PsICRDgXSBTKodnia8f0RYnTVYbW8x7jaQw3MU80uY1RZ28xlm+RHF4iqN0FiLvChObcr9PyVLpZjUwHO109mSf8TBugo1v4f72g/jNyJxHOEhxL7LdPAspYRS+vgKtXFol2sM2jEU+5ifXzA2UM08vocmJUkua4920aEoKwjnI4mshhCmgvITJhRphIolBVmh0uCZ1grSDiBsBcptPGOcjiUMcP4MzbyDn85R8fTkkw8cn08xOnq0fJjHlwktx0cQ9RObSOjKKDd2OHj22LdEwoHHiKel4eb40QRmcQ27voXpbuK0RNlpFbo4McTNoSCdmxDmmbThO32Khw6yTw8NZ9BPZii5w45zGfKnmxnLvUY+vWDJK97oCaPnBjXq0TQSBj8F5zBOzbiL/ukwMUk5ZA/l851NIaTo4YMFcLB8KY0wkGmt+9mHccHmPS/YV/yNvn/Cu/+Q8A/yYYybAKTuBgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="/Untitled.png"
+        title="/Untitled.png"
+        src="/static/81819b6f688a9722da454a800a447a0f/fcda8/Untitled1.png"
+        srcset="/static/81819b6f688a9722da454a800a447a0f/12f09/Untitled1.png 148w,
+/static/81819b6f688a9722da454a800a447a0f/e4a3f/Untitled1.png 295w,
+/static/81819b6f688a9722da454a800a447a0f/fcda8/Untitled1.png 590w,
+/static/81819b6f688a9722da454a800a447a0f/41be6/Untitled1.png 638w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<ul>
+<li>
+<p>request, response, viewmodel 를 struct 로 표현한다.</p>
+<ol>
+<li>
+<p>Request</p>
+<p>view controller 와 request model을 구성하고 interator에게 전달request model은 text field의 텍스트 입력, picker 에서 선택된 값과 같은 user input들이 대부분 포함된다</p>
+</li>
+<li>
+<p>Response</p>
+<p>interactor 가 request에 대한 작업을 마친 후, response model에서 result를 캡슐화하고 presenter 로 전달한다.</p>
+</li>
+<li>
+<p>View Model</p>
+<p>Presenter 가 Interactor로부터 response를 받은 후 string, int 와 같은 raw data 유형으로 결과를 포맷하여 view model로 넣는다. 그런 다음 view model을 다시 view controller 로 전달하여 디스플레이 한다.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>raw data model을 사용하는 것이 아닌 이러한 struct 구조의 data model을 사용하여 얻는 이점</p>
+<ul>
+<li>business logic 이 변경되여 기본 데이터 모델이 변경될 때, 코드 베이스 전체를 업데이트할 필요가 없다.</li>
+</ul>
+</li>
+</ul>
+<h1 id="결론" style="position:relative;"><a href="#%EA%B2%B0%EB%A1%A0" aria-label="결론 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>결론</h1>
+<ul>
+<li>VIP Cycle 을 도입하여 단방향의 제어흐름을 갖게해준다.</li>
+<li>protocol 을 이용해 구현되어 있기 때문에 모의 데이터를 이용한 unit test가 쉽다.</li>
+</ul>
+<p><a href="https://github.com/Clean-Swift/CleanStore">https://github.com/Clean-Swift/CleanStore</a></p></section><hr style="margin-bottom:1.75rem"/><footer><div style="display:flex;margin-bottom:4.375rem"><p><h1>Haeuncs<br/></h1>어쩌다 이 누추한 곳까지 찾아오셨을까요. 반갑습니다.<br/><a href="https://github.com/Haeuncs">Github</a><br/><a href="mailto:haeun.developer@gmail.com">haeun.developer@gmail.com</a></p></div></footer></article><nav><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/2021-cleancode-1/CleanCode7/">← <!-- -->[Clean Code] 7.오류처리</a></li><li></li></ul></nav></div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/2021/CleanSwift/CleanSwift/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-7f7f3c1e6b4c7fa23345.js"],"app":["/app-37e0565d74a3b5af16d8.js"],"component---src-pages-404-js":["/component---src-pages-404-js-bd2e32990b4c56ea446f.js"],"component---src-pages-guest-book-js":["/component---src-pages-guest-book-js-ffef667d94c5d8188a69.js"],"component---src-pages-index-js":["/component---src-pages-index-js-5cd018b7d5a1e8fbb865.js"],"component---src-pages-portfolio-2-js":["/component---src-pages-portfolio-2-js-8da8a1d8999e2dbb2139.js"],"component---src-pages-portfolio-js":["/component---src-pages-portfolio-js-11110927fdb8ee2a0d3b.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-6959436045a99f412334.js"]};/*]]>*/</script><script src="/polyfill-7f7f3c1e6b4c7fa23345.js" nomodule=""></script><script src="/component---src-templates-blog-post-js-6959436045a99f412334.js" async=""></script><script src="/cd7d5f864fc9e15ed8adef086269b0aeff617554-d230b9dd79c1cdc754ef.js" async=""></script><script src="/d5d7a013bc6c1e2b6d7db819052c16d7efea5559-776e713eac1a2d0ed666.js" async=""></script><script src="/9fb2ff794aef75179f6bc5d80ea94523212dd791-4c5cd405be30ae1358e0.js" async=""></script><script src="/commons-02b94864ec7a79de20a5.js" async=""></script><script src="/styles-e9d24b1846c7d6eb9685.js" async=""></script><script src="/app-37e0565d74a3b5af16d8.js" async=""></script><script src="/framework-a0c93c3ca6a1fb6645da.js" async=""></script><script src="/webpack-runtime-1dad612800ebaf9f3136.js" async=""></script></body></html>

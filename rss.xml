@@ -1,4 +1,310 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[2021]]></title><description><![CDATA[ARCHIEVE]]></description><link>https://haeuncs.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 28 Feb 2021 17:21:59 GMT</lastBuildDate><item><title><![CDATA[[Clean Code] 10.클래스]]></title><description><![CDATA[클래스 체계 클래스를 정의하는 표준 자바 관례에서는 아래 순서에 맞춰 작성한다. 정적(static) 공개(public…]]></description><link>https://haeuncs.github.io/2021-cleancode-1/CleanCode10/</link><guid isPermaLink="false">https://haeuncs.github.io/2021-cleancode-1/CleanCode10/</guid><pubDate>Sun, 28 Feb 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;클래스-체계&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%B2%B4%EA%B3%84&quot; aria-label=&quot;클래스 체계 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;클래스 체계&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[2021]]></title><description><![CDATA[ARCHIEVE]]></description><link>https://haeuncs.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 07 Mar 2021 15:17:47 GMT</lastBuildDate><item><title><![CDATA[Clean Swift]]></title><description><![CDATA[Clean Architecture 에서 나온 Architecture인 Clean Swift는 위와 같은 view - interactor - presenter 즉 VIP cycle 을 가진 architecture이다. Clean swift…]]></description><link>https://haeuncs.github.io/2021/CleanSwift/CleanSwift/</link><guid isPermaLink="false">https://haeuncs.github.io/2021/CleanSwift/CleanSwift/</guid><pubDate>Sun, 07 Mar 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/59256c1a344d76352b683c63345d51bf/cc418/Untitled.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 39.86486486486486%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsSAAALEgHS3X78AAABbElEQVQoz5VRTUsCURSdD2fSagS/GCsHUcECwYWgFUTtFKZgjMiYEly0FqLFQEK7yH5AtRxBcmG4SQSDCHQjNC1curOVK/0Pp+ZhhVRIi8uDc+85597zKIqi8N+iaZq8kiShVquhpJfQaDSgqqqJfw/5/X74JB8CgQDcbvdUQdvcLBR5BznlAMlUCqFgEBTLsqQpCAKaj020np5hvBjQNI3gHMeBYRiYc8xYaEpNAh7ODmYKSVzwIh6NIZnYhOgVCWYaks3PCgUULy6xyDtwfJTDfbWK69sbRILLWIvEUC6XcVUs4q5SgZLaRsi5hF6vh7d+H6PRCK12mwiaVxBDWZaRVtLgKQar8QRO8yc4z2twOZwQXR5kMvtQd/dw+BH4SigMr92F+kMdnU4H3W4Xuq5P5Er9dZbAWmGbsWLeLiDqCxMDC2f5IvMcT/L9wTVX/VyXocfhjz9qa30Dg8EAr4aB4XCIbDY7ed4v9Q7/POyhN77vmwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;img/Untitled.png&quot;
+        title=&quot;img/Untitled.png&quot;
+        src=&quot;/static/59256c1a344d76352b683c63345d51bf/fcda8/Untitled.png&quot;
+        srcset=&quot;/static/59256c1a344d76352b683c63345d51bf/12f09/Untitled.png 148w,
+/static/59256c1a344d76352b683c63345d51bf/e4a3f/Untitled.png 295w,
+/static/59256c1a344d76352b683c63345d51bf/fcda8/Untitled.png 590w,
+/static/59256c1a344d76352b683c63345d51bf/efc66/Untitled.png 885w,
+/static/59256c1a344d76352b683c63345d51bf/c83ae/Untitled.png 1180w,
+/static/59256c1a344d76352b683c63345d51bf/cc418/Untitled.png 1992w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Clean Architecture 에서 나온 Architecture인 Clean Swift는 위와 같은 view - interactor - presenter 즉 VIP cycle 을 가진 architecture이다.&lt;/p&gt;
+&lt;h1 id=&quot;clean-swift-의-제어흐름&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#clean-swift-%EC%9D%98-%EC%A0%9C%EC%96%B4%ED%9D%90%EB%A6%84&quot; aria-label=&quot;clean swift 의 제어흐름 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Clean swift 의 제어흐름&lt;/h1&gt;
+&lt;p&gt;위의 그림에서 나타낸 제어 흐름을 글로 설명하면&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;view에서 interactor 에게 business logic 을 요청&lt;/li&gt;
+&lt;li&gt;interactor는 business logic 또는 business logic 을 수행하는 worker 에게 도움을 요청&lt;/li&gt;
+&lt;li&gt;worker 에서 networking, database 등 business를 다루고 작업이 완료&lt;/li&gt;
+&lt;li&gt;완료된 작업을 interactor는 presenter를 호출하여 view에 표시&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;와 같이 동작한다.&lt;/p&gt;
+&lt;p&gt;이러한 모든 작업은 interactor가 presenter 에게 종속되지 않도록 의존성을 되돌리기 위해 swift protocol 을 사용한다.&lt;/p&gt;
+&lt;p&gt;즉 interactor가 presenter 에 의존하는 것이 아닌 protocol에 선언된 메서드를 호출한다.&lt;/p&gt;
+&lt;h1 id=&quot;clean-swift-component&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#clean-swift-component&quot; aria-label=&quot;clean swift component permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Clean Swift Component&lt;/h1&gt;
+&lt;h3 id=&quot;view&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#view&quot; aria-label=&quot;view permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;View&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;뷰에 관련된 로직만 처리&lt;/li&gt;
+&lt;li&gt;비지니스 로직 관련은 interactor에게 요청&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;interactor&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#interactor&quot; aria-label=&quot;interactor permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Interactor&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;business logic 수행&lt;/li&gt;
+&lt;li&gt;요청된 것이 완료되면 Presenter에게 데이터를 전송&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;presenter&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#presenter&quot; aria-label=&quot;presenter permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Presenter&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;interactor로부터 데이터를 받아서 UI를 위한 모델로 가공&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;가공된 모델을 View에게 전달&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;presenter 에서 간단한 포맷팅을 하거나 worker 에게 포맷팅 작업을 인계할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;worker&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#worker&quot; aria-label=&quot;worker permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Worker&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;interactor에서 수행해야하는 business logic 들이 실제 수행되는 곳이다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;model&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#model&quot; aria-label=&quot;model permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Model&lt;/h3&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/81819b6f688a9722da454a800a447a0f/41be6/Untitled1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 160.13513513513513%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAgCAYAAAASYli2AAAACXBIWXMAAAsSAAALEgHS3X78AAAB0klEQVRIx+VVy27bMBDU8iGRlCzGkh/xS3WMJHUDBL21KPoN/f978g+9tdMl7QJG0iSmowABehhQooDxzuzsOsuy7CcDjN/78xT82p932ZsT0l8Q39F7qpD2hF+HLX5sW3z/UkJ9a3aVvqbCzjrcjC3WKw3Rmb4kE0PsICRDgXSBTKodnia8f0RYnTVYbW8x7jaQw3MU80uY1RZ28xlm+RHF4iqN0FiLvChObcr9PyVLpZjUwHO109mSf8TBugo1v4f72g/jNyJxHOEhxL7LdPAspYRS+vgKtXFol2sM2jEU+5ifXzA2UM08vocmJUkua4920aEoKwjnI4mshhCmgvITJhRphIolBVmh0uCZ1grSDiBsBcptPGOcjiUMcP4MzbyDn85R8fTkkw8cn08xOnq0fJjHlwktx0cQ9RObSOjKKDd2OHj22LdEwoHHiKel4eb40QRmcQ27voXpbuK0RNlpFbo4McTNoSCdmxDmmbThO32Khw6yTw8NZ9BPZii5w45zGfKnmxnLvUY+vWDJK97oCaPnBjXq0TQSBj8F5zBOzbiL/ukwMUk5ZA/l851NIaTo4YMFcLB8KY0wkGmt+9mHccHmPS/YV/yNvn/Cu/+Q8A/yYYybAKTuBgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;/Untitled.png&quot;
+        title=&quot;/Untitled.png&quot;
+        src=&quot;/static/81819b6f688a9722da454a800a447a0f/fcda8/Untitled1.png&quot;
+        srcset=&quot;/static/81819b6f688a9722da454a800a447a0f/12f09/Untitled1.png 148w,
+/static/81819b6f688a9722da454a800a447a0f/e4a3f/Untitled1.png 295w,
+/static/81819b6f688a9722da454a800a447a0f/fcda8/Untitled1.png 590w,
+/static/81819b6f688a9722da454a800a447a0f/41be6/Untitled1.png 638w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;request, response, viewmodel 를 struct 로 표현한다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Request&lt;/p&gt;
+&lt;p&gt;view controller 와 request model을 구성하고 interator에게 전달request model은 text field의 텍스트 입력, picker 에서 선택된 값과 같은 user input들이 대부분 포함된다&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Response&lt;/p&gt;
+&lt;p&gt;interactor 가 request에 대한 작업을 마친 후, response model에서 result를 캡슐화하고 presenter 로 전달한다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;View Model&lt;/p&gt;
+&lt;p&gt;Presenter 가 Interactor로부터 response를 받은 후 string, int 와 같은 raw data 유형으로 결과를 포맷하여 view model로 넣는다. 그런 다음 view model을 다시 view controller 로 전달하여 디스플레이 한다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;raw data model을 사용하는 것이 아닌 이러한 struct 구조의 data model을 사용하여 얻는 이점&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;business logic 이 변경되여 기본 데이터 모델이 변경될 때, 코드 베이스 전체를 업데이트할 필요가 없다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;결론&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EA%B2%B0%EB%A1%A0&quot; aria-label=&quot;결론 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;결론&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;VIP Cycle 을 도입하여 단방향의 제어흐름을 갖게해준다.&lt;/li&gt;
+&lt;li&gt;protocol 을 이용해 구현되어 있기 때문에 모의 데이터를 이용한 unit test가 쉽다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/Clean-Swift/CleanStore&quot;&gt;https://github.com/Clean-Swift/CleanStore&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[Clean Code] 7.오류처리]]></title><description><![CDATA[…]]></description><link>https://haeuncs.github.io/2021-cleancode-1/CleanCode7/</link><guid isPermaLink="false">https://haeuncs.github.io/2021-cleancode-1/CleanCode7/</guid><pubDate>Sun, 07 Mar 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;7-오류-처리&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#7-%EC%98%A4%EB%A5%98-%EC%B2%98%EB%A6%AC&quot; aria-label=&quot;7 오류 처리 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;7. 오류 처리&lt;/h1&gt;
+&lt;h2 id=&quot;오류-코드보다-예외를-사용하라&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%98%A4%EB%A5%98-%EC%BD%94%EB%93%9C%EB%B3%B4%EB%8B%A4-%EC%98%88%EC%99%B8%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EB%9D%BC&quot; aria-label=&quot;오류 코드보다 예외를 사용하라 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;오류 코드보다 예외를 사용하라&lt;/h2&gt;
+&lt;p&gt;옛날에는 예외를 지원하지 않는 프로그래밍 언어가 많았다. 그래서 오류 플래그를 설정하거나 호출자에게 오류 코드를 반환하는 방법을 사용했었다.&lt;/p&gt;
+&lt;p&gt;이와 같은 방법을 사용하면 호출자 코드가 복잡해지고 함수 호출과 동시에 오류를 확인해야한다.&lt;/p&gt;
+&lt;p&gt;오류가 발생하면 예외를 던져 논리와 오류 처리 코드를 분리하여 호출자 코드가 더 깔끔해지도록 한다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// Bad
+public class DeviceController {
+  ...
+  public void sendShutDown() {
+    DeviceHandle handle = getHandle(DEV1);
+    // Check the state of the device
+    if (handle != DeviceHandle.INVALID) {
+      // Save the device status to the record field
+      retrieveDeviceRecord(handle);
+      // If not suspended, shut down
+      if (record.getStatus() != DEVICE_SUSPENDED) {
+        pauseDevice(handle);
+        clearDeviceWorkQueue(handle);
+        closeDevice(handle);
+      } else {
+        logger.log(&amp;quot;Device suspended. Unable to shut down&amp;quot;);
+      }
+    } else {
+      logger.log(&amp;quot;Invalid handle for: &amp;quot; + DEV1.toString());
+    }
+  }
+  ...
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// Good
+public class DeviceController {
+  ...
+  public void sendShutDown() {
+    try {
+      tryToShutDown();
+    } catch (DeviceShutDownError e) {
+      logger.log(e);
+    }
+  }
+     
+  private void tryToShutDown() throws DeviceShutDownError {
+    DeviceHandle handle = getHandle(DEV1);
+    DeviceRecord record = retrieveDeviceRecord(handle);
+    pauseDevice(handle);
+    clearDeviceWorkQueue(handle);
+    closeDevice(handle);
+  }
+   
+  private DeviceHandle getHandle(DeviceID id) {
+    ...
+    throw new DeviceShutDownError(&amp;quot;Invalid handle for: &amp;quot; + id.toString());
+    ...
+  }
+  ...
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;try-catch-finally-문부터-작성하라&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#try-catch-finally-%EB%AC%B8%EB%B6%80%ED%84%B0-%EC%9E%91%EC%84%B1%ED%95%98%EB%9D%BC&quot; aria-label=&quot;try catch finally 문부터 작성하라 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Try-Catch-Finally 문부터 작성하라&lt;/h2&gt;
+&lt;p&gt;옛날에는 메서드를 선언할 때 메서드가 반환하는 예외를 모두 열거했다. 하지만 지금은 확인된 예외를 잘 사용하지 않는다.&lt;/p&gt;
+&lt;p&gt;확인된 오류가 치르는 비용에 상응하는 이익을 제공하는지 따져봐야 한다.&lt;/p&gt;
+&lt;p&gt;확인된 예외는 OCP 를 위반한다.&lt;/p&gt;
+&lt;p&gt;메서드에서 확인된 예외를 던졌는데 catch 블록이 세 단계 위에 있다면 그 사이 메서드 모두가 선언부에 해당 예외를 정의해 한다.&lt;/p&gt;
+&lt;p&gt;throws 경로에 위치하는 모든 함수가 최하위 함수에서 던지는 예외를 알아야하기 때문에 캡슐화가 깨진다.&lt;/p&gt;
+&lt;p&gt;아주 중요한 라이브러리의 경우 모든 예외를 잡아야하지만 일반적인 애플리케이션에서는 의존성이라는 비용이 이익보다 크다.&lt;/p&gt;
+&lt;h2 id=&quot;미확인-예외를-사용하라&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%AF%B8%ED%99%95%EC%9D%B8-%EC%98%88%EC%99%B8%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EB%9D%BC&quot; aria-label=&quot;미확인 예외를 사용하라 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;미확인 예외를 사용하라&lt;/h2&gt;
+&lt;p&gt;오류 메시지에 정보를 담아 예외와 함께 던져라&lt;/p&gt;
+&lt;h2 id=&quot;예외에-의미를-제공하라&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%98%88%EC%99%B8%EC%97%90-%EC%9D%98%EB%AF%B8%EB%A5%BC-%EC%A0%9C%EA%B3%B5%ED%95%98%EB%9D%BC&quot; aria-label=&quot;예외에 의미를 제공하라 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;예외에 의미를 제공하라&lt;/h2&gt;
+&lt;p&gt;오류를 분류하는 방법은 수없이 많다.&lt;/p&gt;
+&lt;p&gt;오류가 발생한 위치 - 컴포넌트로 분류
+유형으로 분리 - 디바이스 실패, 네트워크 실패. 프로그래밍 오류 등으로 분류
+하지만 오류를 정의할 때 가장 중요한 것은 오류를 잡아내는 방법이다.&lt;/p&gt;
+&lt;h2 id=&quot;호출자를-고려해-예외-클래스를-정의하라&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%98%B8%EC%B6%9C%EC%9E%90%EB%A5%BC-%EA%B3%A0%EB%A0%A4%ED%95%B4-%EC%98%88%EC%99%B8-%ED%81%B4%EB%9E%98%EC%8A%A4%EB%A5%BC-%EC%A0%95%EC%9D%98%ED%95%98%EB%9D%BC&quot; aria-label=&quot;호출자를 고려해 예외 클래스를 정의하라 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;호출자를 고려해 예외 클래스를 정의하라&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// Bad
+  ACMEPort port = new ACMEPort(12);
+  try {
+    port.open();
+  } catch (DeviceResponseException e) {
+    reportPortError(e);
+    logger.log(&amp;quot;Device response exception&amp;quot;, e);
+  } catch (ATM1212UnlockedException e) {
+    reportPortError(e);
+    logger.log(&amp;quot;Unlock exception&amp;quot;, e);
+  } catch (GMXError e) {
+    reportPortError(e);
+    logger.log(&amp;quot;Device response exception&amp;quot;);
+  } finally {
+    ...
+  }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// Good
+LocalPort port = new LocalPort(12);
+try {
+  port.open();
+} catch (PortDeviceFailure e) {
+  reportError(e);
+  logger.log(e.getMessage(), e);
+} finally {
+  ...
+}
+
+public class LocalPort {
+  private ACMEPort innerPort;
+  public LocalPort(int portNumber) {
+    innerPort = new ACMEPort(portNumber);
+  }
+  
+  public void open() {
+    try {
+      innerPort.open();
+    } catch (DeviceResponseException e) {
+      throw new PortDeviceFailure(e);
+    } catch (ATM1212UnlockedException e) {
+      throw new PortDeviceFailure(e);
+    } catch (GMXError e) {
+      throw new PortDeviceFailure(e);
+    }
+  }
+  ...
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;정상-흐름을-정의하라&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%A0%95%EC%83%81-%ED%9D%90%EB%A6%84%EC%9D%84-%EC%A0%95%EC%9D%98%ED%95%98%EB%9D%BC&quot; aria-label=&quot;정상 흐름을 정의하라 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;정상 흐름을 정의하라&lt;/h2&gt;
+&lt;p&gt;앞 절의 내용을 따르면 비지니스 논리와 오류 처리가 잘 분리된 코드가 나온다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// Bad
+  try {
+    MealExpenses expenses = expenseReportDAO.getMeals(employee.getID());
+    m_total += expenses.getTotal();
+  } catch(MealExpensesNotFound e) {
+    m_total += getMealPerDiem();
+  }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// Good
+  // caller logic.
+  ...
+  MealExpenses expenses = expenseReportDAO.getMeals(employee.getID());
+  m_total += expenses.getTotal();
+  ...
+  
+  public class PerDiemMealExpenses implements MealExpenses {
+    public int getTotal() {
+      // return the per diem default
+    }
+  }
+  
+  // 이해를 돕기 위해 직접 추가한 클래스
+  public class ExpenseReportDAO {
+    ...
+    public MealExpenses getMeals(int employeeId) {
+      MealExpenses expenses;
+      try {
+        expenses = expenseReportDAO.getMeals(employee.getID());
+      } catch(MealExpensesNotFound e) {
+        expenses = new PerDiemMealExpenses();
+      }
+      
+      return expenses;
+    }
+    ...
+  }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;null을-반환하지-마라&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#null%EC%9D%84-%EB%B0%98%ED%99%98%ED%95%98%EC%A7%80-%EB%A7%88%EB%9D%BC&quot; aria-label=&quot;null을 반환하지 마라 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;null을 반환하지 마라&lt;/h2&gt;
+&lt;p&gt;null을 반환하는 코드는 일거리를 늘릴 뿐만 아니라 호출자에게 문제를 떠넘긴다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// Bad
+  List&amp;lt;Employee&amp;gt; employees = getEmployees();
+  if (employees != null) {
+    for(Employee e : employees) {
+      totalPay += e.getPay();
+    }
+  }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// Good
+List&amp;lt;Employee&amp;gt; employees = getEmployees();
+for(Employee e : employees) {
+  totalPay += e.getPay();
+}
+
+public List&amp;lt;Employee&amp;gt; getEmployees() {
+  if( .. there are no employees .. )
+    return Collections.emptyList();
+  }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;null을-전달하지-마라&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#null%EC%9D%84-%EC%A0%84%EB%8B%AC%ED%95%98%EC%A7%80-%EB%A7%88%EB%9D%BC&quot; aria-label=&quot;null을 전달하지 마라 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;null을 전달하지 마라&lt;/h2&gt;
+&lt;p&gt;메서드에서 null을 반환하는 방식도 나쁘지만 메서드로 null을 전달하는 방식은 더 나쁘다.&lt;/p&gt;
+&lt;p&gt;대다수의 프로그래밍 언어는 호출자가 실수로 넘가는 null을 적절히 처리하는 방법이 없어 애초에 null을 넘기지 못하도록 금지하는 정책이 합리적이다.&lt;/p&gt;
+&lt;h2 id=&quot;결론&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EA%B2%B0%EB%A1%A0&quot; aria-label=&quot;결론 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;결론&lt;/h2&gt;
+&lt;p&gt;깨끗한 코드는 읽기도 좋아야하지만 안정성도 높아야 한다. 오류 처리를 프로그램 논리와 분리하면 튼튼하고 깨끗한 코드를 작성할 수 있다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[Clean Code] 10.클래스]]></title><description><![CDATA[클래스 체계 클래스를 정의하는 표준 자바 관례에서는 아래 순서에 맞춰 작성한다. 정적(static) 공개(public…]]></description><link>https://haeuncs.github.io/2021-cleancode-1/CleanCode10/</link><guid isPermaLink="false">https://haeuncs.github.io/2021-cleancode-1/CleanCode10/</guid><pubDate>Sun, 28 Feb 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;클래스-체계&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%B2%B4%EA%B3%84&quot; aria-label=&quot;클래스 체계 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;클래스 체계&lt;/h1&gt;
 &lt;p&gt;클래스를 정의하는 표준 자바 관례에서는 아래 순서에 맞춰 작성한다.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;정적(static) 공개(public) 상수&lt;/li&gt;
