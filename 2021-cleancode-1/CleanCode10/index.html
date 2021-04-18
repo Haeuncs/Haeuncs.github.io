@@ -72,7 +72,7 @@ data-styled.g4[id="layout__RightSideWrapper-sc-1xvv2zr-3"]{content:"fmuRMc,"}
 <li>비공개 함수 (자신을 호출하는 공개 함수 바로 뒤에)</li>
 </ol>
 <p><strong>캡슐화</strong></p>
-<p>변수와 유틸리티 함수는 가능한 공개하지 않는 편이 낫다. 함수를 protected 로 서언하여 테스트 코드에서 접근 할 수 있도록 해야한다. (swift 에서는 static 으로 해서 테스트코드에서 접근할 수 있도록 하는 것이랑 같은걸까?)</p>
+<p>변수와 유틸리티 함수는 가능한 공개하지 않는 편이 낫다. 함수를 protected 로 서언하여 테스트 코드에서 접근 할 수 있도록 해야한다. (swift internal?)</p>
 <h1 id="클래스는-작아야-한다" style="position:relative;"><a href="#%ED%81%B4%EB%9E%98%EC%8A%A4%EB%8A%94-%EC%9E%91%EC%95%84%EC%95%BC-%ED%95%9C%EB%8B%A4" aria-label="클래스는 작아야 한다 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>클래스는 작아야 한다!</h1>
 <p>함수와 마찬가지로 클래스도 작아야한다.</p>
 <p>클래스 이름은 해당 클래스 책임을 기술해야 한다. 예를 들어 Processor, Manager, Super 등과 같은 모호한 단어가 있다면 클래스가 여러 책임을 떠안았다는 증거이다.</p>

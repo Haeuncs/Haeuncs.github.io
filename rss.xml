@@ -1,4 +1,153 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[2021]]></title><description><![CDATA[ARCHIEVE]]></description><link>https://haeuncs.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 14 Mar 2021 17:10:01 GMT</lastBuildDate><item><title><![CDATA[Clean Swift]]></title><description><![CDATA[Clean Architecture 에서 나온 Architecture인 Clean Swift는 위와 같은 view - interactor - presenter 즉 VIP cycle 을 가진 architecture이다. Clean swift…]]></description><link>https://haeuncs.github.io/2021/CleanSwift/CleanSwift/</link><guid isPermaLink="false">https://haeuncs.github.io/2021/CleanSwift/CleanSwift/</guid><pubDate>Sun, 07 Mar 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[2021]]></title><description><![CDATA[ARCHIEVE]]></description><link>https://haeuncs.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 18 Apr 2021 15:58:41 GMT</lastBuildDate><item><title><![CDATA[2021 4월 - LG 32UN880 후기]]></title><description><![CDATA[서론 기존에 사용한 모니터는 게임용 144hz 모니터 였다. 2017년에 대학교 휴학을 하고 알바 시간 빼고는 오버워치 게임만 했던 시기가 있는데 그 때 구입한 모니터였다. 물론 모니터를 144hz…]]></description><link>https://haeuncs.github.io/2021/4월의소비/</link><guid isPermaLink="false">https://haeuncs.github.io/2021/4월의소비/</guid><pubDate>Sun, 18 Apr 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;서론&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%84%9C%EB%A1%A0&quot; aria-label=&quot;서론 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;서론&lt;/h1&gt;
+&lt;p&gt;기존에 사용한 모니터는 게임용 144hz 모니터 였다.&lt;/p&gt;
+&lt;p&gt;2017년에 대학교 휴학을 하고 알바 시간 빼고는 오버워치 게임만 했던 시기가 있는데 그 때 구입한 모니터였다.&lt;/p&gt;
+&lt;p&gt;물론 모니터를 144hz로 바꾼다고 티어가 바뀌진 않았었지만 나름 잘 사용했다.&lt;/p&gt;
+&lt;p&gt;최근에 모니터를 너무너무 바꾸고 싶었는데 그 이유들로는 &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;기존 모니터에 스피커가 달려있지 않음&lt;/li&gt;
+&lt;li&gt;mac os 랑 잘 안맞는 느낌&lt;/li&gt;
+&lt;li&gt;모니터가 자유자재로 움직이지 않아서 시점이 불편함&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;이러한 이유들로 모니터를 바꾸고 싶었는데 몇 주 전, 집 옮기기에 달인인 어머니께서 가구 배치를 바꾸시다가 그만 모니터를 깨버리셨다!&lt;/p&gt;
+&lt;p&gt;그래서 신나게 모니터를 알아봤다.&lt;/p&gt;
+&lt;p&gt;모니터 구입 후보로는&lt;/p&gt;
+&lt;p&gt;가성비 모니터 27UL850 가 있었다. 27UL850 + 모니터 암 이 조합으로 구입할까 생각했는데 뒷 판이 흰색인게 거슬렸다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/9ab5b513406c446eb1263e718542a011/a2510/27ul850.bkr_hr.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 50%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAKABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAEFAv/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAGnOuKNDK//xAAZEAACAwEAAAAAAAAAAAAAAAAAAQIEERD/2gAIAQEAAQUCsaOctH3/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAcEAACAAcAAAAAAAAAAAAAAAABAgAREiAhMUH/2gAIAQEABj8CWRIzyBSX3b//xAAbEAACAwADAAAAAAAAAAAAAAABEQAQITFBUf/aAAgBAQABPyExVhplCvADprhOxX//2gAMAwEAAgADAAAAEG8P/8QAFhEAAwAAAAAAAAAAAAAAAAAAEBFB/9oACAEDAQE/EHB//8QAFREBAQAAAAAAAAAAAAAAAAAAEBH/2gAIAQIBAT8Qh//EABoQAQACAwEAAAAAAAAAAAAAAAEAERAhMUH/2gAIAQEAAT8QEs4sltcUgoNDY/u8d4Yv/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;27ul850.bkr_hr.jpg&quot;
+        title=&quot;27ul850.bkr_hr.jpg&quot;
+        src=&quot;/static/9ab5b513406c446eb1263e718542a011/1c72d/27ul850.bkr_hr.jpg&quot;
+        srcset=&quot;/static/9ab5b513406c446eb1263e718542a011/a80bd/27ul850.bkr_hr.jpg 148w,
+/static/9ab5b513406c446eb1263e718542a011/1c91a/27ul850.bkr_hr.jpg 295w,
+/static/9ab5b513406c446eb1263e718542a011/1c72d/27ul850.bkr_hr.jpg 590w,
+/static/9ab5b513406c446eb1263e718542a011/a8a14/27ul850.bkr_hr.jpg 885w,
+/static/9ab5b513406c446eb1263e718542a011/a2510/27ul850.bkr_hr.jpg 1000w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h1 id=&quot;32un880-구입&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#32un880-%EA%B5%AC%EC%9E%85&quot; aria-label=&quot;32un880 구입 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;32UN880 구입&lt;/h1&gt;
+&lt;p&gt;27UL850 말고도 여러 후보의 모니터들이 있었지만 결제를 한 모니터는 바로 &lt;b&gt;32UN880&lt;/b&gt; 이다. 원래는 27인치로 구입하고 싶었는데 내가 살 때는 27인치가 품절인지 LG공식에서는 구입할 수가 없어서 어쩔 수 없이 32인치를 구입했다.&lt;/p&gt;
+&lt;p&gt;모니터에 대한 자세한 설명은 아래 동영상으로 대체한다. 위의 모니터 조건들을 모두 충족시키는 꿈의 모니터였다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-resp-iframe-wrapper&quot; style=&quot;padding-bottom: 56.25%; position: relative; height: 0; overflow: hidden; margin-bottom: 1.0725rem&quot; &gt; &lt;iframe src=&quot;https://www.youtube.com/embed/R3-tdE2Lv6c&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen style=&quot; position: absolute; top: 0; left: 0; width: 100%; height: 100%; &quot;&gt;&lt;/iframe&gt; &lt;/div&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 576px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/3585c900c29e1cb87311ec8b9cd61b1b/533c1/4purchase_1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 14.864864864864865%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAwklEQVQI12PgncP5n2cOBxjzzuECYz48mH8u939uoFrR+UL/+YBs/rk8/wXm8oL18QDNYtDcrfQ/7nT4/8DjXv8TzkT9l90u9p9xHcN/tvUM/1mRMPsGhv8Maxn+p55L+N9+s+l/yrn4/8EnfP/33G7/33Wr9X/ZlcL/ILMY+Ndz/FfaIv1fbZvCf5nNov/51rH/Z10NNGANOmb8zwIU192h/t9st8F/la2y/w136fw332P432av2X+DnVr/RTbw/gcAG49zzasJEjMAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;27ul850.bkr_hr.jpg&quot;
+        title=&quot;27ul850.bkr_hr.jpg&quot;
+        src=&quot;/static/3585c900c29e1cb87311ec8b9cd61b1b/533c1/4purchase_1.png&quot;
+        srcset=&quot;/static/3585c900c29e1cb87311ec8b9cd61b1b/12f09/4purchase_1.png 148w,
+/static/3585c900c29e1cb87311ec8b9cd61b1b/e4a3f/4purchase_1.png 295w,
+/static/3585c900c29e1cb87311ec8b9cd61b1b/533c1/4purchase_1.png 576w&quot;
+        sizes=&quot;(max-width: 576px) 100vw, 576px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;기사 설치, 배송 두가지 선택지가 있었는데 기사님께서 설치해주시는건 너무 오래걸려서 그냥 당일 배송으로 구입했다.&lt;/p&gt;
+&lt;p&gt;설치 방법이 그닥 어렵지 않아서 설명서만 보면 설치할 수 있는 정도였다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/a1ff37a392736c54203ec8a76dfda65f/c274f/4purchase_2.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 60.13513513513513%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAMABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAQCAwX/xAAWAQEBAQAAAAAAAAAAAAAAAAACAAH/2gAMAwEAAhADEAAAAUJN3WIGsB//xAAcEAACAgIDAAAAAAAAAAAAAAAAAQIRAwQSEyH/2gAIAQEAAQUCtU5ZRPYOuLOKZHw//8QAGBEAAgMAAAAAAAAAAAAAAAAAAQIQEUH/2gAIAQMBAT8BC1sf/8QAGBEAAwEBAAAAAAAAAAAAAAAAAAERAjH/2gAIAQIBAT8Be6uFP//EAB4QAAECBwEAAAAAAAAAAAAAAAARIQESIzEyQnGB/9oACAEBAAY/Ask9KcyG48F6WGP/xAAbEAEAAgMBAQAAAAAAAAAAAAABABEhMUFRkf/aAAgBAQABPyEYZPtqXTaL9lHL8ygN1MsFK9CiAKDs/9oADAMBAAIAAwAAABA8D//EABYRAQEBAAAAAAAAAAAAAAAAAAARMf/aAAgBAwEBPxDdSP/EABYRAQEBAAAAAAAAAAAAAAAAABEBEP/aAAgBAgEBPxCADH//xAAcEAEAAwACAwAAAAAAAAAAAAABABEhMVFBYfD/2gAIAQEAAT8QbAQvEegqBUnihx2XtRHK/Op5YmCrFqzTQpQLmQIINnVto9z/2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;27ul850.bkr_hr.jpg&quot;
+        title=&quot;27ul850.bkr_hr.jpg&quot;
+        src=&quot;/static/a1ff37a392736c54203ec8a76dfda65f/1c72d/4purchase_2.jpg&quot;
+        srcset=&quot;/static/a1ff37a392736c54203ec8a76dfda65f/a80bd/4purchase_2.jpg 148w,
+/static/a1ff37a392736c54203ec8a76dfda65f/1c91a/4purchase_2.jpg 295w,
+/static/a1ff37a392736c54203ec8a76dfda65f/1c72d/4purchase_2.jpg 590w,
+/static/a1ff37a392736c54203ec8a76dfda65f/a8a14/4purchase_2.jpg 885w,
+/static/a1ff37a392736c54203ec8a76dfda65f/fbd2c/4purchase_2.jpg 1180w,
+/static/a1ff37a392736c54203ec8a76dfda65f/c274f/4purchase_2.jpg 3965w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;개인 노트북을 사용할 때는 해당 사진처럼 모니터만 켜두고 사용한다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/805ab1ba85148ba5b59de71dec46e010/93992/4purchase_3.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 182.43243243243242%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAkABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAIDBAH/xAAXAQEBAQEAAAAAAAAAAAAAAAAEAgEF/9oADAMBAAIQAxAAAAHMsjUaERk19r4k0lAvV2DRxEp//8QAHhAAAgEDBQAAAAAAAAAAAAAAAQIAAxESISIxMkH/2gAIAQEAAQUCAFomqeSn0pi6ERDtRgENRTBxiJissJ//xAAZEQACAwEAAAAAAAAAAAAAAAABEQACEAP/2gAIAQMBAT8BeKV4BDASp//EABcRAAMBAAAAAAAAAAAAAAAAAAEQEQD/2gAIAQIBAT8BgVxf/8QAGhAAAgMBAQAAAAAAAAAAAAAAARAAETEhUf/aAAgBAQAGPwJCc8QgYsyrWTF//8QAHhABAAICAQUAAAAAAAAAAAAAAQARITFREGFxgZH/2gAIAQEAAT8hQPELNLHYd1DTsdFCwXslZuJWHgHuY5ZmOWIcb5KmwDzG7U//2gAMAwEAAgADAAAAEP8AxU+D7//EABkRAQEBAQEBAAAAAAAAAAAAAAEAETEhQf/aAAgBAwEBPxDY9jlpZjL8I7ZHt//EABkRAAIDAQAAAAAAAAAAAAAAAAABEBExIf/aAAgBAgEBPxCxYPSlDdcM/8QAHxABAAICAgIDAAAAAAAAAAAAAQARITFBgVFhcZGx/9oACAEBAAE/EHoODrOpxB2xV9rJiLapk+onMMPwQ8IQ6hu3aPEwH3+x0dV0iKo2KAFmhZW4gbTPvCfE2CmbAPU//9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;27ul850.bkr_hr.jpg&quot;
+        title=&quot;27ul850.bkr_hr.jpg&quot;
+        src=&quot;/static/805ab1ba85148ba5b59de71dec46e010/1c72d/4purchase_3.jpg&quot;
+        srcset=&quot;/static/805ab1ba85148ba5b59de71dec46e010/a80bd/4purchase_3.jpg 148w,
+/static/805ab1ba85148ba5b59de71dec46e010/1c91a/4purchase_3.jpg 295w,
+/static/805ab1ba85148ba5b59de71dec46e010/1c72d/4purchase_3.jpg 590w,
+/static/805ab1ba85148ba5b59de71dec46e010/a8a14/4purchase_3.jpg 885w,
+/static/805ab1ba85148ba5b59de71dec46e010/fbd2c/4purchase_3.jpg 1180w,
+/static/805ab1ba85148ba5b59de71dec46e010/93992/4purchase_3.jpg 2088w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;업무를 볼 때는 27인치 아이맥 + 90도로 해서 모니터로는 코드를 띄어두면서 작업한다.&lt;/p&gt;
+&lt;p&gt;솔직히 엄청 커서 아이맥 조합에서는 목을 열심히 돌려야해서 보기 힘들다.&lt;/p&gt;
+&lt;h1 id=&quot;결론&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EA%B2%B0%EB%A1%A0&quot; aria-label=&quot;결론 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;결론&lt;/h1&gt;
+&lt;p&gt;어째든 좋은 소비였다.&lt;/p&gt;
+&lt;p&gt;모니터를 침대쪽으로 틀어서 자기전에 넷플릭스도 보고 스위치로 링피트도 하고 너무 만족스럽다. ( ͡° ͜ʖ ͡°)&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Clean Swift]]></title><description><![CDATA[Clean Architecture 에서 나온 Architecture인 Clean Swift는 위와 같은 view - interactor - presenter 즉 VIP cycle 을 가진 architecture이다. Clean swift…]]></description><link>https://haeuncs.github.io/2021/CleanSwift/CleanSwift/</link><guid isPermaLink="false">https://haeuncs.github.io/2021/CleanSwift/CleanSwift/</guid><pubDate>Sun, 07 Mar 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
     &gt;
@@ -315,7 +464,7 @@ public List&amp;lt;Employee&amp;gt; getEmployees() {
 &lt;li&gt;비공개 함수 (자신을 호출하는 공개 함수 바로 뒤에)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;캡슐화&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;변수와 유틸리티 함수는 가능한 공개하지 않는 편이 낫다. 함수를 protected 로 서언하여 테스트 코드에서 접근 할 수 있도록 해야한다. (swift 에서는 static 으로 해서 테스트코드에서 접근할 수 있도록 하는 것이랑 같은걸까?)&lt;/p&gt;
+&lt;p&gt;변수와 유틸리티 함수는 가능한 공개하지 않는 편이 낫다. 함수를 protected 로 서언하여 테스트 코드에서 접근 할 수 있도록 해야한다. (swift internal?)&lt;/p&gt;
 &lt;h1 id=&quot;클래스는-작아야-한다&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%81%B4%EB%9E%98%EC%8A%A4%EB%8A%94-%EC%9E%91%EC%95%84%EC%95%BC-%ED%95%9C%EB%8B%A4&quot; aria-label=&quot;클래스는 작아야 한다 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;클래스는 작아야 한다!&lt;/h1&gt;
 &lt;p&gt;함수와 마찬가지로 클래스도 작아야한다.&lt;/p&gt;
 &lt;p&gt;클래스 이름은 해당 클래스 책임을 기술해야 한다. 예를 들어 Processor, Manager, Super 등과 같은 모호한 단어가 있다면 클래스가 여러 책임을 떠안았다는 증거이다.&lt;/p&gt;
