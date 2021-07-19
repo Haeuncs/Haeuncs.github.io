@@ -1,4 +1,391 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[2021]]></title><description><![CDATA[ARCHIEVE]]></description><link>https://haeuncs.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 21 Jun 2021 16:11:50 GMT</lastBuildDate><item><title><![CDATA[Unit Test 를 시작하는 사람들을 위한 글 (with Swift) 1]]></title><description><![CDATA[Unit Test 를 시작하는 사람들을 위한 글 (with Swift) 1 Unit Test란? 작성한 코드가 제대로 동작하는지 확인하여 안정성을 높이고 계속해서 수정되는 코드들에 unit test…]]></description><link>https://haeuncs.github.io/2021/UnitTest/UnitTest01/</link><guid isPermaLink="false">https://haeuncs.github.io/2021/UnitTest/UnitTest01/</guid><pubDate>Tue, 22 Jun 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;unit-test-를-시작하는-사람들을-위한-글-with-swift-1&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#unit-test-%EB%A5%BC-%EC%8B%9C%EC%9E%91%ED%95%98%EB%8A%94-%EC%82%AC%EB%9E%8C%EB%93%A4%EC%9D%84-%EC%9C%84%ED%95%9C-%EA%B8%80-with-swift-1&quot; aria-label=&quot;unit test 를 시작하는 사람들을 위한 글 with swift 1 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Unit Test 를 시작하는 사람들을 위한 글 (with Swift) 1&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[2021]]></title><description><![CDATA[ARCHIEVE]]></description><link>https://haeuncs.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 19 Jul 2021 13:06:39 GMT</lastBuildDate><item><title><![CDATA[[WWDC2021]Embrace Expected Failures in XCTest]]></title><description><![CDATA[Introduction…]]></description><link>https://haeuncs.github.io/2021/WWDC/WWDC2021_ Embrace Expected Failures in XCTest/</link><guid isPermaLink="false">https://haeuncs.github.io/2021/WWDC/WWDC2021_ Embrace Expected Failures in XCTest/</guid><pubDate>Mon, 19 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;introduction&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#introduction&quot; aria-label=&quot;introduction permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;테스트는 투자이다. 테스트를 생성, 실행 및 유지를 위해서는 비용이 필요하다. 해당 세션에서 설명하는  예상되는 테스트 실패를 수용하는 방법을 통해서 비용을 줄일 수 있다.&lt;/p&gt;
+&lt;p&gt;테스트는 훌륭한 애플리케이션 구축에 있어 매우 중요한 부분이다.&lt;/p&gt;
+&lt;p&gt;좋은 테스트는 출시 전에 문제를 추적하고 워크플로우를 개선하여 좋은 환경을 제공하는데 도움을 준다.
+그러나, 즉시 해결할 수 없는 문제의 경우에 XCTExpectFailure 를 사용하여 문제들을 보다 효과적으로 해결하는데 도움을 줄 수 있다.&lt;/p&gt;
+&lt;p&gt;테스트란? 한마디로 버그를 잡기 위한 것이다. 실패가 발생하고 이 실패를 바로 해결할 수 없다고 그대로 두면 소음(noise)가 생겨서 이전과 다른 새로운 실패가 발생했을 때 소음 때문에 발견하기 힘들 수 있다.&lt;/p&gt;
+&lt;h1 id=&quot;the-way-we-skipped-the-test-before-was&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#the-way-we-skipped-the-test-before-was&quot; aria-label=&quot;the way we skipped the test before was permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;The way we skipped the test before was…&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Disabling
+test plan 혹은 scheme에서 테스트를 제외하는 방법
+장점: 테스트 코드가 계속 컴파일 됨
+단점: 코드가 실행되지 않기 때문에 test report 에 표시되지 않음
+가시성이 감소하여 해결해야 할 문제로 추적하기 어려워짐&lt;/li&gt;
+&lt;li&gt;XCTSkip
+XCTSkip 으로 테스트를 관리하는 방법
+계속 빌드되고 XCTSkip 이 호출되기 전까지 실행됨
+test report 에 포함되어 문제를 더 잘 파악할 수 있음
+하지만 모든 테스트를 실행하지 않으므로 새로운 문제 및 기존 문제에 대한 변경의 형태로 실패가 발견될 경우에 실패에 대한 유용한 정보를 잃게 됨
+XCTSkip은 특정 OS 버전 또는 device type 에 따른 처리에 훌륭한 도구&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&quot;new-ways-to-handle-known-failures&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#new-ways-to-handle-known-failures&quot; aria-label=&quot;new ways to handle known failures permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;New ways to handle known failures&lt;/h1&gt;
+&lt;p&gt;XCTExpectFailure 를 사용하면, test는 failure가 아니라 expected failure 로 report 되며 test의 suite 도 failure가 아닌 pass 로 표시가 된다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/b16cd0fe8b6446081e0aa0f43d009c78/090a8/1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 58.10810810810811%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABYlAAAWJQFJUiTwAAABQ0lEQVQoz2Pg4eHZLS8vv1ZcXHyDqKjoBmlp6Q0gNgsLywYGBgZi8Vog3gPELgySkpL/jY2N/xsZGf03MDAA0yDMxcX1H6gAghkZEWz8OIMByvgBxH/QMSMj4x9s4ljwd6g5SWADgRp/A/F/ZIxss5OExP+mwuL/7j5+2Fz1D4h/QdnJMBf+RlcoATTExMQEzI4ODf9/48bN//sPHv6vra0DFmNiYiLNQGCk/Ofl5YUYLivzf8r02f9rauv/c3JxkudCFMOBWFyE/z8zK+t/SBCRYSDIhexsEAN8VPn/Ry7h/q9WzfSfiYXMMFRSUvpvaW0BdB3Hf5lEhv+5T4z/x11R+s9nCpIHRhoTfgN/QA2FY1DMs7Awg9nM3Ay/DXsZf6tmM/5GVwfFqMmGijgTZOACIJ4KxNNxYkY0GhOD9C8CYmsAGe/09GzSiwUAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;1&quot;
+        title=&quot;1&quot;
+        src=&quot;/static/b16cd0fe8b6446081e0aa0f43d009c78/fcda8/1.png&quot;
+        srcset=&quot;/static/b16cd0fe8b6446081e0aa0f43d009c78/12f09/1.png 148w,
+/static/b16cd0fe8b6446081e0aa0f43d009c78/e4a3f/1.png 295w,
+/static/b16cd0fe8b6446081e0aa0f43d009c78/fcda8/1.png 590w,
+/static/b16cd0fe8b6446081e0aa0f43d009c78/efc66/1.png 885w,
+/static/b16cd0fe8b6446081e0aa0f43d009c78/c83ae/1.png 1180w,
+/static/b16cd0fe8b6446081e0aa0f43d009c78/090a8/1.png 2504w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;XCTExpectFailure를 통해 오류로 인해 발생하는 노이즈를 제거하고 테스트에 다른 문제가 있는지 쉽게 확인할 수 있다.&lt;/p&gt;
+&lt;h2 id=&quot;track-expected-failures&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#track-expected-failures&quot; aria-label=&quot;track expected failures permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Track expected failures&lt;/h2&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/686adf1fa4032830aab9b1597d85834d/090a8/2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 58.10810810810811%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABYlAAAWJQFJUiTwAAABDklEQVQoz9WTPU7EMBCFfQ+wJ/7fJFsgWlpOAg0cCNEi+pXo4V6swMI8z5qNEVYkREXx5Y1HM8+jZCIk6Wep9O5UDU8MaUb+jh14Qf+lsH6TXZiyjzOYcthM2biYSds8aAegxtW4nrX7hkJOu5BheCO83+Yxnu9jOEsxzGl2IY3Wp9E41i2Ym3OATnz2rLggYbpXgjEMr0S5XZF9V2SyGgBpVmpQHb7ykswHet+KDwyvRXFGgg1xUymouoY51qkfhmYxVAMXdCdaqDVL/cqEtVgOpm/c1DTx/zO0JbkvpnjJMNasa9QBjvFhbexhbcpCUl3Q8oGo1R6mF1v8DLzYtwKPB3AH7v9A6X88kXTxCUt1NGrZoGqOAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;2&quot;
+        title=&quot;2&quot;
+        src=&quot;/static/686adf1fa4032830aab9b1597d85834d/fcda8/2.png&quot;
+        srcset=&quot;/static/686adf1fa4032830aab9b1597d85834d/12f09/2.png 148w,
+/static/686adf1fa4032830aab9b1597d85834d/e4a3f/2.png 295w,
+/static/686adf1fa4032830aab9b1597d85834d/fcda8/2.png 590w,
+/static/686adf1fa4032830aab9b1597d85834d/efc66/2.png 885w,
+/static/686adf1fa4032830aab9b1597d85834d/c83ae/2.png 1180w,
+/static/686adf1fa4032830aab9b1597d85834d/090a8/2.png 2504w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;위의 그림처럼 문자열에 URL 을 포함할 수 있다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/ac0169c0a8d3a7521415d2d5317fef29/090a8/3.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 58.10810810810811%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABYlAAAWJQFJUiTwAAABj0lEQVQoz6WSzU7CQBDHKx8HLoSEQEKAJ/BAidCLV+OFtoDEF9CLPpDxaryTcNfnUDmACfIRrFACTVu6sn93ClgOHIxs8stMO7u/nTYjxePxp3Q63UylUq1kMtmSJOk/NAXPgjMpm81CLhZRLpdRKBQQiUQQCoUQDof/DO0XMuJG2iSu4PsAnI3nSspkMjjXL1lFq0FTVei6DlVETdNQqVT8Z4qEulOv1Wo+jUaDi71eLBYj4bVUr1/gi4HNnRVcxwYtxhj4isNxHHC+joTneX59uVxiZ/H5fO7l8/m1kG7BijHTnMJ1l/5B13VhWRZs2/YhAUWqbd9RfbFYYDab8X6/HwirJBRNDT4tfIwMjIbDXwmJt93tg+rU4Xg89nK53Fqo61Vf2B4O8NJ+R/vtFd1uF51Ox8cwDEynU5imiclk4ucE5eJT6ZfwXq8XCBOJBBSlxI5lGQX5BMWiDFkOoHFSFGUvVCuVSlyMmxeNRtfCnbFhBxCMDSU0mEeC0AFshLckfBDcCe4PgM4/Ck5/AOf0vlbthnIRAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;3&quot;
+        title=&quot;3&quot;
+        src=&quot;/static/ac0169c0a8d3a7521415d2d5317fef29/fcda8/3.png&quot;
+        srcset=&quot;/static/ac0169c0a8d3a7521415d2d5317fef29/12f09/3.png 148w,
+/static/ac0169c0a8d3a7521415d2d5317fef29/e4a3f/3.png 295w,
+/static/ac0169c0a8d3a7521415d2d5317fef29/fcda8/3.png 590w,
+/static/ac0169c0a8d3a7521415d2d5317fef29/efc66/3.png 885w,
+/static/ac0169c0a8d3a7521415d2d5317fef29/c83ae/3.png 1180w,
+/static/ac0169c0a8d3a7521415d2d5317fef29/090a8/3.png 2504w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;테스트 리포트에 버그 아이콘이 생겨 문자열에 넣은 URL 로 이동할 수 있다.&lt;/p&gt;
+&lt;p&gt;(개인적으로 좋은 기능이라고 생각한다. 어쨌든 버그가 발생하고 bug tracking system에 해당 이슈에 대한 ticket을 만드는 행위를 통해서 해당 버그를 더욱 인지할 수 있는 것과 같은 것이..)&lt;/p&gt;
+&lt;h2 id=&quot;using-xctexpectfailure&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#using-xctexpectfailure&quot; aria-label=&quot;using xctexpectfailure permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Using XCTExpectFailure&lt;/h2&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/d050201193c2bbe65c144eda9453efd4/090a8/4.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 58.10810810810811%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABYlAAAWJQFJUiTwAAACZklEQVQoz5WSX0hTURzHrxvTB5E9bMvm2EPYgxFurKFbhbbQpis2mzMxTScb2VV8KK2HZX9IavNlSYZOs1JmBhnaKaiJyyynm2JqSq8RCfMh6aUXY3fs2/XqxECGPXz4Xjjnfs/39z2HSktL80ul0mGRSETkcjlJT08nEomEyGQy7lsgEBCKogiPx+NUX6QnM0tzZHZ5njwb6CLPRwbJ6w+jw96X3vdvx94UUhkZGdBoNFAoFFAqlVCr1VCpVNuampoK1gh8Pp9TY4kJK2urWFyeRaDfjdEX3fi0EEJoaQZjEz6a2tjE8oclmgg2IadGkzH64+dqdG7KHw08cUdDw0+jo8GJdf/0OCYmx2yUUCgEOyrDjsYlSEpK+oetA8EacmpiE679/oVw+DvedbZi0jcUC31diEx9DuBjwG+nxGIxsrKymJSUlO2fd4PH3zS0lFnwLbyCW+0dcLY0457rbqzdOxAJzk8jEBy3UxvdJCcnMzvT7EZ8PUerRe3V6zh6tgqFFTacsV6Knayqizi7urH4JWiPd8gkMtuJULIfWlM5ii5cRMF5GwxWOlZcS0fMDU246b7/P4abCffJ5Mg5ZURusRm6cit052pix8yVEbO9AfSVpr0b8rZGzldno8XRDIXOgPzSSuSVVsZUhrJI7wMXxvva7DufDZMItkNONYczmYdOB5OZe4I5lKdnlPoS5kjB6fVe1zX0uB02aq/dxS9FlX0Qg200rNUWVNTVw1htRZW9Bh2uZjgcdP2GYT9LJ4snEezInOYoDnjIo8se0nfH43v12EOGejytrpZOutHqvX2j8fhfJ0tydkG8124AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;4&quot;
+        title=&quot;4&quot;
+        src=&quot;/static/d050201193c2bbe65c144eda9453efd4/fcda8/4.png&quot;
+        srcset=&quot;/static/d050201193c2bbe65c144eda9453efd4/12f09/4.png 148w,
+/static/d050201193c2bbe65c144eda9453efd4/e4a3f/4.png 295w,
+/static/d050201193c2bbe65c144eda9453efd4/fcda8/4.png 590w,
+/static/d050201193c2bbe65c144eda9453efd4/efc66/4.png 885w,
+/static/d050201193c2bbe65c144eda9453efd4/c83ae/4.png 1180w,
+/static/d050201193c2bbe65c144eda9453efd4/090a8/4.png 2504w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;XCTExpectFailure를 사용하는 두가지 방식이 있다. Stateful 그리고 Scoped 방식&lt;/p&gt;
+&lt;h3 id=&quot;stateful&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#stateful&quot; aria-label=&quot;stateful permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Stateful&lt;/h3&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/d5e13dc35d5faecbd451ad95776b5ff1/090a8/5.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 58.10810810810811%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABYlAAAWJQFJUiTwAAABeUlEQVQoz7WS206DQBCGeY627Ako0KMpYKHUCxNj9DXqjT6Q8dZ438R7fa82ZcP475ba1lNMjBcfM/Oz8+8yrONy+QKWHSaeET/T6Iyrd43ZqA7WqSXiKzwuHOWH5Hcj8oAKQjK1F0QkvICE34Uek4RmsO+BKxTBlJiJAGZ2PQxvnUE4omxSrLNpqSdpoSejVOe9VPf6Ix1FfR33hjqOBzpqMHkIPQh72m8Iwv7KHKjt8oUzGCdUzq6qcnZN+dklFeU5zadzytOcpg2zrLB1luRUWK2gcTKl0eTUUI+TfBMPT6jVYTeOUD4J2a2kDIkFAbl+QEx51HI5tZkAHLnY54zbiM/bUYMNl57Jt4aukJWZAzukmc8vqMHG+FhDLn0jVt81YDNsoCw2F9v8e0NzQi6ro6ZdA//CsMl3NXpr8J+GGCaEtTHFBa228Rg0Ww7rD2tWzU9ZOBKX1xRmlhbl7/ODWvzwzvQr+MDwzsHjEdyDhz9g+p9wscs3+zc6shd6EyAAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;5&quot;
+        title=&quot;5&quot;
+        src=&quot;/static/d5e13dc35d5faecbd451ad95776b5ff1/fcda8/5.png&quot;
+        srcset=&quot;/static/d5e13dc35d5faecbd451ad95776b5ff1/12f09/5.png 148w,
+/static/d5e13dc35d5faecbd451ad95776b5ff1/e4a3f/5.png 295w,
+/static/d5e13dc35d5faecbd451ad95776b5ff1/fcda8/5.png 590w,
+/static/d5e13dc35d5faecbd451ad95776b5ff1/efc66/5.png 885w,
+/static/d5e13dc35d5faecbd451ad95776b5ff1/c83ae/5.png 1180w,
+/static/d5e13dc35d5faecbd451ad95776b5ff1/090a8/5.png 2504w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;위와 같이 XCTExpectFailure를 작성하면 test 코드들에서 실패가 발생하면 모두 감지한다.&lt;/p&gt;
+&lt;h3 id=&quot;scoped&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#scoped&quot; aria-label=&quot;scoped permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Scoped&lt;/h3&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/b0ae7a2691dd82322234e09aa4b8861b/090a8/6.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 58.10810810810811%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABYlAAAWJQFJUiTwAAABiUlEQVQoz6WRS0/CQBSF528oj3baMqVKoihaHoIUB6gkJsaFcS0b/UHGrXFvwl7/l6Ztej23g6/EbnTxce5h5p7OzBU1Sz6DJ7Cq1u0V62/US/43ONz/gn4tXM8nTwXkNqA+VDVBQA68xBqr7TagzTX+J2Zvk+q2QxJ7EHgjtlWLOrvh2/5BL2t3wqzd2ssOm+0sCFqZUkHm+1vAqCpqox6DdQahrw4+Xq1Z1yIcRKSnF2k8v6JZfEk6Pqd4fkYzvaCTKCY9iWk+OS10Aj+FnsAPQf94xuSok91OjzY2K0tx2B/TUTRPh+MFDaMF9fUpDRDWH88oHGrqjqYUjoz2QLdAo9aFh+aDKE529rsIrC6FhzdwPJVajkf2DxrFu5Rhf5HDJ9JV/IZLYUmXMKEU0B/JQcI5JhCnwZRSntQfyUHCt/oM/Djhrw2WQzVbFmrqb57r9Qm/As2V39ahpSCgoGT9dX3layE9RWws6ZXDQ5IGrgt+7HF5sBx4K/DzAO7A/T/g/sdKzRq8A/NpRT2t+rKtAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;6&quot;
+        title=&quot;6&quot;
+        src=&quot;/static/b0ae7a2691dd82322234e09aa4b8861b/fcda8/6.png&quot;
+        srcset=&quot;/static/b0ae7a2691dd82322234e09aa4b8861b/12f09/6.png 148w,
+/static/b0ae7a2691dd82322234e09aa4b8861b/e4a3f/6.png 295w,
+/static/b0ae7a2691dd82322234e09aa4b8861b/fcda8/6.png 590w,
+/static/b0ae7a2691dd82322234e09aa4b8861b/efc66/6.png 885w,
+/static/b0ae7a2691dd82322234e09aa4b8861b/c83ae/6.png 1180w,
+/static/b0ae7a2691dd82322234e09aa4b8861b/090a8/6.png 2504w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Stateful 가 아닌 클로저를 사용하여 범위를 지정하여 클로저 내에 있는 test 조건들에서 실패를 감지한다.&lt;/p&gt;
+&lt;h2 id=&quot;option&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#option&quot; aria-label=&quot;option permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Option&lt;/h2&gt;
+&lt;p&gt;기본적으로 XCTExpectFailure를 사용하면 영향을 받는 범위의 모든 실패가 포착되지만 issueMatcher 를 통해서 필터를 정할 수 있다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/ee87ecf0ca6cd5ad73bb1bf097e14779/090a8/7.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 58.10810810810811%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABYlAAAWJQFJUiTwAAABmUlEQVQoz6WS3W7UMBCF8xyQ+D+287tplu5utatuV7RSUSUeor2BB0LcIu4rcQ/v1WoT5TCO0m0RKqJw8eV47PHxTOwo4fI7cZsw+W2EP8KEOpDw56H1W8r/ETNxHinjoK2HSj30AzQnjQUlHWDiecK60CnI8ENU+RkWR6v745N13y5W/bxZ9Kty2WflrLdZ2bu86q0v+vSPlHfaZnid8Ouobo5xtjnvLt5eYbt9h93Ze5xuL7HbXeF0c4n15gLzxRp1u8Rsvvqddjk0b072edXgVZzcRFxqWJd1jalRZi1y38KYDGV+BK9raFWAc4OEcUKEtg46jQfSffAhvYmEMnBp0znbInUzOCo9p//hpIJTGp4oKc7CHOUWpJ7UmAI2rZCX9ZC6bDRMgqGkBJvWnbcNTFFB5QUMXRIXCkLoSdWo7ImycY2QeqB4HwqLHwxjLrp4amls58nt/gUD8WgYSqUTOnY4+cX8WuHYO5f3jJMpQeN/4W66lOsoPOAQCGlICTXpi9BQ5EOGHyP6fCE+EZ//g7D/Kz3s9U/aHD3cWtQtNQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;7&quot;
+        title=&quot;7&quot;
+        src=&quot;/static/ee87ecf0ca6cd5ad73bb1bf097e14779/fcda8/7.png&quot;
+        srcset=&quot;/static/ee87ecf0ca6cd5ad73bb1bf097e14779/12f09/7.png 148w,
+/static/ee87ecf0ca6cd5ad73bb1bf097e14779/e4a3f/7.png 295w,
+/static/ee87ecf0ca6cd5ad73bb1bf097e14779/fcda8/7.png 590w,
+/static/ee87ecf0ca6cd5ad73bb1bf097e14779/efc66/7.png 885w,
+/static/ee87ecf0ca6cd5ad73bb1bf097e14779/c83ae/7.png 1180w,
+/static/ee87ecf0ca6cd5ad73bb1bf097e14779/090a8/7.png 2504w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;테스트 중인 코드에 새로운 문제가 나타날 때를 감지하는데 유용하게 사용할 수 있다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/70a7182a77580b75be40cddd400179e5/090a8/8.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 58.10810810810811%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABYlAAAWJQFJUiTwAAABcUlEQVQoz6WSTU7DQAyFc4/SzP9PJk1S2iIhseUksIEDIbaIfaXu4V5UZFTzJmlDC7QgsfjiF2v8ZHsmGzPxcpbzJVgl8I8oVuOtHuJpluAV9deZMp6MD6Rd6KMtyABlPUnjujyXmphQJxHKEgzvMiccNUWzrmeLWNbTWBVNPLdNhHHEoSi1iyiI6CDmXMacAb7VA+KNCZ0MbzIB0bhJezGfUz1pqAwzqosZeV+TcxU5X3UdwpBQ3MUvbMB7OgPD2yyJy3ndLpoJlbYmJT0FZinPOY1ylg4NZkfYgE9DBuH0pC3snKydoqtAwToK2lIhDRXKUKV67XC2VH3UuiRrKirKamN9gKHZGmKhXJjWm2TWkAglaSBRyNAZQxd8ryM2aFwG7y7ksEOJTpBs+/EYjdOI2zH/yPcdItH+uJ/TuzuyQ4wMw3Uy3YGn0bGf+4W9Z9OPTCmxg++01Af54yhKq4PhfYbPE3gAj/8g1T+PxuzqA9scOBB6xqZ+AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;8&quot;
+        title=&quot;8&quot;
+        src=&quot;/static/70a7182a77580b75be40cddd400179e5/fcda8/8.png&quot;
+        srcset=&quot;/static/70a7182a77580b75be40cddd400179e5/12f09/8.png 148w,
+/static/70a7182a77580b75be40cddd400179e5/e4a3f/8.png 295w,
+/static/70a7182a77580b75be40cddd400179e5/fcda8/8.png 590w,
+/static/70a7182a77580b75be40cddd400179e5/efc66/8.png 885w,
+/static/70a7182a77580b75be40cddd400179e5/c83ae/8.png 1180w,
+/static/70a7182a77580b75be40cddd400179e5/090a8/8.png 2504w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;특정 configuration에서 예상되는 오류를 비활성화하는 데 사용할 수 있다.&lt;/p&gt;
+&lt;h2 id=&quot;what-happens-when-known-failures-begin-to-pass&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#what-happens-when-known-failures-begin-to-pass&quot; aria-label=&quot;what happens when known failures begin to pass permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;What happens when known failures begin to pass?&lt;/h2&gt;
+&lt;p&gt;근본적인 문제가 해결되어 더 이상 실패하지 않는 경우, API에 대한 불필요한 호출을 제거하라는 메시지가 표시되어 코드를 유지하는데 도움을 준다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/f27249fdd10ea4235b2a66443a838236/090a8/9.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 58.10810810810811%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABYlAAAWJQFJUiTwAAABBElEQVQoz62SzWqDUBCFr+I/KiKIPy/gyh/QXbd5kmbTPlDpNmQfcN++V0JSOp1zuTeYQNKQZPExw0HPnBkVcRx/FUWxybJsAnmeT2maHmtVVZNhGJMQ4hob5ptZiLIsaRxHapqG2ralvu+prmsahkFqXdeRaZrED9/Cm1DNjvl5gK3yeZWGvNKBQZVpoiiSaE0n8DyP+EQUhuE81S+zV/1SJzwoY2mYJAnx/WSvNVQYQofpbNhlQ43ruuT7/sl9dFLHcc5vej0hKsyCIDimmIN1bdueD7ktIdY7/4owwDDLsu5LqDWtY1XcDwP/S7hTpvdy+ts8kXcYrpgP5vMB8P6aefkDB6PjqCH+JpoAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;9&quot;
+        title=&quot;9&quot;
+        src=&quot;/static/f27249fdd10ea4235b2a66443a838236/fcda8/9.png&quot;
+        srcset=&quot;/static/f27249fdd10ea4235b2a66443a838236/12f09/9.png 148w,
+/static/f27249fdd10ea4235b2a66443a838236/e4a3f/9.png 295w,
+/static/f27249fdd10ea4235b2a66443a838236/fcda8/9.png 590w,
+/static/f27249fdd10ea4235b2a66443a838236/efc66/9.png 885w,
+/static/f27249fdd10ea4235b2a66443a838236/c83ae/9.png 1180w,
+/static/f27249fdd10ea4235b2a66443a838236/090a8/9.png 2504w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;비결정적인(Nondeterministic) 코드인 경우에는 strict 하게 검사하는 것은 도움이 되지 않고 테스트에 노이즈만 발생시킨다. (예측된 실패가 발생하지 않아 성공한 경우, expected failure 에 대한 API 를 제거하라는 문구가 안뜨게 한다는 뜻)&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/ccfcb0b9784d08cb4024c1f53e01a68e/090a8/10.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 58.10810810810811%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABYlAAAWJQFJUiTwAAABYElEQVQoz62Sy07DMBBF8x9t/Bg7cR4NtCoVSHTZL4ENfBBii9hX6h7+qxWxOlw7QB8pCAkWJ3PHytzMTJykUr8MhVqCFTRQq53+GSEJMaCX4BV1i8RkBWdFxdaVbPISsYpIsiy0OY0ihkFEIg9omzMM7xJHBZ/Xk83ZeOrrZuwbN/ITU3tD1itFnrTxGrGj02Sdz1zl0YiHmYfxWmobDG8SBZHZpm3KS67KC1DzCB3XmWOHLmuTcUlZ1DGim6aZ8nQ259nVnLXJtzB8UxQNb5MgpKaW0CnZgkXuWIIw2hAj9SEUSh6kggdDEcbeYgU7Q8LsaLvFz4g7EQK7Ed1+wq56yF7e7xAH7aniaCo7k1Qd6r18C70zDMvEYfv1wl4nxya/M6T/Ngz3SupNGPt7KMbwYfGhj/J18InXRnc/JV7kMP4BdKjDFVOf5/s56qm72PcJHk/gATz+gVD/PEjl9TsDYDYuM/dW7wAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;10&quot;
+        title=&quot;10&quot;
+        src=&quot;/static/ccfcb0b9784d08cb4024c1f53e01a68e/fcda8/10.png&quot;
+        srcset=&quot;/static/ccfcb0b9784d08cb4024c1f53e01a68e/12f09/10.png 148w,
+/static/ccfcb0b9784d08cb4024c1f53e01a68e/e4a3f/10.png 295w,
+/static/ccfcb0b9784d08cb4024c1f53e01a68e/fcda8/10.png 590w,
+/static/ccfcb0b9784d08cb4024c1f53e01a68e/efc66/10.png 885w,
+/static/ccfcb0b9784d08cb4024c1f53e01a68e/c83ae/10.png 1180w,
+/static/ccfcb0b9784d08cb4024c1f53e01a68e/090a8/10.png 2504w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;비결정적인 테스트의 경우에 strict 동작을 사용하지 않도록 설정하여 처리할 수 있다.&lt;/p&gt;
+&lt;p&gt;또한 비결정적인 테스트를 조사해야하는 경우 Xcode13에서 제공하는 테스트 반복 기능으로 신뢰할 수 없는 코드를 진단 할 수 있다.&lt;/p&gt;
+&lt;h1 id=&quot;wrap-up&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#wrap-up&quot; aria-label=&quot;wrap up permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Wrap-up&lt;/h1&gt;
+&lt;p&gt;XCTExpectFailure를 사용하여 테스트 실패가 워크플로우에 영향을 미치지 않도록 한다.&lt;/p&gt;
+&lt;h1 id=&quot;reference-links&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#reference-links&quot; aria-label=&quot;reference links permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference Links&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/videos/play/wwdc2021/10207&quot;&gt;https://developer.apple.com/videos/play/wwdc2021/10207&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/documentation/xctest/expected_failures&quot;&gt;https://developer.apple.com/documentation/xctest/expected_failures&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[입사 후 1년]]></title><description><![CDATA[서론 저번 달 25일에 팀원들과 온라인 회식을 하던 중 입사한지 1주년인 것을 알고 ‘벌써?!’라는 생각이 들었다.…]]></description><link>https://haeuncs.github.io/2021/입사후1년을돌아본다/</link><guid isPermaLink="false">https://haeuncs.github.io/2021/입사후1년을돌아본다/</guid><pubDate>Tue, 22 Jun 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;서론&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%84%9C%EB%A1%A0&quot; aria-label=&quot;서론 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;서론&lt;/h1&gt;
+&lt;p&gt;저번 달 25일에 팀원들과 온라인 회식을 하던 중 입사한지 1주년인 것을 알고 ‘벌써?!’라는 생각이 들었다.&lt;/p&gt;
+&lt;p&gt;1년이라는 시간이 믿기지 않을 정도로 시간이 빠르게 흘렀다.&lt;/p&gt;
+&lt;p&gt;입사 후 모든 것이 온라인으로 진행되다 보니 같이 일하는 분들을 봐도 봐도 익숙하지 않고 모든게 새로웠었다. 이제 1년 아직 배울게 많지만 이제는 일이 어떻게 돌아가는 건지, 다른 팀들과 커뮤니케이션은 어떻게 해야하는 건지 비로소 깨닫게 되었다.&lt;/p&gt;
+&lt;p&gt;내가 생각하는 회사의 장점을 말해보려고 한다.
+물론 나는 나 포함 4명이였던 스타트업에서 일한 경험과 현재 회사 두 회사이기 때문에 다른 회사들도 당연히 이런 시스템이 구축되어있을 수도 있다.&lt;/p&gt;
+&lt;h2 id=&quot;내가-생각하는-장점&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%82%B4%EA%B0%80-%EC%83%9D%EA%B0%81%ED%95%98%EB%8A%94-%EC%9E%A5%EC%A0%90&quot; aria-label=&quot;내가 생각하는 장점 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;내가 생각하는 장점&lt;/h2&gt;
+&lt;h4 id=&quot;코드리뷰&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%BD%94%EB%93%9C%EB%A6%AC%EB%B7%B0&quot; aria-label=&quot;코드리뷰 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;코드리뷰&lt;/h4&gt;
+&lt;p&gt;이 회사를 들어오기 전까지 타인에게 코드 리뷰를 받은 경험이 없었기 때문에, 리뷰를 받는 것이 좋은 경험이었다. &lt;/p&gt;
+&lt;p&gt;내가 작성한 코드는 분명 내가 이해할 수 있지만 타인이 이해하지 못하는 경우나
+잘못된 네이밍이나 챙기지 못한 것들 등등이 분명 존재하고 코드 리뷰를 통하여 더 좋은 코드로 만드는 그런 과정이 좋았다.&lt;/p&gt;
+&lt;h4 id=&quot;수많은-코드&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%88%98%EB%A7%8E%EC%9D%80-%EC%BD%94%EB%93%9C&quot; aria-label=&quot;수많은 코드 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;수많은 코드&lt;/h4&gt;
+&lt;p&gt;큰 규모의 앱이다보니 수많은 코드가 이미 존재해 있어 참고할 코드가 많이 있다.
+그리고 어떻게 만들어진건지 궁금한 코드를 볼 수 있다는게 엄청난 장점이다.&lt;/p&gt;
+&lt;h4 id=&quot;재택-근무&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%9E%AC%ED%83%9D-%EA%B7%BC%EB%AC%B4&quot; aria-label=&quot;재택 근무 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;재택 근무&lt;/h4&gt;
+&lt;p&gt;입사 후 지금까지 회사 출근이 10일은 넘을까? 그정도로 회사로 출근을 한 적이 없다. 코로나 전에는 풀재택 근무에 대해서 나 또한 회의적인 생각이었으나, 실제 1년 내내 재택 근무를 해보니 ‘문제 없다’로 결론이 났다.&lt;/p&gt;
+&lt;p&gt;물론, 회사로 출근했다면 얻는 장점, 경험들이 있었겠지만. 아직 경험해 보지 않아서 모르고.. 풀재택으로 근무를 해도 일정이나 집중력에 대해서는 관계가 없다고 생각한다. 나 또한 처음에는 집중도 안되었던 날들이 있었지만 이제는 아침 10시쯤 일어나 세수하고 커피타고 바로 책상에 앉아 팀원들에게 인사하는 것이 편해졌다.&lt;/p&gt;
+&lt;p&gt;출퇴근 시간이 없어지니 남는 시간을 통해서 잠을 더 자거나 자기계발을 할 시간을 만들 수 있는 것이 엄청난 장점이다.&lt;/p&gt;
+&lt;p&gt;전 회사 왕복 3시간 이상 출근길을 어떻게 다녔는지 나 자신이 대단하다.&lt;/p&gt;
+&lt;h4 id=&quot;멋진-동료들&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%A9%8B%EC%A7%84-%EB%8F%99%EB%A3%8C%EB%93%A4&quot; aria-label=&quot;멋진 동료들 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;멋진 동료들&lt;/h4&gt;
+&lt;p&gt;팀이라는 소속감이 주는 안정감이 있다. 내가 모르거나 못하는 것들을 질문하거나 믿고 맡길 수(?)있는 팀원들이 있다는 생각으로 일하고 있다. ^—^&lt;/p&gt;
+&lt;p&gt;아직 배울게 산더미지만 1년간 크진 않아도 어째든 ‘성장 했다’고 생각한다. 또한 지금 당장 잘하든 못하든 이 일이 너무 재미있고 더 잘하고 싶은 마음이다.😋&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Unit Test 를 시작하는 사람들을 위한 글 (with Swift) 1]]></title><description><![CDATA[Unit Test 를 시작하는 사람들을 위한 글 (with Swift) 1 Unit Test란? 작성한 코드가 제대로 동작하는지 확인하여 안정성을 높이고 계속해서 수정되는 코드들에 unit test…]]></description><link>https://haeuncs.github.io/2021/UnitTest/UnitTest01/</link><guid isPermaLink="false">https://haeuncs.github.io/2021/UnitTest/UnitTest01/</guid><pubDate>Tue, 22 Jun 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;unit-test-를-시작하는-사람들을-위한-글-with-swift-1&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#unit-test-%EB%A5%BC-%EC%8B%9C%EC%9E%91%ED%95%98%EB%8A%94-%EC%82%AC%EB%9E%8C%EB%93%A4%EC%9D%84-%EC%9C%84%ED%95%9C-%EA%B8%80-with-swift-1&quot; aria-label=&quot;unit test 를 시작하는 사람들을 위한 글 with swift 1 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Unit Test 를 시작하는 사람들을 위한 글 (with Swift) 1&lt;/h1&gt;
 &lt;h2 id=&quot;unit-test란&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#unit-test%EB%9E%80&quot; aria-label=&quot;unit test란 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Unit Test란?&lt;/h2&gt;
 &lt;p&gt;작성한 코드가 제대로 동작하는지 확인하여 안정성을 높이고 계속해서 수정되는 코드들에 unit test를 수행하여 수정한 코드가 안전하다는 것을 검증해줍니다.
 테스트 커버리지가 높을 수록 버그에 대한 공포도 줄여줍니다.
@@ -83,28 +470,7 @@ optional을 벗길 때 실패한 경우 XCTFail 으로 실패를 알리는 코�
         &lt;span class=&quot;token comment&quot;&gt;// TEHN&lt;/span&gt;
         &lt;span class=&quot;token function&quot;&gt;XCTAssertTrue&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;isSuccess&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[입사 후 1년]]></title><description><![CDATA[서론 저번 달 25일에 팀원들과 온라인 회식을 하던 중 입사한지 1주년인 것을 알고 ‘벌써?!’라는 생각이 들었다.…]]></description><link>https://haeuncs.github.io/2021/입사후1년을돌아본다/</link><guid isPermaLink="false">https://haeuncs.github.io/2021/입사후1년을돌아본다/</guid><pubDate>Tue, 22 Jun 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;서론&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%84%9C%EB%A1%A0&quot; aria-label=&quot;서론 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;서론&lt;/h1&gt;
-&lt;p&gt;저번 달 25일에 팀원들과 온라인 회식을 하던 중 입사한지 1주년인 것을 알고 ‘벌써?!’라는 생각이 들었다.&lt;/p&gt;
-&lt;p&gt;1년이라는 시간이 믿기지 않을 정도로 시간이 빠르게 흘렀다.&lt;/p&gt;
-&lt;p&gt;입사 후 모든 것이 온라인으로 진행되다 보니 같이 일하는 분들을 봐도 봐도 익숙하지 않고 모든게 새로웠었다. 이제 1년 아직 배울게 많지만 이제는 일이 어떻게 돌아가는 건지, 다른 팀들과 커뮤니케이션은 어떻게 해야하는 건지 비로소 깨닫게 되었다.&lt;/p&gt;
-&lt;p&gt;내가 생각하는 회사의 장점을 말해보려고 한다.
-물론 나는 나 포함 4명이였던 스타트업에서 일한 경험과 현재 회사 두 회사이기 때문에 다른 회사들도 당연히 이런 시스템이 구축되어있을 수도 있다.&lt;/p&gt;
-&lt;h2 id=&quot;내가-생각하는-장점&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%82%B4%EA%B0%80-%EC%83%9D%EA%B0%81%ED%95%98%EB%8A%94-%EC%9E%A5%EC%A0%90&quot; aria-label=&quot;내가 생각하는 장점 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;내가 생각하는 장점&lt;/h2&gt;
-&lt;h4 id=&quot;코드리뷰&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%BD%94%EB%93%9C%EB%A6%AC%EB%B7%B0&quot; aria-label=&quot;코드리뷰 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;코드리뷰&lt;/h4&gt;
-&lt;p&gt;이 회사를 들어오기 전까지 타인에게 코드 리뷰를 받은 경험이 없었기 때문에, 리뷰를 받는 것이 좋은 경험이었다.&lt;/p&gt;
-&lt;p&gt;내가 작성한 코드는 분명 내가 이해할 수 있지만 타인이 이해하지 못하는 경우나
-잘못된 네이밍이나 챙기지 못한 것들이 분명 존재하고 코드 리뷰를 통하여 더 좋은 코드로 만드는 그런 과정이 좋았다.&lt;/p&gt;
-&lt;h4 id=&quot;수많은-코드&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%88%98%EB%A7%8E%EC%9D%80-%EC%BD%94%EB%93%9C&quot; aria-label=&quot;수많은 코드 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;수많은 코드&lt;/h4&gt;
-&lt;p&gt;큰 규모의 앱이다보니 수많은 코드가 이미 존재해 있어 참고할 코드가 많이 있다.
-그리고 어떻게 만들어진건지 궁금한 코드를 볼 수 있다는게 엄청난 장점이다.&lt;/p&gt;
-&lt;h4 id=&quot;재택-근무&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%9E%AC%ED%83%9D-%EA%B7%BC%EB%AC%B4&quot; aria-label=&quot;재택 근무 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;재택 근무&lt;/h4&gt;
-&lt;p&gt;입사 후 지금까지 회사 출근이 10일은 넘을까? 그정도로 회사로 출근을 한 적이 없다. 코로나 전에는 풀재택 근무에 대해서 나 또한 회의적인 생각이었으나, 실제 1년 내내 재택 근무를 해보니 ‘문제 없다’로 결론이 났다.&lt;/p&gt;
-&lt;p&gt;물론, 회사로 출근했다면 얻는 장점, 경험들이 있었겠지만. 아직 경험해 보지 않아서 모르고.. 풀재택으로 근무를 해도 일정이나 집중력에 대해서는 관계가 없다고 생각한다. 나 또한 처음에는 집중도 안되었던 날들이 있었지만 이제는 아침 10시쯤 일어나 세수하고 커피타고 바로 책상에 앉아 팀원들에게 인사하는 것이 편해졌다.&lt;/p&gt;
-&lt;p&gt;출퇴근 시간이 없어지니 남는 시간을 통해서 잠을 더 자거나 자기계발을 할 시간을 만들 수 있는 것이 엄청난 장점이다.&lt;/p&gt;
-&lt;p&gt;전 회사 왕복 3시간 이상 출근길을 어떻게 다녔는지 나 자신이 대단하다.&lt;/p&gt;
-&lt;h4 id=&quot;멋진-동료들&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%A9%8B%EC%A7%84-%EB%8F%99%EB%A3%8C%EB%93%A4&quot; aria-label=&quot;멋진 동료들 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;멋진 동료들&lt;/h4&gt;
-&lt;p&gt;팀이라는 소속감이 주는 안정감이 있다. 내가 모르거나 못하는 것들을 질문하거나 믿고 맡길 수(?)있는 팀원들이 있다는 생각으로 일하고 있다. ^—^&lt;/p&gt;
-&lt;p&gt;아직 배울게 산더미지만 1년간 크진 않아도 어째든 ‘성장 했다’고 생각한다. 또한 지금 당장 잘하든 못하든 이 일이 너무 재미있고 더 잘하고 싶은 마음이다.😋&lt;/p&gt;</content:encoded></item><item><title><![CDATA[210611~210612 1박 2일 미니멀 강릉여행]]></title><description><![CDATA[주말마다 만나는 친구가 갑자기 여행가고 싶다고 해서 급하게 강릉 여행을 가게 되었다.
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[210611~210612 1박 2일 미니멀 강릉여행]]></title><description><![CDATA[주말마다 만나는 친구가 갑자기 여행가고 싶다고 해서 급하게 강릉 여행을 가게 되었다.
 나는 어딜 여행을 가든 짐을 최소한으로 챙기는데 이번 여행은 1박…]]></description><link>https://haeuncs.github.io/2021/미니멀 강릉여행/</link><guid isPermaLink="false">https://haeuncs.github.io/2021/미니멀 강릉여행/</guid><pubDate>Sun, 13 Jun 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;주말마다 만나는 친구가 갑자기 여행가고 싶다고 해서 급하게 강릉 여행을 가게 되었다.
 나는 어딜 여행을 가든 짐을 최소한으로 챙기는데 이번 여행은 1박 2일이기도 하고 뚜벅이 여행이기도 해서 최소한의 짐만 챙겨서 다녀왔다.&lt;/p&gt;
 &lt;p&gt;옷은 빨아도 빨리 마를 수 있는 옷으로 입었다.
