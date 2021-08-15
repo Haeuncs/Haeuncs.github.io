@@ -1,8 +1,8 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import media from "styled-media-query";
 
-import { Link, navigate } from "gatsby";
+import { Link } from "gatsby";
 
 import { rhythm, scale } from "../utils/typography";
 
@@ -14,17 +14,6 @@ import image1 from "../../static/Profile-1.jpg";
 import image2 from "../../static/Profile-2.jpg";
 import image3 from "../../static/Profile-3.jpg";
 import image4 from "../../static/Profile-4.jpg";
-
-const MyInfoWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 10px;
-  ${media.greaterThan("medium")`
-  maxWidth: 300px
-  paddingRight: 30px
-  `};
-`;
 
 const BodyWrapper = styled.div`
   height: 100%;
@@ -69,7 +58,6 @@ const RightSideWrapper = styled.div`
 `;
 
 const Layout = (props) => {
-  const testRef = useRef();
   const { location, title, children } = props;
   const rootPath = `${__PATH_PREFIX__}/`;
 
@@ -100,23 +88,6 @@ const Layout = (props) => {
   } else {
     header = (
       <></>
-      // <h3
-      //   style={{
-      //     fontFamily: `Montserrat, sans-serif`,
-      //     marginTop: 0,
-      //   }}
-      // >
-      //   <Link
-      //     style={{
-      //       boxShadow: `none`,
-      //       textDecoration: `none`,
-      //       color: `inherit`,
-      //     }}
-      //     to={`/`}
-      //   >
-      //     {title}
-      //   </Link>
-      // </h3>
     );
   }
 
@@ -131,18 +102,6 @@ const Layout = (props) => {
     z-index: -1;
   `;
 
-  const random = () => {
-    return (
-      <div
-        className="h-screen w-screen absolute"
-        style={{
-          background:
-            "url(../../static/Profile-1.jpg) no-repeat center center fixed",
-          backgroundSize: "auto",
-        }}
-      ></div>
-    );
-  };
   return (
     <div className="customBorder h-screen w-screen flex flex-col overflow-auto">
       {isFunBackground && (
@@ -180,51 +139,5 @@ const Layout = (props) => {
     </div>
   );
 };
-// class Layout extends React.Component {
-//   render() {
-//     return (
-//       <Wrapper>
-//         <MainWrapper>
-//           <div
-//             id="style-15"
-//             style={{
-//               display: "flex",
-//               flexDirection: "column",
-//               overflow: "auto",
-//               padding: "30px",
-//             }}
-//           >
-//             <header>{header}</header>
-//             <main>{children}</main>
-//             <footer>
-//               © {new Date().getFullYear()}, Built with
-//               {` `}
-//               <a href="https://www.gatsbyjs.org">Gatsby</a>
-//             </footer>
-//           </div>
-//         </MainWrapper>
-//         <MyInfoWrapper>
-//           <MyInfo></MyInfo>
-//         </MyInfoWrapper>
-//       </Wrapper>
-//       // <div
-//       //   style={{
-//       //     marginLeft: `auto`,
-//       //     marginRight: `auto`,
-//       //     maxWidth: rhythm(24),
-//       //     padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-//       //   }}
-//       // >
-//       //   <header>{header}</header>
-//       //   <main>{children}</main>
-//       //   <footer>
-//       //     © {new Date().getFullYear()}, Built with
-//       //     {` `}
-//       //     <a href="https://www.gatsbyjs.org">Gatsby</a>
-//       //   </footer>
-//       // </div>
-//     )
-//   }
-// }
 
 export default Layout;

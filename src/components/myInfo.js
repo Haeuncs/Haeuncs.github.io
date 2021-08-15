@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import styled from "styled-components";
 import media from "styled-media-query";
 import { Link } from "gatsby";
@@ -19,6 +18,7 @@ const Span = styled.span`
   font-size: 20px;
   `}
 `;
+
 const SmallSpan = styled.span`
   font-size: 18px;
   font-weight: 600;
@@ -27,12 +27,6 @@ const SmallSpan = styled.span`
   `}
 `;
 
-const MobileHideDiv = styled.div`
-  ${media.lessThan("medium")`
-  opacity: 0;
-  height: 0;
-`}
-`;
 const mapSizesToProps = ({ width }) => ({
   isMobile: width > 480,
 });
