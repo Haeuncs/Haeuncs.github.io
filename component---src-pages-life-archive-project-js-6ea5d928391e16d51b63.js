@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[10],{"8BCK":function(e,n,t){"use strict";t.r(n);var a=t("q1tI"),l=t.n(a);t("fqRJ");n.default=function(e){e.data,e.location;return l.a.createElement("div",{className:"flex"},l.a.createElement("diV",null,"내 인생 아카이브 프로젝트"),l.a.createElement("diV",null,"기록을 안하면 잊혀지는게 아쉬워 시작하는 프로젝트"),l.a.createElement("diV",null,"매일의 기억을 저장하는 공간"))}},fqRJ:function(e,n,t){}}]);
-//# sourceMappingURL=component---src-pages-life-archive-project-js-6ea5d928391e16d51b63.js.map
